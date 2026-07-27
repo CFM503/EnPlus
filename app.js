@@ -1,12 +1,11 @@
 /**
- * VoiceTutor AI - Real HTML5 Web Audio API 300% Volume Gain Booster & Fallback Engine
+ * VoiceTutor AI - Full 3000 Word Progression Engine
+ * Stage 1: Ogden 850 Core Words | Stage 2: Oxford 2000 Daily | Stage 3: Oxford 3000 Advanced
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ==========================================
-    // REAL WEB AUDIO GAIN AMPLIFIER ENGINE
-    // ==========================================
+    // Web Audio API Amplifier
     let audioCtx = null;
     let gainNode = null;
     let currentAudioElement = null;
@@ -27,11 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return audioCtx;
     }
 
-    // High Quality Real HTML5 Audio Player with True Gain Amplification
     function playLoudAudio(text, rate = 1.0, gainMultiplier = 2.0) {
         getAudioContext();
 
-        // Stop previous audio
         if (currentAudioElement) {
             currentAudioElement.pause();
             currentAudioElement.currentTime = 0;
@@ -40,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const sanitizedText = text.replace(/\[.*?\]|\/.*?\/|\(.*?\)/g, '').replace(/[^a-zA-Z0-9\s,'\.\!\?\-]/g, '').trim();
         if (!sanitizedText) return;
 
-        // Choose Accent Source (Youdao Type 2 = US, Type 1 = UK)
         const accentType = (accentSelect && accentSelect.value === 'en-GB') ? '1' : '2';
         const audioUrl = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(sanitizedText)}&type=${accentType}`;
 
@@ -50,19 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
         audio.playbackRate = rate;
         currentAudioElement = audio;
 
-        // Route through Web Audio API GainNode for REAL 200%~400% volume amplification
         if (audioCtx && gainNode) {
             try {
                 const source = audioCtx.createMediaElementSource(audio);
                 source.connect(gainNode);
                 gainNode.gain.setValueAtTime(gainMultiplier, audioCtx.currentTime);
-            } catch (err) {
-                // MediaElementSource already connected or CORS fallback
-            }
+            } catch (err) {}
         }
 
         audio.play().catch(err => {
-            console.warn("Online TTS audio play failed, falling back to Web Speech API:", err);
             speakWebSpeechFallback(sanitizedText, rate, gainMultiplier);
         });
     }
@@ -82,7 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. DATASETS FOR 850 / 2000 / 3000 WORDS
     // ==========================================
     const VOCAB_DATA = {
+        // STAGE 1: OGDEN 850 CORE VOCABULARY
         vocab850: [
+            // Operations & Action Verbs
             { word: "make", ipa: "/meɪk/", pos: "v.", cn: "制作；做；使得", cat: "ops", exEn: "Practice makes perfect.", exCn: "熟能生巧。" },
             { word: "come", ipa: "/kʌm/", pos: "v.", cn: "来；来到；到达", cat: "ops", exEn: "Come and join us for lunch!", exCn: "快来和我们一起吃午饭吧！" },
             { word: "go", ipa: "/ɡoʊ/", pos: "v.", cn: "去；前往；行走", cat: "ops", exEn: "Let's go for a walk outside.", exCn: "我们去外面散散步吧。" },
@@ -97,29 +91,53 @@ document.addEventListener('DOMContentLoaded', () => {
             { word: "say", ipa: "/seɪ/", pos: "v.", cn: "说；讲；表明", cat: "ops", exEn: "What did you say?", exCn: "你刚才说了什么？" },
             { word: "see", ipa: "/siː/", pos: "v.", cn: "看见；明白；理解", cat: "ops", exEn: "I see what you mean.", exCn: "我明白你的意思了。" },
             { word: "send", ipa: "/send/", pos: "v.", cn: "发送；寄出", cat: "ops", exEn: "I'll send you an email soon.", exCn: "我很快会给你发邮件。" },
+            { word: "may", ipa: "/meɪ/", pos: "v.aux.", cn: "也许；可以", cat: "ops", exEn: "May I ask a quick question?", exCn: "我能问个小问题吗？" },
+            { word: "will", ipa: "/wɪl/", pos: "v.aux.", cn: "将要；愿意", cat: "ops", exEn: "I will do my best.", exCn: "我会尽力的。" },
 
+            // General Nouns
             { word: "account", ipa: "/əˈkaʊnt/", pos: "n.", cn: "账户；描述；解释", cat: "things", exEn: "I need to open a bank account.", exCn: "我需要开一个银行账户。" },
             { word: "agreement", ipa: "/əˈɡriːmənt/", pos: "n.", cn: "协议；同意；一致", cat: "things", exEn: "They reached a mutual agreement.", exCn: "他们达成了共同协议。" },
             { word: "amount", ipa: "/əˈmaʊnt/", pos: "n.", cn: "数量；总额", cat: "things", exEn: "A large amount of work remains.", exCn: "还有大量的工作要做。" },
             { word: "business", ipa: "/ˈbɪznəs/", pos: "n.", cn: "商业；生意；事务", cat: "things", exEn: "Mind your own business.", exCn: "管好你自己的事。" },
             { word: "company", ipa: "/ˈkʌmpəni/", pos: "n.", cn: "公司；陪伴；同伴", cat: "things", exEn: "She works for a tech company.", exCn: "她在一家科技公司工作。" },
+            { word: "decision", ipa: "/dɪˈsɪʒn/", pos: "n.", cn: "决定；决断", cat: "things", exEn: "It was a tough decision to make.", exCn: "这是一个艰难的决定。" },
+            { word: "education", ipa: "/ˌedʒuˈkeɪʃn/", pos: "n.", cn: "教育；培养", cat: "things", exEn: "Education opens many doors.", exCn: "教育开阔了人生的道路。" },
+            { word: "experience", ipa: "/ɪkˈspɪriəns/", pos: "n.", cn: "经验；经历", cat: "things", exEn: "Experience is the best teacher.", exCn: "经验是最好的老师。" },
+            { word: "government", ipa: "/ˈɡʌvərnmənt/", pos: "n.", cn: "政府；治理", cat: "things", exEn: "The government issued new guidelines.", exCn: "政府发布了新的准则。" },
+            { word: "history", ipa: "/ˈhɪstri/", pos: "n.", cn: "历史；过去", cat: "things", exEn: "History repeats itself.", exCn: "历史总是不断重演。" },
 
+            // Qualities & Adjectives
             { word: "able", ipa: "/ˈeɪbl/", pos: "adj.", cn: "有能力的；能干的", cat: "qualities", exEn: "Will you be able to come tonight?", exCn: "你今晚能来吗？" },
             { word: "beautiful", ipa: "/ˈbjuːtɪfl/", pos: "adj.", cn: "美丽的；出色的", cat: "qualities", exEn: "What a beautiful sunset!", exCn: "多么迷人的日落啊！" },
             { word: "clear", ipa: "/klɪər/", pos: "adj.", cn: "清晰的；晴朗的；明白的", cat: "qualities", exEn: "Is the explanation clear to you?", exCn: "这个解释你听明白了吗？" },
             { word: "different", ipa: "/ˈdɪfrənt/", pos: "adj.", cn: "不同的；各种各样的", cat: "qualities", exEn: "We have completely different ideas.", exCn: "我们有截然不同的想法。" },
-            { word: "important", ipa: "/ɪmˈpɔːrtnt/", pos: "adj.", cn: "重要的；重大的", cat: "qualities", exEn: "Health is the most important thing.", exCn: "健康是最重要的事情。" }
+            { word: "important", ipa: "/ɪmˈpɔːrtnt/", pos: "adj.", cn: "重要的；重大的", cat: "qualities", exEn: "Health is the most important thing.", exCn: "健康是最重要的事情。" },
+            { word: "necessary", ipa: "/ˈnesəseri/", pos: "adj.", cn: "必要的；必需的", cat: "qualities", exEn: "Sleep is necessary for good health.", exCn: "充足的睡眠对健康非常必要。" },
+            { word: "possible", ipa: "/ˈpɑːsəbl/", pos: "adj.", cn: "可能的；潜在的", cat: "qualities", exEn: "Anything is possible if you try.", exCn: "只要尝试，一切皆有可能。" },
+            { word: "simple", ipa: "/ˈsɪmpl/", pos: "adj.", cn: "简单的；朴素的", cat: "qualities", exEn: "Keep it simple and direct.", exCn: "保持简单明了。" }
         ],
 
+        // STAGE 2: OXFORD 2000 DAILY HIGH FREQUENCY VOCABULARY
         vocab2000: [
             { word: "achieve", ipa: "/əˈtʃiːv/", pos: "v.", cn: "实现；达到", cat: "ops", exEn: "You can achieve your goal.", exCn: "你能实现你的目标。" },
+            { word: "advantage", ipa: "/ədˈvæntɪdʒ/", pos: "n.", cn: "优势；有利条件", cat: "things", exEn: "Taking initiative is a great advantage.", exCn: "采取主动是一个极大的优势。" },
+            { word: "afford", ipa: "/əˈfɔːrd/", pos: "v.", cn: "负担得起；买得起", cat: "ops", exEn: "Can you afford this new trip?", exCn: "你负担得起这次新旅行吗？" },
+            { word: "apologize", ipa: "/əˈpɑːlədʒaɪz/", pos: "v.", cn: "道歉；谢罪", cat: "ops", exEn: "He promised to apologize sincerely.", exCn: "他答应真诚地道歉。" },
             { word: "attitude", ipa: "/ˈætɪtuːd/", pos: "n.", cn: "态度；看法", cat: "things", exEn: "A positive attitude changes everything.", exCn: "积极的态度改变一切。" },
-            { word: "confident", ipa: "/ˈkɑːnfɪdənt/", pos: "adj.", cn: "自信的；确信的", cat: "qualities", exEn: "Be confident when speaking English.", exCn: "说英语时要自信。" }
+            { word: "benefit", ipa: "/ˈbenɪfɪt/", pos: "n./v.", cn: "利益；好处", cat: "things", exEn: "Regular exercise has many benefits.", exCn: "规律运动有很多好处。" },
+            { word: "challenge", ipa: "/ˈtʃælɪndʒ/", pos: "n./v.", cn: "挑战；质疑", cat: "things", exEn: "Embrace every new challenge.", exCn: "拥抱每一个新挑战。" },
+            { word: "confident", ipa: "/ˈkɑːnfɪdənt/", pos: "adj.", cn: "自信的；确信的", cat: "qualities", exEn: "Be confident when speaking English.", exCn: "说英语时要自信。" },
+            { word: "consider", ipa: "/kənˈsɪdər/", pos: "v.", cn: "考虑；认为", cat: "ops", exEn: "Please consider all available options.", exCn: "请考虑所有可行的选项。" },
+            { word: "create", ipa: "/kriˈeɪt/", pos: "v.", cn: "创造；创作；引起", cat: "ops", exEn: "Creativity helps create solutions.", exCn: "创造力有助于找到解决方案。" }
         ],
 
+        // STAGE 3: OXFORD 3000 ADVANCED GOLD VOCABULARY
         vocab3000: [
+            { word: "approximate", ipa: "/əˈprɑːksɪmət/", pos: "adj.", cn: "近似的；大概的", cat: "qualities", exEn: "What is the approximate cost?", exCn: "大概成本是多少？" },
             { word: "collaborate", ipa: "/kəˈlæbəreɪt/", pos: "v.", cn: "合作；协作", cat: "ops", exEn: "We need to collaborate on this project.", exCn: "我们需要在这个项目上展开合作。" },
-            { word: "efficient", ipa: "/ɪˈfɪʃnt/", pos: "adj.", cn: "高效的；有能力的", cat: "qualities", exEn: "This tool makes learning efficient.", exCn: "这个工具使学习非常高效。" }
+            { word: "demonstrate", ipa: "/ˈdemənstreɪt/", pos: "v.", cn: "演示；证明", cat: "ops", exEn: "She will demonstrate how it works.", exCn: "她将演示它是如何工作的。" },
+            { word: "efficient", ipa: "/ɪˈfɪʃnt/", pos: "adj.", cn: "高效的；有能力的", cat: "qualities", exEn: "This tool makes learning efficient.", exCn: "这个工具使学习非常高效。" },
+            { word: "extraordinary", ipa: "/ɪkˈstrɔːrdəneri/", pos: "adj.", cn: "非凡的；特别的", cat: "qualities", exEn: "He gave an extraordinary speech.", exCn: "他发表了一场非凡的演说。" }
         ]
     };
 
@@ -219,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleCardFlipBtn = document.getElementById('toggleCardFlipBtn');
     const masterWordBtn = document.getElementById('masterWordBtn');
 
-    // Volume Slider Event (50% ~ 300%)
+    // Volume Range Listener
     if (volumeRange) {
         volumeRange.addEventListener('input', (e) => {
             currentVolume = parseFloat(e.target.value);
@@ -228,7 +246,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Unified Audio Speaker function
     function speakText(text, rate = currentSpeed) {
         playLoudAudio(text, rate, currentVolume);
     }
@@ -297,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const percent = ((mastered / 3000) * 100).toFixed(1);
         goalProgressPercentEl.innerText = `${percent}%`;
 
-        if (currentCategory === 'vocab850') currentLevelTag.innerText = "L1: 850核心词";
+        if (currentCategory === 'vocab850') currentLevelTag.innerText = "L1: 850核心词 (通关中)";
         else if (currentCategory === 'vocab2000') currentLevelTag.innerText = "L2: 2000日常词";
         else if (currentCategory === 'vocab3000') currentLevelTag.innerText = "L3: 3000黄金词";
     }
@@ -371,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentCategory === 'vocab2000') stageLabel = "Stage 2: 2000 Daily Words";
         if (currentCategory === 'vocab3000') stageLabel = "Stage 3: 3000 Advanced Words";
 
-        cardCategoryTag.innerText = stageLabel;
+        cardCategoryTag.innerText = `${stageLabel} (${currentVocabIndex + 1}/${filteredVocabList.length})`;
         cardWord.innerText = item.word;
         cardIpa.innerText = item.ipa;
         cardPos.innerText = item.pos;
