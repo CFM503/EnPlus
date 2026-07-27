@@ -1,5 +1,5 @@
 /**
- * VoiceTutor AI - Complete Sidebar Courses & 3000 Word Progression Engine
+ * VoiceTutor AI - Comprehensive Datasets & Feature Engine for Menus 1 to 6
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -70,9 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 1. DATASETS FOR VOCAB & ALL SIDEBAR MENUS
+    // DATASETS FOR MENU 1, 2, 3, 4, 5, 6
     // ==========================================
     const VOCAB_DATA = {
+        // MENU 1: STAGE 1 - OGDEN 850 CORE VOCABULARY
         vocab850: [
             { word: "make", ipa: "/meɪk/", pos: "v.", cn: "制作；做；使得", cat: "ops", exEn: "Practice makes perfect.", exCn: "熟能生巧。" },
             { word: "come", ipa: "/kʌm/", pos: "v.", cn: "来；来到；到达", cat: "ops", exEn: "Come and join us for lunch!", exCn: "快来和我们一起吃午饭吧！" },
@@ -88,13 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
             { word: "say", ipa: "/seɪ/", pos: "v.", cn: "说；讲；表明", cat: "ops", exEn: "What did you say?", exCn: "你刚才说了什么？" },
             { word: "see", ipa: "/siː/", pos: "v.", cn: "看见；明白；理解", cat: "ops", exEn: "I see what you mean.", exCn: "我明白你的意思了。" },
             { word: "send", ipa: "/send/", pos: "v.", cn: "发送；寄出", cat: "ops", exEn: "I'll send you an email soon.", exCn: "我很快会给你发邮件。" },
-
             { word: "account", ipa: "/əˈkaʊnt/", pos: "n.", cn: "账户；描述；解释", cat: "things", exEn: "I need to open a bank account.", exCn: "我需要开一个银行账户。" },
             { word: "agreement", ipa: "/əˈɡriːmənt/", pos: "n.", cn: "协议；同意；一致", cat: "things", exEn: "They reached a mutual agreement.", exCn: "他们达成了共同协议。" },
             { word: "amount", ipa: "/əˈmaʊnt/", pos: "n.", cn: "数量；总额", cat: "things", exEn: "A large amount of work remains.", exCn: "还有大量的工作要做。" },
             { word: "business", ipa: "/ˈbɪznəs/", pos: "n.", cn: "商业；生意；事务", cat: "things", exEn: "Mind your own business.", exCn: "管好你自己的事。" },
             { word: "company", ipa: "/ˈkʌmpəni/", pos: "n.", cn: "公司；陪伴；同伴", cat: "things", exEn: "She works for a tech company.", exCn: "她在一家科技公司工作。" },
-
             { word: "able", ipa: "/ˈeɪbl/", pos: "adj.", cn: "有能力的；能干的", cat: "qualities", exEn: "Will you be able to come tonight?", exCn: "你今晚能来吗？" },
             { word: "beautiful", ipa: "/ˈbjuːtɪfl/", pos: "adj.", cn: "美丽的；出色的", cat: "qualities", exEn: "What a beautiful sunset!", exCn: "多么迷人的日落啊！" },
             { word: "clear", ipa: "/klɪər/", pos: "adj.", cn: "清晰的；晴朗的；明白的", cat: "qualities", exEn: "Is the explanation clear to you?", exCn: "这个解释你听明白了吗？" },
@@ -102,21 +101,41 @@ document.addEventListener('DOMContentLoaded', () => {
             { word: "important", ipa: "/ɪmˈpɔːrtnt/", pos: "adj.", cn: "重要的；重大的", cat: "qualities", exEn: "Health is the most important thing.", exCn: "健康是最重要的事情。" }
         ],
 
+        // MENU 2: STAGE 2 - OXFORD 2000 DAILY HIGH FREQUENCY VOCABULARY
         vocab2000: [
-            { word: "achieve", ipa: "/əˈtʃiːv/", pos: "v.", cn: "实现；达到", cat: "ops", exEn: "You can achieve your goal.", exCn: "你能实现你的目标。" },
-            { word: "advantage", ipa: "/ədˈvæntɪdʒ/", pos: "n.", cn: "优势；有利条件", cat: "things", exEn: "Taking initiative is a great advantage.", exCn: "采取主动是一个极大的优势。" },
+            { word: "achieve", ipa: "/əˈtʃiːv/", pos: "v.", cn: "实现；达到", cat: "ops", exEn: "You can achieve your goal with persistence.", exCn: "坚持就能实现目标。" },
+            { word: "advantage", ipa: "/ədˈvæntɪdʒ/", pos: "n.", cn: "优势；有利条件", cat: "things", exEn: "Taking initiative gives you a huge advantage.", exCn: "采取主动会给你带来巨大优势。" },
+            { word: "advice", ipa: "/ədˈvaɪs/", pos: "n.", cn: "建议；忠告", cat: "things", exEn: "Thanks for your valuable advice.", exCn: "谢谢你宝贵的建议。" },
+            { word: "afford", ipa: "/əˈfɔːrd/", pos: "v.", cn: "负担得起；买得起", cat: "ops", exEn: "We can afford to buy a new computer.", exCn: "我们买得起一台新电脑。" },
+            { word: "allow", ipa: "/əˈlaʊ/", pos: "v.", cn: "允许；准许", cat: "ops", exEn: "Please allow me to introduce myself.", exCn: "请允许我自我介绍。" },
+            { word: "announce", ipa: "/əˈnaʊns/", pos: "v.", cn: "宣布；宣告", cat: "ops", exEn: "They will announce the final results tomorrow.", exCn: "他们明天将公布最终结果。" },
+            { word: "apologize", ipa: "/əˈpɑːlədʒaɪz/", pos: "v.", cn: "道歉；谢罪", cat: "ops", exEn: "I sincerely apologize for the delay.", exCn: "我为延迟表示诚挚的歉意。" },
             { word: "attitude", ipa: "/ˈætɪtuːd/", pos: "n.", cn: "态度；看法", cat: "things", exEn: "A positive attitude changes everything.", exCn: "积极的态度改变一切。" },
-            { word: "confident", ipa: "/ˈkɑːnfɪdənt/", pos: "adj.", cn: "自信的；确信的", cat: "qualities", exEn: "Be confident when speaking English.", exCn: "说英语时要自信。" }
+            { word: "benefit", ipa: "/ˈbenɪfɪt/", pos: "n./v.", cn: "利益；好处", cat: "things", exEn: "Regular exercise has immense health benefits.", exCn: "规律运动对健康大有裨益。" },
+            { word: "challenge", ipa: "/ˈtʃælɪndʒ/", pos: "n./v.", cn: "挑战；质疑", cat: "things", exEn: "Welcome every new challenge with courage.", exCn: "用勇气迎接入每一个新挑战。" },
+            { word: "comfortable", ipa: "/ˈkʌmftəbl/", pos: "adj.", cn: "舒适的；自在的", cat: "qualities", exEn: "Make yourself comfortable in the living room.", exCn: "在客厅请自便，随便坐。" },
+            { word: "confident", ipa: "/ˈkɑːnfɪdənt/", pos: "adj.", cn: "自信的；确信的", cat: "qualities", exEn: "Speak loudly and stay confident.", exCn: "大声说话并保持自信。" },
+            { word: "consider", ipa: "/kənˈsɪdər/", pos: "v.", cn: "考虑；认为", cat: "ops", exEn: "Please consider all factors carefully.", exCn: "请仔细考虑所有因素。" },
+            { word: "create", ipa: "/kriˈeɪt/", pos: "v.", cn: "创造；创作；引起", cat: "ops", exEn: "Creativity helps create solutions.", exCn: "创造力有助于找到解决办法。" }
         ],
 
+        // MENU 3: STAGE 3 - OXFORD 3000 ADVANCED GOLD VOCABULARY
         vocab3000: [
-            { word: "collaborate", ipa: "/kəˈlæbəreɪt/", pos: "v.", cn: "合作；协作", cat: "ops", exEn: "We need to collaborate on this project.", exCn: "我们需要在这个项目上展开合作。" },
-            { word: "efficient", ipa: "/ɪˈfɪʃnt/", pos: "adj.", cn: "高效的；有能力的", cat: "qualities", exEn: "This tool makes learning efficient.", exCn: "这个工具使学习非常高效。" }
+            { word: "approximate", ipa: "/əˈprɑːksɪmət/", pos: "adj.", cn: "近似的；大概的", cat: "qualities", exEn: "What is the approximate cost of this project?", exCn: "这个项目的预计大概成本是多少？" },
+            { word: "collaborate", ipa: "/kəˈlæbəreɪt/", pos: "v.", cn: "合作；协作", cat: "ops", exEn: "Our teams collaborate closely to deliver results.", exCn: "我们团队密切合作以交付成果。" },
+            { word: "demonstrate", ipa: "/ˈdemənstreɪt/", pos: "v.", cn: "演示；证明", cat: "ops", exEn: "She will demonstrate the new software feature.", exCn: "她将演示新的软件功能。" },
+            { word: "efficient", ipa: "/ɪˈfɪʃnt/", pos: "adj.", cn: "高效的；有能力的", cat: "qualities", exEn: "An efficient workflow saves time and resources.", exCn: "高效的工作流程省时省资源。" },
+            { word: "extraordinary", ipa: "/ɪkˈstrɔːrdəneri/", pos: "adj.", cn: "非凡的；特别的", cat: "qualities", exEn: "The speaker gave an extraordinary performance.", exCn: "演讲者带来了非凡的表现。" },
+            { word: "fundamental", ipa: "/ˌfʌndəˈmentl/", pos: "adj.", cn: "根本的；基础的", cat: "qualities", exEn: "Trust is a fundamental pillar of teamwork.", exCn: "信任是团队合作的基础基石。" },
+            { word: "guarantee", ipa: "/ˌɡærənˈtiː/", pos: "v./n.", cn: "保证；担保", cat: "ops", exEn: "Quality execution guarantees satisfaction.", exCn: "高质量的执行保证满意度。" },
+            { word: "innovation", ipa: "/ˌɪnəˈveɪʃn/", pos: "n.", cn: "创新；革新", cat: "things", exEn: "Innovation drives business growth.", exCn: "创新推动业务增长。" },
+            { word: "perspective", ipa: "/pərˈspektɪv/", pos: "n.", cn: "视角；观点", cat: "things", exEn: "Looking from a fresh perspective brings insights.", exCn: "从全新视角看待能带来灵感。" }
         ]
     };
 
-    // COMPLETE RICH SCENARIOS FOR ALL SIDEBAR MENUS
+    // COURSES FOR MENU 4 (Casual), MENU 5 (Workplace), MENU 6 (Travel)
     const SCENARIOS = {
+        // MENU 4: 日常对话听读 (CASUAL DAILY TALK)
         casual: [
             {
                 id: 'coffee',
@@ -171,6 +190,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         cn: "听起来太棒了！希望天气能一直保持晴朗。",
                         ipa: "/ðæt saʊndz ˈwʌndərfʊl! ˈhoʊpfəli ðə ˈweðər steɪz ˈsʌni ænd klɪər/",
                         vocab: [{ word: "sunny and clear", cn: "晴朗明亮" }]
+                    },
+                    {
+                        en: "Would you like to come along with us this Sunday morning?",
+                        cn: "这周日上午你想和我们一起去吗？",
+                        ipa: "/wʊd juː laɪk tuː kʌm əˈlɔːŋ wɪð ʌs ðɪs ˈsʌndeɪ ˈmɔːrnɪŋ/",
+                        vocab: [{ word: "come along", cn: "一道前往" }]
                     }
                 ]
             },
@@ -189,12 +214,38 @@ document.addEventListener('DOMContentLoaded', () => {
                         en: "Not yet, but I heard the visual effects are absolutely mind-blowing!",
                         cn: "还没看，但我听说视觉特效简直令人震撼！",
                         ipa: "/nɑːt jet, bʌt aɪ hɜːrd ðə ˈvɪʒuəl ɪˈfekts ɑːr ˌæbsəˈluːtli maɪnd ˈbloʊɪŋ/",
-                        vocab: [{ word: "mind-blowing", cn: "令人震惊/极度震撼" }]
+                        vocab: [{ word: "mind-blowing", cn: "极度震撼" }]
+                    },
+                    {
+                        en: "The storyline is so gripping that you won't take your eyes off the screen.",
+                        cn: "故事情节非常引人入胜，你根本舍不得把视线移开屏幕。",
+                        ipa: "/ðə ˈstɔːrilaɪn ɪz soʊ ˈɡrɪpɪŋ ðæt juː woʊnt teɪk jɔːr aɪz ɑːf ðə skriːn/",
+                        vocab: [{ word: "gripping", cn: "扣人心弦/引人入胜" }]
+                    }
+                ]
+            },
+            {
+                id: 'pizza',
+                title: '🍕 Ordering Food Delivery',
+                subtitle: '外卖点餐与饮食口味偏好',
+                sentences: [
+                    {
+                        en: "Hey, what should we order for dinner tonight: pizza or sushi?",
+                        cn: "嘿，我们今晚晚餐点什么外卖：披萨还是寿司？",
+                        ipa: "/heɪ, wʌt ʃʊd wiː ˈɔːrdər fɔːr ˈdɪnər təˈnaɪt: ˈpiːtsə ɔːr ˈsuːʃi/",
+                        vocab: [{ word: "delivery", cn: "外卖配送" }]
+                    },
+                    {
+                        en: "Let's order a large pepperoni pizza with extra mozzarella cheese!",
+                        cn: "点一份加量马苏里拉芝士的大号双汇披萨吧！",
+                        ipa: "/lets ˈɔːrdər ə lɑːrdʒ ˌpepəˈroʊni ˈpiːtsə wɪð ˈekstrə ˌmɑːtsəˈrelə tʃiːz/",
+                        vocab: [{ word: "mozzarella", cn: "马苏里拉芝士" }]
                     }
                 ]
             }
         ],
 
+        // MENU 5: 职场商务听读 (WORKPLACE BUSINESS TALK)
         workplace: [
             {
                 id: 'interview',
@@ -218,6 +269,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         cn: "我的核心优势在于能在紧迫的时间节点下解决复杂的技术问题。",
                         ipa: "/maɪ kiː streŋθ laɪz ɪn ˈsɑːlvɪŋ kəmˈpleks ˈteknɪkl ˈprɑːbləmz ˈʌndər taɪt ˈdedlaɪnz/",
                         vocab: [{ word: "tight deadlines", cn: "紧迫的截止日期" }]
+                    },
+                    {
+                        en: "I am eager to contribute my skills to your innovative engineering team.",
+                        cn: "我渴望为贵公司充满创新的工程团队贡献我的技能。",
+                        ipa: "/aɪ æm ˈiːɡər tuː kənˈtrɪbjuːt maɪ skɪlz tuː jɔːr ˈɪnəveɪtɪv ˌendʒɪˈnɪrɪŋ tiːm/",
+                        vocab: [{ word: "eager", cn: "渴望的/热切的" }]
                     }
                 ]
             },
@@ -237,11 +294,37 @@ document.addEventListener('DOMContentLoaded', () => {
                         cn: "目前进度正常，预计周五下午前完成质量测试。",
                         ipa: "/wiː ɑːr ˈkɜːrəntli raɪt ɑːn ˈskedʒuːl tuː kəmˈpliːt testɪŋ baɪ ˈfraɪdeɪ ˌæftərˈnuːn/",
                         vocab: [{ word: "on schedule", cn: "按计划" }]
+                    },
+                    {
+                        en: "All critical bugs have been resolved, and performance has improved by 30 percent.",
+                        cn: "所有关键 Bug 均已解决，性能提升了 30%。",
+                        ipa: "/ɔːl ˈkrɪtɪkl bʌɡz hæv biːn rɪˈzɑːlvd, ænd pərˈfɔːrməns hæz ɪmˈpruːvd baɪ ˈθɜːrti pərˈsent/",
+                        vocab: [{ word: "critical bugs", cn: "关键缺陷" }]
+                    }
+                ]
+            },
+            {
+                id: 'email',
+                title: '✉️ Professional Email Alignment',
+                subtitle: '商务邮件沟通与跨部门对齐',
+                sentences: [
+                    {
+                        en: "Please find attached the updated proposal for your review.",
+                        cn: "请查收附件中更新后的方案供您审阅。",
+                        ipa: "/pliːz faɪnd əˈtætʃt ðə ˌʌpˈdeɪtɪd prəˈpoʊzl fɔːr jɔːr rɪˈvjuː/",
+                        vocab: [{ word: "attached", cn: "随信附上的" }]
+                    },
+                    {
+                        en: "Let me know if you have any questions or require further clarification.",
+                        cn: "如果您有任何问题或需要进一步说明，请随时告知。",
+                        ipa: "/let miː noʊ ɪf juː hæv ˈeni ˈkwestʃənz ɔːr rɪˈkwaɪər ˈfɜːrðər ˌklærəfɪˈkeɪʃn/",
+                        vocab: [{ word: "clarification", cn: "澄清/说明" }]
                     }
                 ]
             }
         ],
 
+        // MENU 6: 旅游点餐听读 (TRAVEL & OUTING TALK)
         travel: [
             {
                 id: 'hotel',
@@ -259,12 +342,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         cn: "可以帮我升房到带海景的高楼层房间吗？",
                         ipa: "/ɪz ɪt ˈpɑːsəbl tuː ˌʌpˈɡreɪd tuː ə ruːm ɑːn ə ˈhaɪər flɔːr wɪð ən ˈoʊʃn vjuː/",
                         vocab: [{ word: "ocean view", cn: "海景" }]
+                    },
+                    {
+                        en: "What time is complimentary breakfast served in the main dining hall?",
+                        cn: "主餐厅的免费早餐是在几点供应？",
+                        ipa: "/wʌt taɪm ɪz ˌkɑːmplɪˈmentri ˈbrekfəst sɜːrvd ɪn ðə meɪn ˈdaɪnɪŋ hɔːl/",
+                        vocab: [{ word: "complimentary", cn: "赠送的/免费的" }]
                     }
                 ]
             },
             {
                 id: 'airport',
-                title: '✈️ Airport Boarding & Customs Inspection',
+                title: '✈️ Airport Boarding & Customs',
                 subtitle: '机场登机与海关入境问答',
                 sentences: [
                     {
@@ -278,6 +367,31 @@ document.addEventListener('DOMContentLoaded', () => {
                         cn: "我因公差旅行，预计停留五天。",
                         ipa: "/aɪ æm ˈtrævlɪŋ fɔːr ˈbɪznəs ænd wɪl biː ˈsteɪɪŋ fɔːr faɪv deɪz/",
                         vocab: [{ word: "business trip", cn: "商务差旅" }]
+                    },
+                    {
+                        en: "Do you have anything to declare in your luggage?",
+                        cn: "您的行李里有任何需要向海关申报的物品吗？",
+                        ipa: "/duː juː hæv ˈeniθɪŋ tuː dɪˈkler ɪn jɔːr ˈlʌɡɪdʒ/",
+                        vocab: [{ word: "declare", cn: "申报" }]
+                    }
+                ]
+            },
+            {
+                id: 'directions',
+                title: '🗺️ Asking for Directions in New York',
+                subtitle: '街头问路与公共交通出行',
+                sentences: [
+                    {
+                        en: "Excuse me, could you tell me how to get to Times Square from here?",
+                        cn: "打扰一下，请问从这里怎么去时代广场？",
+                        ipa: "/ɪkˈskjuːz miː, kʊd juː tel miː haʊ tuː ɡet tuː taɪmz skwer frəm hɪər/",
+                        vocab: [{ word: "Times Square", cn: "时代广场" }]
+                    },
+                    {
+                        en: "Take the subway line N and get off at 42nd Street Station.",
+                        cn: "乘坐 N 线地铁，在 42 街站下车即可。",
+                        ipa: "/teɪk ðə ˈsʌbweɪ laɪn en ænd ɡet ɑːf æt ˈfɔːrti ˈsekənd striːt ˈsteɪʃn/",
+                        vocab: [{ word: "get off", cn: "下车" }]
                     }
                 ]
             }
