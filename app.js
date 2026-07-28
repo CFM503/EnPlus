@@ -1,5 +1,5 @@
 /**
- * VoiceTutor AI - Comprehensive Datasets & Feature Engine for Menus 1 to 6
+ * VoiceTutor AI - Expanded Layout & Auto-Play Flashcard Engine
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return audioCtx;
     }
 
-    function playLoudAudio(text, rate = 1.0, gainMultiplier = 2.0) {
+    function playLoudAudio(text, rate = 1.0, gainMultiplier = 2.0, onEndedCallback = null) {
         getAudioContext();
 
         if (currentAudioElement) {
@@ -53,12 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {}
         }
 
+        if (onEndedCallback) {
+            audio.onended = onEndedCallback;
+        }
+
         audio.play().catch(err => {
-            speakWebSpeechFallback(sanitizedText, rate, gainMultiplier);
+            speakWebSpeechFallback(sanitizedText, rate, gainMultiplier, onEndedCallback);
         });
     }
 
-    function speakWebSpeechFallback(text, rate, gainMultiplier) {
+    function speakWebSpeechFallback(text, rate, gainMultiplier, onEndedCallback = null) {
         const synth = window.speechSynthesis;
         if (synth.speaking) synth.cancel();
 
@@ -66,14 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
         utterance.rate = rate;
         utterance.volume = Math.min(1.0, gainMultiplier);
         utterance.lang = 'en-US';
+        if (onEndedCallback) utterance.onend = onEndedCallback;
         synth.speak(utterance);
     }
 
-    // ==========================================
-    // DATASETS FOR MENU 1, 2, 3, 4, 5, 6
-    // ==========================================
+    // DATASETS
     const VOCAB_DATA = {
-        // MENU 1: STAGE 1 - OGDEN 850 CORE VOCABULARY
         vocab850: [
             { word: "make", ipa: "/meɪk/", pos: "v.", cn: "制作；做；使得", cat: "ops", exEn: "Practice makes perfect.", exCn: "熟能生巧。" },
             { word: "come", ipa: "/kʌm/", pos: "v.", cn: "来；来到；到达", cat: "ops", exEn: "Come and join us for lunch!", exCn: "快来和我们一起吃午饭吧！" },
@@ -101,41 +103,29 @@ document.addEventListener('DOMContentLoaded', () => {
             { word: "important", ipa: "/ɪmˈpɔːrtnt/", pos: "adj.", cn: "重要的；重大的", cat: "qualities", exEn: "Health is the most important thing.", exCn: "健康是最重要的事情。" }
         ],
 
-        // MENU 2: STAGE 2 - OXFORD 2000 DAILY HIGH FREQUENCY VOCABULARY
         vocab2000: [
             { word: "achieve", ipa: "/əˈtʃiːv/", pos: "v.", cn: "实现；达到", cat: "ops", exEn: "You can achieve your goal with persistence.", exCn: "坚持就能实现目标。" },
             { word: "advantage", ipa: "/ədˈvæntɪdʒ/", pos: "n.", cn: "优势；有利条件", cat: "things", exEn: "Taking initiative gives you a huge advantage.", exCn: "采取主动会给你带来巨大优势。" },
             { word: "advice", ipa: "/ədˈvaɪs/", pos: "n.", cn: "建议；忠告", cat: "things", exEn: "Thanks for your valuable advice.", exCn: "谢谢你宝贵的建议。" },
             { word: "afford", ipa: "/əˈfɔːrd/", pos: "v.", cn: "负担得起；买得起", cat: "ops", exEn: "We can afford to buy a new computer.", exCn: "我们买得起一台新电脑。" },
             { word: "allow", ipa: "/əˈlaʊ/", pos: "v.", cn: "允许；准许", cat: "ops", exEn: "Please allow me to introduce myself.", exCn: "请允许我自我介绍。" },
-            { word: "announce", ipa: "/əˈnaʊns/", pos: "v.", cn: "宣布；宣告", cat: "ops", exEn: "They will announce the final results tomorrow.", exCn: "他们明天将公布最终结果。" },
             { word: "apologize", ipa: "/əˈpɑːlədʒaɪz/", pos: "v.", cn: "道歉；谢罪", cat: "ops", exEn: "I sincerely apologize for the delay.", exCn: "我为延迟表示诚挚的歉意。" },
             { word: "attitude", ipa: "/ˈætɪtuːd/", pos: "n.", cn: "态度；看法", cat: "things", exEn: "A positive attitude changes everything.", exCn: "积极的态度改变一切。" },
             { word: "benefit", ipa: "/ˈbenɪfɪt/", pos: "n./v.", cn: "利益；好处", cat: "things", exEn: "Regular exercise has immense health benefits.", exCn: "规律运动对健康大有裨益。" },
             { word: "challenge", ipa: "/ˈtʃælɪndʒ/", pos: "n./v.", cn: "挑战；质疑", cat: "things", exEn: "Welcome every new challenge with courage.", exCn: "用勇气迎接入每一个新挑战。" },
-            { word: "comfortable", ipa: "/ˈkʌmftəbl/", pos: "adj.", cn: "舒适的；自在的", cat: "qualities", exEn: "Make yourself comfortable in the living room.", exCn: "在客厅请自便，随便坐。" },
-            { word: "confident", ipa: "/ˈkɑːnfɪdənt/", pos: "adj.", cn: "自信的；确信的", cat: "qualities", exEn: "Speak loudly and stay confident.", exCn: "大声说话并保持自信。" },
-            { word: "consider", ipa: "/kənˈsɪdər/", pos: "v.", cn: "考虑；认为", cat: "ops", exEn: "Please consider all factors carefully.", exCn: "请仔细考虑所有因素。" },
-            { word: "create", ipa: "/kriˈeɪt/", pos: "v.", cn: "创造；创作；引起", cat: "ops", exEn: "Creativity helps create solutions.", exCn: "创造力有助于找到解决办法。" }
+            { word: "confident", ipa: "/ˈkɑːnfɪdənt/", pos: "adj.", cn: "自信的；确信的", cat: "qualities", exEn: "Speak loudly and stay confident.", exCn: "大声说话并保持自信。" }
         ],
 
-        // MENU 3: STAGE 3 - OXFORD 3000 ADVANCED GOLD VOCABULARY
         vocab3000: [
             { word: "approximate", ipa: "/əˈprɑːksɪmət/", pos: "adj.", cn: "近似的；大概的", cat: "qualities", exEn: "What is the approximate cost of this project?", exCn: "这个项目的预计大概成本是多少？" },
             { word: "collaborate", ipa: "/kəˈlæbəreɪt/", pos: "v.", cn: "合作；协作", cat: "ops", exEn: "Our teams collaborate closely to deliver results.", exCn: "我们团队密切合作以交付成果。" },
             { word: "demonstrate", ipa: "/ˈdemənstreɪt/", pos: "v.", cn: "演示；证明", cat: "ops", exEn: "She will demonstrate the new software feature.", exCn: "她将演示新的软件功能。" },
             { word: "efficient", ipa: "/ɪˈfɪʃnt/", pos: "adj.", cn: "高效的；有能力的", cat: "qualities", exEn: "An efficient workflow saves time and resources.", exCn: "高效的工作流程省时省资源。" },
-            { word: "extraordinary", ipa: "/ɪkˈstrɔːrdəneri/", pos: "adj.", cn: "非凡的；特别的", cat: "qualities", exEn: "The speaker gave an extraordinary performance.", exCn: "演讲者带来了非凡的表现。" },
-            { word: "fundamental", ipa: "/ˌfʌndəˈmentl/", pos: "adj.", cn: "根本的；基础的", cat: "qualities", exEn: "Trust is a fundamental pillar of teamwork.", exCn: "信任是团队合作的基础基石。" },
-            { word: "guarantee", ipa: "/ˌɡærənˈtiː/", pos: "v./n.", cn: "保证；担保", cat: "ops", exEn: "Quality execution guarantees satisfaction.", exCn: "高质量的执行保证满意度。" },
-            { word: "innovation", ipa: "/ˌɪnəˈveɪʃn/", pos: "n.", cn: "创新；革新", cat: "things", exEn: "Innovation drives business growth.", exCn: "创新推动业务增长。" },
-            { word: "perspective", ipa: "/pərˈspektɪv/", pos: "n.", cn: "视角；观点", cat: "things", exEn: "Looking from a fresh perspective brings insights.", exCn: "从全新视角看待能带来灵感。" }
+            { word: "extraordinary", ipa: "/ɪkˈstrɔːrdəneri/", pos: "adj.", cn: "非凡的；特别的", cat: "qualities", exEn: "The speaker gave an extraordinary performance.", exCn: "演讲者带来了非凡的表现。" }
         ]
     };
 
-    // COURSES FOR MENU 4 (Casual), MENU 5 (Workplace), MENU 6 (Travel)
     const SCENARIOS = {
-        // MENU 4: 日常对话听读 (CASUAL DAILY TALK)
         casual: [
             {
                 id: 'coffee',
@@ -153,273 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         cn: "可以少冰并加一点点香草糖浆吗？",
                         ipa: "/kʊd aɪ ɡet ðæt wɪð les aɪs ænd ə splæʃ əv vəˈnɪlə ˈsɪrəp/",
                         vocab: [{ word: "splash", cn: "少许" }, { word: "vanilla syrup", cn: "香草糖浆" }]
-                    },
-                    {
-                        en: "Sure thing! What size would you prefer: Tall, Grande, or Venti?",
-                        cn: "没问题！您想要什么杯型：中杯、大杯还是超大杯？",
-                        ipa: "/ʃʊr θɪŋ! wʌt saɪz wʊd juː prɪˈfɜːr/",
-                        vocab: [{ word: "Grande", cn: "大杯" }, { word: "prefer", cn: "偏好" }]
-                    },
-                    {
-                        en: "A Grande will be perfect. I'll pay with Apple Pay.",
-                        cn: "大杯就好，谢谢。我用 Apple Pay 支付。",
-                        ipa: "/ə ˈɡrɑːndeɪ wɪl biː ˈpɜːrfɪkt. aɪl peɪ wɪð ˈæpl peɪ/",
-                        vocab: [{ word: "perfect", cn: "完美/正好" }]
-                    }
-                ]
-            },
-            {
-                id: 'weekend',
-                title: '🌴 Weekend Relaxation & Hobbies',
-                subtitle: '聊聊周末休假与户外活动',
-                sentences: [
-                    {
-                        en: "Do you have any exciting plans for the upcoming weekend?",
-                        cn: "这个周末你有什么有趣的计划吗？",
-                        ipa: "/duː juː hæv ˈeni ɪkˈsaɪtɪŋ plænz fɔːr ðə ˈʌpkʌmɪŋ ˈwiːkend/",
-                        vocab: [{ word: "upcoming", cn: "即将来临的" }]
-                    },
-                    {
-                        en: "I'm thinking about going hiking in the mountains to recharge.",
-                        cn: "我打算去山里徒步，放松充会儿电。",
-                        ipa: "/aɪm ˈθɪŋkɪŋ əˈbaʊt ˈɡoʊɪŋ ˈhaɪkɪŋ ɪn ðə ˈmaʊntnz tuː riːˈtʃɑːrdʒ/",
-                        vocab: [{ word: "recharge", cn: "充电/恢复精力" }]
-                    },
-                    {
-                        en: "That sounds wonderful! Hopefully the weather stays sunny and clear.",
-                        cn: "听起来太棒了！希望天气能一直保持晴朗。",
-                        ipa: "/ðæt saʊndz ˈwʌndərfʊl! ˈhoʊpfəli ðə ˈweðər steɪz ˈsʌni ænd klɪər/",
-                        vocab: [{ word: "sunny and clear", cn: "晴朗明亮" }]
-                    },
-                    {
-                        en: "Would you like to come along with us this Sunday morning?",
-                        cn: "这周日上午你想和我们一起去吗？",
-                        ipa: "/wʊd juː laɪk tuː kʌm əˈlɔːŋ wɪð ʌs ðɪs ˈsʌndeɪ ˈmɔːrnɪŋ/",
-                        vocab: [{ word: "come along", cn: "一道前往" }]
-                    }
-                ]
-            },
-            {
-                id: 'movie',
-                title: '🎬 Recommending a Great Movie',
-                subtitle: '分享好电影与观影感想',
-                sentences: [
-                    {
-                        en: "Have you seen the latest sci-fi blockbuster in theaters?",
-                        cn: "你看过电影院最近上映的那部科幻大片吗？",
-                        ipa: "/hæv juː siːn ðə ˈleɪtɪst saɪ faɪ ˈblɑːkbʌstər ɪn ˈθiːətərz/",
-                        vocab: [{ word: "blockbuster", cn: "大片/爆款电影" }]
-                    },
-                    {
-                        en: "Not yet, but I heard the visual effects are absolutely mind-blowing!",
-                        cn: "还没看，但我听说视觉特效简直令人震撼！",
-                        ipa: "/nɑːt jet, bʌt aɪ hɜːrd ðə ˈvɪʒuəl ɪˈfekts ɑːr ˌæbsəˈluːtli maɪnd ˈbloʊɪŋ/",
-                        vocab: [{ word: "mind-blowing", cn: "极度震撼" }]
-                    },
-                    {
-                        en: "The storyline is so gripping that you won't take your eyes off the screen.",
-                        cn: "故事情节非常引人入胜，你根本舍不得把视线移开屏幕。",
-                        ipa: "/ðə ˈstɔːrilaɪn ɪz soʊ ˈɡrɪpɪŋ ðæt juː woʊnt teɪk jɔːr aɪz ɑːf ðə skriːn/",
-                        vocab: [{ word: "gripping", cn: "扣人心弦/引人入胜" }]
-                    }
-                ]
-            },
-            {
-                id: 'pizza',
-                title: '🍕 Ordering Food Delivery',
-                subtitle: '外卖点餐与饮食口味偏好',
-                sentences: [
-                    {
-                        en: "Hey, what should we order for dinner tonight: pizza or sushi?",
-                        cn: "嘿，我们今晚晚餐点什么外卖：披萨还是寿司？",
-                        ipa: "/heɪ, wʌt ʃʊd wiː ˈɔːrdər fɔːr ˈdɪnər təˈnaɪt: ˈpiːtsə ɔːr ˈsuːʃi/",
-                        vocab: [{ word: "delivery", cn: "外卖配送" }]
-                    },
-                    {
-                        en: "Let's order a large pepperoni pizza with extra mozzarella cheese!",
-                        cn: "点一份加量马苏里拉芝士的大号双汇披萨吧！",
-                        ipa: "/lets ˈɔːrdər ə lɑːrdʒ ˌpepəˈroʊni ˈpiːtsə wɪð ˈekstrə ˌmɑːtsəˈrelə tʃiːz/",
-                        vocab: [{ word: "mozzarella", cn: "马苏里拉芝士" }]
-                    }
-                ]
-            }
-        ],
-
-        // MENU 5: 职场商务听读 (WORKPLACE BUSINESS TALK)
-        workplace: [
-            {
-                id: 'interview',
-                title: '💼 Job Interview Self-Introduction',
-                subtitle: '求职面试高频自述句型',
-                sentences: [
-                    {
-                        en: "Thank you for giving me this opportunity to introduce myself.",
-                        cn: "感谢您给我这次自我介绍的机会。",
-                        ipa: "/θæŋk juː fɔːr ˈɡɪvɪŋ miː ðɪs ˌɑːpərˈtuːnəti tuː ˌɪntrəˈduːs maɪˈself/",
-                        vocab: [{ word: "opportunity", cn: "机会" }]
-                    },
-                    {
-                        en: "I have over five years of experience in full-stack software engineering.",
-                        cn: "我在全栈软件工程领域拥有超过五年的工作经验。",
-                        ipa: "/aɪ hæv ˈoʊvər faɪv jɪərz əv ɪkˈspɪriəns ɪn fʊl stæk ˈsɔːftwer ˌendʒɪˈnɪrɪŋ/",
-                        vocab: [{ word: "experience", cn: "经验" }]
-                    },
-                    {
-                        en: "My key strength lies in solving complex technical problems under tight deadlines.",
-                        cn: "我的核心优势在于能在紧迫的时间节点下解决复杂的技术问题。",
-                        ipa: "/maɪ kiː streŋθ laɪz ɪn ˈsɑːlvɪŋ kəmˈpleks ˈteknɪkl ˈprɑːbləmz ˈʌndər taɪt ˈdedlaɪnz/",
-                        vocab: [{ word: "tight deadlines", cn: "紧迫的截止日期" }]
-                    },
-                    {
-                        en: "I am eager to contribute my skills to your innovative engineering team.",
-                        cn: "我渴望为贵公司充满创新的工程团队贡献我的技能。",
-                        ipa: "/aɪ æm ˈiːɡər tuː kənˈtrɪbjuːt maɪ skɪlz tuː jɔːr ˈɪnəveɪtɪv ˌendʒɪˈnɪrɪŋ tiːm/",
-                        vocab: [{ word: "eager", cn: "渴望的/热切的" }]
-                    }
-                ]
-            },
-            {
-                id: 'meeting',
-                title: '📊 Project Status Meeting Update',
-                subtitle: '团队例会中汇报项目进展',
-                sentences: [
-                    {
-                        en: "I'd like to share a brief status update on our new feature release.",
-                        cn: "我想就新功能发布进展做一个简要汇报。",
-                        ipa: "/aɪd laɪk tuː ʃer ə briːf ˈstætəs ˌʌpˈdeɪt ɑːn aʊər nuː ˈfiːtʃər rɪˈliːs/",
-                        vocab: [{ word: "status update", cn: "进展汇报" }]
-                    },
-                    {
-                        en: "We are currently right on schedule to complete QA testing by Friday afternoon.",
-                        cn: "目前进度正常，预计周五下午前完成质量测试。",
-                        ipa: "/wiː ɑːr ˈkɜːrəntli raɪt ɑːn ˈskedʒuːl tuː kəmˈpliːt testɪŋ baɪ ˈfraɪdeɪ ˌæftərˈnuːn/",
-                        vocab: [{ word: "on schedule", cn: "按计划" }]
-                    },
-                    {
-                        en: "All critical bugs have been resolved, and performance has improved by 30 percent.",
-                        cn: "所有关键 Bug 均已解决，性能提升了 30%。",
-                        ipa: "/ɔːl ˈkrɪtɪkl bʌɡz hæv biːn rɪˈzɑːlvd, ænd pərˈfɔːrməns hæz ɪmˈpruːvd baɪ ˈθɜːrti pərˈsent/",
-                        vocab: [{ word: "critical bugs", cn: "关键缺陷" }]
-                    }
-                ]
-            },
-            {
-                id: 'email',
-                title: '✉️ Professional Email Alignment',
-                subtitle: '商务邮件沟通与跨部门对齐',
-                sentences: [
-                    {
-                        en: "Please find attached the updated proposal for your review.",
-                        cn: "请查收附件中更新后的方案供您审阅。",
-                        ipa: "/pliːz faɪnd əˈtætʃt ðə ˌʌpˈdeɪtɪd prəˈpoʊzl fɔːr jɔːr rɪˈvjuː/",
-                        vocab: [{ word: "attached", cn: "随信附上的" }]
-                    },
-                    {
-                        en: "Let me know if you have any questions or require further clarification.",
-                        cn: "如果您有任何问题或需要进一步说明，请随时告知。",
-                        ipa: "/let miː noʊ ɪf juː hæv ˈeni ˈkwestʃənz ɔːr rɪˈkwaɪər ˈfɜːrðər ˌklærəfɪˈkeɪʃn/",
-                        vocab: [{ word: "clarification", cn: "澄清/说明" }]
-                    }
-                ]
-            }
-        ],
-
-        // MENU 6: 旅游点餐听读 (TRAVEL & OUTING TALK)
-        travel: [
-            {
-                id: 'hotel',
-                title: '🏨 Hotel Check-in & Requests',
-                subtitle: '办理酒店入住与提出房间需求',
-                sentences: [
-                    {
-                        en: "Good evening! I have a reservation under the name Alex Turner.",
-                        cn: "晚上好！我有一份 Alex Turner 名下的预订。",
-                        ipa: "/ɡʊd ˈiːvnɪŋ! aɪ hæv ə ˌrezərˈveɪʃn ˈʌndər ðə neɪm ˈælɪks ˈtɜːrnər/",
-                        vocab: [{ word: "reservation", cn: "预订" }]
-                    },
-                    {
-                        en: "Is it possible to upgrade to a room on a higher floor with an ocean view?",
-                        cn: "可以帮我升房到带海景的高楼层房间吗？",
-                        ipa: "/ɪz ɪt ˈpɑːsəbl tuː ˌʌpˈɡreɪd tuː ə ruːm ɑːn ə ˈhaɪər flɔːr wɪð ən ˈoʊʃn vjuː/",
-                        vocab: [{ word: "ocean view", cn: "海景" }]
-                    },
-                    {
-                        en: "What time is complimentary breakfast served in the main dining hall?",
-                        cn: "主餐厅的免费早餐是在几点供应？",
-                        ipa: "/wʌt taɪm ɪz ˌkɑːmplɪˈmentri ˈbrekfəst sɜːrvd ɪn ðə meɪn ˈdaɪnɪŋ hɔːl/",
-                        vocab: [{ word: "complimentary", cn: "赠送的/免费的" }]
-                    }
-                ]
-            },
-            {
-                id: 'airport',
-                title: '✈️ Airport Boarding & Customs',
-                subtitle: '机场登机与海关入境问答',
-                sentences: [
-                    {
-                        en: "May I see your passport and mobile boarding pass, please?",
-                        cn: "请出示您的护照和电子登机牌。",
-                        ipa: "/meɪ aɪ siː jɔːr ˈpæspɔːrt ænd ˈmoʊbl ˈbɔːrdɪŋ pæs, pliːz/",
-                        vocab: [{ word: "boarding pass", cn: "登机牌" }]
-                    },
-                    {
-                        en: "I am traveling for business and will be staying for five days.",
-                        cn: "我因公差旅行，预计停留五天。",
-                        ipa: "/aɪ æm ˈtrævlɪŋ fɔːr ˈbɪznəs ænd wɪl biː ˈsteɪɪŋ fɔːr faɪv deɪz/",
-                        vocab: [{ word: "business trip", cn: "商务差旅" }]
-                    },
-                    {
-                        en: "Do you have anything to declare in your luggage?",
-                        cn: "您的行李里有任何需要向海关申报的物品吗？",
-                        ipa: "/duː juː hæv ˈeniθɪŋ tuː dɪˈkler ɪn jɔːr ˈlʌɡɪdʒ/",
-                        vocab: [{ word: "declare", cn: "申报" }]
-                    }
-                ]
-            },
-            {
-                id: 'directions',
-                title: '🗺️ Asking for Directions in New York',
-                subtitle: '街头问路与公共交通出行',
-                sentences: [
-                    {
-                        en: "Excuse me, could you tell me how to get to Times Square from here?",
-                        cn: "打扰一下，请问从这里怎么去时代广场？",
-                        ipa: "/ɪkˈskjuːz miː, kʊd juː tel miː haʊ tuː ɡet tuː taɪmz skwer frəm hɪər/",
-                        vocab: [{ word: "Times Square", cn: "时代广场" }]
-                    },
-                    {
-                        en: "Take the subway line N and get off at 42nd Street Station.",
-                        cn: "乘坐 N 线地铁，在 42 街站下车即可。",
-                        ipa: "/teɪk ðə ˈsʌbweɪ laɪn en ænd ɡet ɑːf æt ˈfɔːrti ˈsekənd striːt ˈsteɪʃn/",
-                        vocab: [{ word: "get off", cn: "下车" }]
-                    }
-                ]
-            }
-        ],
-
-        idioms: [
-            {
-                id: 'golden_phrases',
-                title: '🌟 10 Gold Oral Idioms & Expressions',
-                subtitle: '地道习惯用语与金句卡片',
-                sentences: [
-                    {
-                        en: "Let's call it a day! We've made great progress today.",
-                        cn: "今天就到此为止收工吧！我们今天进展很大。",
-                        ipa: "/lets kɔːl ɪt ə deɪ! wiːv meɪd ɡreɪt ˈprɑːɡres təˈdeɪ/",
-                        vocab: [{ word: "call it a day", cn: "收工/今日到此为止" }]
-                    },
-                    {
-                        en: "You hit the nail on the head! That's exactly what I meant.",
-                        cn: "你说得一针见血！我就是这个意思。",
-                        ipa: "/juː hɪt ðə neɪl ɑːn ðə hed! ðæts ɪɡˈzæktli wʌt aɪ ment/",
-                        vocab: [{ word: "hit the nail on the head", cn: "一针见血/彻底说对" }]
-                    },
-                    {
-                        en: "Don't worry, it's not rocket science! You will get the hang of it quickly.",
-                        cn: "别担心，这并不难！你很快就能上手掌握要领的。",
-                        ipa: "/doʊnt ˈwɜːri, ɪts nɑːt ˈrɑːkɪt ˈsaɪəns! juː wɪl ɡet ðə hæŋ əv ɪt ˈkwɪkli/",
-                        vocab: [{ word: "get the hang of", cn: "掌握要领/上手" }]
                     }
                 ]
             }
@@ -431,13 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTopicIndex = 0;
     let currentSentenceIndex = 0;
     let currentSpeed = 1.0;
-    let currentVolume = 2.5; // Default 250% boosted
-    let currentMode = 'vocab-card';
+    let currentVolume = 2.5;
 
     let currentVocabList = [...VOCAB_DATA.vocab850];
     let filteredVocabList = [...currentVocabList];
     let currentVocabIndex = 0;
-    let isCardFlipped = false;
+    let isCardExpanded = true; // DEFAULT EXPANDED ON (修改1: 默认展开例句和释义)
+
+    // AUTO PLAY & CAROUSEL SPEED STATE (修改2: 自动播放与换卡速度)
+    let isAutoPlaying = false;
+    let autoPlayTimer = null;
+    let autoPlayInterval = 3000; // Default 3s
 
     let userStats = JSON.parse(localStorage.getItem('voicetutor_stats')) || {
         practicedCount: 0,
@@ -452,9 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const accentSelect = document.getElementById('accentSelect');
     const volumeRange = document.getElementById('volumeRange');
     const volumeValText = document.getElementById('volumeValText');
-    const speedBtns = document.querySelectorAll('.speed-btn');
     const tabBtns = document.querySelectorAll('.tab-btn');
-    const modeBtns = document.querySelectorAll('.mode-btn');
+
+    const autoPlayToggleBtn = document.getElementById('autoPlayToggleBtn');
+    const autoPlayIntervalSelect = document.getElementById('autoPlayIntervalSelect');
 
     const openSyncModalBtn = document.getElementById('openSyncModalBtn');
     const syncBadgeText = document.getElementById('syncBadgeText');
@@ -494,184 +222,83 @@ document.addEventListener('DOMContentLoaded', () => {
         volumeRange.addEventListener('input', (e) => {
             currentVolume = parseFloat(e.target.value);
             const percent = Math.round(currentVolume * 100);
-            volumeValText.innerText = `🔥 ${percent}% (硬件级暴音量)`;
+            volumeValText.innerText = `🔥 ${percent}% (加倍)`;
         });
     }
 
-    function speakText(text, rate = currentSpeed) {
-        playLoudAudio(text, rate, currentVolume);
+    function speakText(text, rate = currentSpeed, onEnded = null) {
+        playLoudAudio(text, rate, currentVolume, onEnded);
     }
 
-    // Cloud Sync Engine
-    async function syncToCloud() {
-        if (!syncToken) return;
-
-        syncBadgeText.innerText = "同步中...";
-        try {
-            const res = await fetch(`/api/sync`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ token: syncToken, data: userStats })
-            });
-            const result = await res.json();
-            if (result.success) {
-                openSyncModalBtn.className = "sync-badge synced";
-                syncBadgeText.innerText = "☁️ 已同步到云端";
-            }
-        } catch (err) {
-            console.warn("Cloud sync warning:", err);
-            openSyncModalBtn.className = "sync-badge";
-            syncBadgeText.innerText = "☁️ 本地保存";
+    // AUTO PLAY CONTROLLER
+    function stopAutoPlay() {
+        isAutoPlaying = false;
+        if (autoPlayTimer) {
+            clearTimeout(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+        if (autoPlayToggleBtn) {
+            autoPlayToggleBtn.className = "btn btn-primary";
+            autoPlayToggleBtn.innerHTML = `<i class="fa-solid fa-play"></i> 开启自动连续换卡`;
         }
     }
 
-    async function fetchFromCloud() {
-        if (!syncToken) return;
-
-        try {
-            const res = await fetch(`/api/sync?token=${encodeURIComponent(syncToken)}`);
-            const result = await res.json();
-            if (result.success && result.data) {
-                const cloudMastered = result.data.masteredVocab || [];
-                const localMastered = userStats.masteredVocab || [];
-                const merged = Array.from(new Set([...localMastered, ...cloudMastered]));
-
-                userStats = {
-                    ...userStats,
-                    ...result.data,
-                    masteredVocab: merged
-                };
-                saveStats(false);
-                openSyncModalBtn.className = "sync-badge synced";
-                syncBadgeText.innerText = "☁️ 已同步到云端";
-                showToast("✅ 已成功同步手机/电脑端学习数据！");
-            }
-        } catch (err) {
-            console.warn("Cloud fetch error:", err);
+    function startAutoPlay() {
+        isAutoPlaying = true;
+        if (autoPlayToggleBtn) {
+            autoPlayToggleBtn.className = "btn btn-secondary";
+            autoPlayToggleBtn.innerHTML = `<i class="fa-solid fa-pause"></i> 暂停自动播放`;
         }
+        playCurrentCardAndScheduleNext();
     }
 
-    function saveStats(triggerSync = true) {
-        localStorage.setItem('voicetutor_stats', JSON.stringify(userStats));
-        updateStatsUI();
-        if (triggerSync && syncToken) {
-            syncToCloud();
-        }
-    }
+    function playCurrentCardAndScheduleNext() {
+        if (!isAutoPlaying || filteredVocabList.length === 0) return;
 
-    function updateStatsUI() {
-        const mastered = (userStats.masteredVocab || []).length;
-        masteredVocabCountEl.innerText = `${mastered} / 850`;
+        const currentItem = filteredVocabList[currentVocabIndex];
+        
+        // Speak current word, then schedule next word
+        speakText(currentItem.word, currentSpeed, () => {
+            if (!isAutoPlaying) return;
 
-        const percent = ((mastered / 3000) * 100).toFixed(1);
-        goalProgressPercentEl.innerText = `${percent}%`;
+            autoPlayTimer = setTimeout(() => {
+                if (!isAutoPlaying) return;
 
-        if (currentCategory === 'vocab850') currentLevelTag.innerText = "L1: 850核心词 (通关中)";
-        else if (currentCategory === 'vocab2000') currentLevelTag.innerText = "L2: 2000日常词";
-        else if (currentCategory === 'vocab3000') currentLevelTag.innerText = "L3: 3000黄金词";
-        else currentLevelTag.innerText = "对话场景特训";
-    }
-
-    // Modal UI Listeners
-    openSyncModalBtn.addEventListener('click', () => {
-        syncTokenInput.value = syncToken;
-        syncModal.classList.remove('hidden');
-    });
-
-    closeSyncModalBtn.addEventListener('click', () => syncModal.classList.add('hidden'));
-
-    saveSyncTokenBtn.addEventListener('click', () => {
-        const token = syncTokenInput.value.trim();
-        if (!token) {
-            showToast("请先输入自定的同步密钥！");
-            return;
-        }
-        syncToken = token;
-        localStorage.setItem('voicetutor_sync_token', syncToken);
-        syncModal.classList.add('hidden');
-        showToast("已设置同步密钥，正在与云端进行同步...");
-        fetchFromCloud();
-    });
-
-    exportProgressBtn.addEventListener('click', () => {
-        const jsonStr = JSON.stringify(userStats, null, 2);
-        const blob = new Blob([jsonStr], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `voicetutor_progress_${new Date().toISOString().slice(0,10)}.json`;
-        a.click();
-        showToast("已导出学习进度 JSON 备份文件！");
-    });
-
-    importProgressBtn.addEventListener('click', () => importFileInput.click());
-
-    importFileInput.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            try {
-                const imported = JSON.parse(event.target.result);
-                if (imported && Array.isArray(imported.masteredVocab)) {
-                    userStats = imported;
-                    saveStats();
-                    showToast("🎉 学习进度成功导入！");
-                    syncModal.classList.add('hidden');
+                if (currentVocabIndex < filteredVocabList.length - 1) {
+                    currentVocabIndex++;
+                } else {
+                    currentVocabIndex = 0; // Loop back to start
                 }
-            } catch (err) {
-                showToast("导入失败，文件格式有误。");
-            }
-        };
-        reader.readAsText(file);
-    });
-
-    // Custom Text Processor
-    const loadCustomTextBtn = document.getElementById('loadCustomTextBtn');
-    const clearCustomTextBtn = document.getElementById('clearCustomTextBtn');
-    const customTextInput = document.getElementById('customTextInput');
-
-    if (loadCustomTextBtn) {
-        loadCustomTextBtn.addEventListener('click', () => {
-            const rawText = customTextInput.value.trim();
-            if (!rawText) {
-                showToast("请先在输入框中粘贴英文段落或文章！");
-                return;
-            }
-
-            const rawSentences = rawText.split(/(?<=[.?!])\s+/).filter(s => s.trim().length > 0);
-            const customSentences = rawSentences.map(s => ({
-                en: s,
-                cn: "自定义短文句子",
-                ipa: "",
-                vocab: []
-            }));
-
-            SCENARIOS.custom = [
-                {
-                    id: 'custom_course',
-                    title: '📝 自定义英文听读课件',
-                    subtitle: `已成功解析 ${customSentences.length} 个训练句子`,
-                    sentences: customSentences
-                }
-            ];
-
-            currentTopicIndex = 0;
-            currentSentenceIndex = 0;
-            renderTopics();
-            renderSentenceCard();
-            showToast("✅ 自定义短文听读课件生成成功！");
+                renderFlashcard();
+                playCurrentCardAndScheduleNext();
+            }, autoPlayInterval);
         });
     }
 
-    if (clearCustomTextBtn) {
-        clearCustomTextBtn.addEventListener('click', () => {
-            if (customTextInput) customTextInput.value = '';
+    if (autoPlayToggleBtn) {
+        autoPlayToggleBtn.addEventListener('click', () => {
+            if (isAutoPlaying) {
+                stopAutoPlay();
+                showToast("已暂停自动连续换卡");
+            } else {
+                startAutoPlay();
+                showToast("▶️ 已开启自动连续朗读换卡！");
+            }
         });
     }
 
-    // Flashcard Render
+    if (autoPlayIntervalSelect) {
+        autoPlayIntervalSelect.addEventListener('change', (e) => {
+            autoPlayInterval = parseInt(e.target.value);
+            showToast(`⏱️ 换卡间隔已设置为 ${autoPlayInterval / 1000} 秒`);
+            if (isAutoPlaying) {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+        });
+    }
+
+    // Flashcard Render (Expanded By Default)
     function renderFlashcard() {
         if (filteredVocabList.length === 0) {
             cardWord.innerText = "No word found";
@@ -702,9 +329,14 @@ document.addEventListener('DOMContentLoaded', () => {
             masterWordBtn.innerHTML = `<i class="fa-solid fa-check"></i> 标为已掌握`;
         }
 
-        isCardFlipped = false;
-        cardBack.classList.add('hidden');
-        toggleCardFlipBtn.innerHTML = `<i class="fa-solid fa-eye"></i> 翻转显示释义`;
+        // 修改1: 默认展开例句和释义
+        if (isCardExpanded) {
+            cardBack.classList.remove('hidden');
+            toggleCardFlipBtn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> 折叠释义例句`;
+        } else {
+            cardBack.classList.add('hidden');
+            toggleCardFlipBtn.innerHTML = `<i class="fa-solid fa-eye"></i> 显示释义例句`;
+        }
     }
 
     cardAudioBtn.addEventListener('click', () => {
@@ -716,19 +348,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     toggleCardFlipBtn.addEventListener('click', () => {
-        isCardFlipped = !isCardFlipped;
-        if (isCardFlipped) {
-            cardBack.classList.remove('hidden');
-            toggleCardFlipBtn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> 隐藏释义`;
-        } else {
-            cardBack.classList.add('hidden');
-            toggleCardFlipBtn.innerHTML = `<i class="fa-solid fa-eye"></i> 翻转显示释义`;
-        }
-    });
-
-    mainFlashcard.addEventListener('click', (e) => {
-        if (e.target.closest('#cardAudioBtn') || e.target.closest('#cardExPlayBtn')) return;
-        toggleCardFlipBtn.click();
+        isCardExpanded = !isCardExpanded;
+        renderFlashcard();
     });
 
     prevWordBtn.addEventListener('click', () => {
@@ -791,9 +412,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // SIDEBAR TAB CLICK HANDLER FOR ALL MENUS
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            stopAutoPlay();
             tabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -820,134 +441,124 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('scriptPanel').classList.add('hidden');
                 } else {
                     document.getElementById('customInputCard').classList.add('hidden');
-                    renderTopics();
-                    renderSentenceCard();
                 }
             }
             updateStatsUI();
         });
     });
 
-    function renderTopics() {
-        topicListEl.innerHTML = '';
-        const topics = SCENARIOS[currentCategory] || [];
-        topics.forEach((tp, idx) => {
-            const item = document.createElement('div');
-            item.className = `topic-item ${idx === currentTopicIndex ? 'active' : ''}`;
-            item.innerHTML = `
-                <div class="topic-item-title">${tp.title}</div>
-                <div class="topic-item-subtitle">${tp.subtitle} (${tp.sentences.length}句)</div>
-            `;
-            item.addEventListener('click', () => {
-                currentTopicIndex = idx;
-                currentSentenceIndex = 0;
-                renderTopics();
-                renderSentenceCard();
-            });
-            topicListEl.appendChild(item);
-        });
-    }
-
-    function renderSentenceCard() {
-        if (['vocab850', 'vocab2000', 'vocab3000', 'custom'].includes(currentCategory) && !SCENARIOS[currentCategory]) return;
-
-        const topics = SCENARIOS[currentCategory] || [];
-        if (!topics || topics.length === 0) return;
-
-        document.getElementById('topicBanner').classList.remove('hidden');
-        document.getElementById('sentenceCard').classList.remove('hidden');
-        document.getElementById('scriptPanel').classList.remove('hidden');
-
-        const topic = topics[currentTopicIndex];
-        const sentence = topic.sentences[currentSentenceIndex];
-
-        document.getElementById('currentTopicTitle').innerText = topic.title;
-        document.getElementById('currentTopicDesc').innerText = topic.subtitle;
-        document.getElementById('progressText').innerText = `句子 ${currentSentenceIndex + 1} / ${topic.sentences.length}`;
-        document.getElementById('progressFill').style.width = `${((currentSentenceIndex + 1) / topic.sentences.length) * 100}%`;
-
-        document.getElementById('ipaLine').innerText = sentence.ipa || '';
-        document.getElementById('targetSentence').innerText = sentence.en;
-        document.getElementById('cnTranslation').innerText = sentence.cn;
-
-        const vocabChips = document.getElementById('vocabChips');
-        vocabChips.innerHTML = '';
-        if (sentence.vocab) {
-            sentence.vocab.forEach(v => {
-                const chip = document.createElement('span');
-                chip.className = 'chip';
-                chip.innerHTML = `<strong>${v.word}</strong> [${v.cn}]`;
-                vocabChips.appendChild(chip);
-            });
+    function saveStats(triggerSync = true) {
+        localStorage.setItem('voicetutor_stats', JSON.stringify(userStats));
+        updateStatsUI();
+        if (triggerSync && syncToken) {
+            syncToCloud();
         }
-        renderScriptList(topic);
     }
 
-    function renderScriptList(topic) {
-        const scriptLinesList = document.getElementById('scriptLinesList');
-        if (!scriptLinesList) return;
+    function updateStatsUI() {
+        const mastered = (userStats.masteredVocab || []).length;
+        masteredVocabCountEl.innerText = `${mastered} / 850`;
 
-        scriptLinesList.innerHTML = '';
-        topic.sentences.forEach((st, idx) => {
-            const row = document.createElement('div');
-            row.className = `script-line-item ${idx === currentSentenceIndex ? 'active' : ''}`;
-            row.innerHTML = `
-                <div>
-                    <div class="line-en">${idx + 1}. ${st.en}</div>
-                    <div class="line-cn">${st.cn}</div>
-                </div>
-                <button class="control-btn icon-only"><i class="fa-solid fa-volume-high"></i></button>
-            `;
-            row.addEventListener('click', (e) => {
-                currentSentenceIndex = idx;
-                renderSentenceCard();
-                if (e.target.closest('.icon-only')) speakText(st.en);
+        const percent = ((mastered / 3000) * 100).toFixed(1);
+        goalProgressPercentEl.innerText = `${percent}%`;
+
+        if (currentCategory === 'vocab850') currentLevelTag.innerText = "L1: 850核心词";
+        else if (currentCategory === 'vocab2000') currentLevelTag.innerText = "L2: 2000日常词";
+        else if (currentCategory === 'vocab3000') currentLevelTag.innerText = "L3: 3000黄金词";
+        else currentLevelTag.innerText = "对话场景特训";
+    }
+
+    // Modal UI Listeners
+    openSyncModalBtn.addEventListener('click', () => {
+        syncTokenInput.value = syncToken;
+        syncModal.classList.remove('hidden');
+    });
+
+    closeSyncModalBtn.addEventListener('click', () => syncModal.classList.add('hidden'));
+
+    saveSyncTokenBtn.addEventListener('click', () => {
+        const token = syncTokenInput.value.trim();
+        if (!token) {
+            showToast("请先输入自定的同步密钥！");
+            return;
+        }
+        syncToken = token;
+        localStorage.setItem('voicetutor_sync_token', syncToken);
+        syncModal.classList.add('hidden');
+        showToast("已设置同步密钥，正在与云端进行同步...");
+        fetchFromCloud();
+    });
+
+    exportProgressBtn.addEventListener('click', () => {
+        const jsonStr = JSON.stringify(userStats, null, 2);
+        const blob = new Blob([jsonStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `voicetutor_progress_${new Date().toISOString().slice(0,10)}.json`;
+        a.click();
+        showToast("已导出学习进度 JSON 备份文件！");
+    });
+
+    importProgressBtn.addEventListener('click', () => importFileInput.click());
+
+    importFileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try {
+                const imported = JSON.parse(event.target.result);
+                if (imported && Array.isArray(imported.masteredVocab)) {
+                    userStats = imported;
+                    saveStats();
+                    showToast("🎉 学习进度成功导入！");
+                    syncModal.classList.add('hidden');
+                }
+            } catch (err) {
+                showToast("导入失败，文件格式有误。");
+            }
+        };
+        reader.readAsText(file);
+    });
+
+    async function syncToCloud() {
+        if (!syncToken) return;
+        syncBadgeText.innerText = "同步中...";
+        try {
+            const res = await fetch(`/api/sync`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ token: syncToken, data: userStats })
             });
-            scriptLinesList.appendChild(row);
-        });
+            const result = await res.json();
+            if (result.success) {
+                openSyncModalBtn.className = "sync-badge synced";
+                syncBadgeText.innerText = "☁️ 已同步到云端";
+            }
+        } catch (err) {
+            openSyncModalBtn.className = "sync-badge";
+            syncBadgeText.innerText = "☁️ 本地保存";
+        }
     }
 
-    // Sentence Card Audio Buttons
-    const playSentenceBtn = document.getElementById('playSentenceBtn');
-    const slowPlayBtn = document.getElementById('slowPlayBtn');
-    const prevSentenceBtn = document.getElementById('prevSentenceBtn');
-    const nextSentenceBtn = document.getElementById('nextSentenceBtn');
-
-    if (playSentenceBtn) {
-        playSentenceBtn.addEventListener('click', () => {
-            const topics = SCENARIOS[currentCategory];
-            if (topics && topics[currentTopicIndex]) {
-                speakText(topics[currentTopicIndex].sentences[currentSentenceIndex].en, currentSpeed);
+    async function fetchFromCloud() {
+        if (!syncToken) return;
+        try {
+            const res = await fetch(`/api/sync?token=${encodeURIComponent(syncToken)}`);
+            const result = await res.json();
+            if (result.success && result.data) {
+                const cloudMastered = result.data.masteredVocab || [];
+                const localMastered = userStats.masteredVocab || [];
+                const merged = Array.from(new Set([...localMastered, ...cloudMastered]));
+                userStats = { ...userStats, ...result.data, masteredVocab: merged };
+                saveStats(false);
+                openSyncModalBtn.className = "sync-badge synced";
+                syncBadgeText.innerText = "☁️ 已同步到云端";
+                showToast("✅ 已成功同步手机/电脑端学习数据！");
             }
-        });
-    }
-
-    if (slowPlayBtn) {
-        slowPlayBtn.addEventListener('click', () => {
-            const topics = SCENARIOS[currentCategory];
-            if (topics && topics[currentTopicIndex]) {
-                speakText(topics[currentTopicIndex].sentences[currentSentenceIndex].en, 0.5);
-            }
-        });
-    }
-
-    if (prevSentenceBtn) {
-        prevSentenceBtn.addEventListener('click', () => {
-            if (currentSentenceIndex > 0) {
-                currentSentenceIndex--;
-                renderSentenceCard();
-            }
-        });
-    }
-
-    if (nextSentenceBtn) {
-        nextSentenceBtn.addEventListener('click', () => {
-            const topics = SCENARIOS[currentCategory];
-            if (topics && topics[currentTopicIndex] && currentSentenceIndex < topics[currentTopicIndex].sentences.length - 1) {
-                currentSentenceIndex++;
-                renderSentenceCard();
-            }
-        });
+        } catch (err) {}
     }
 
     function showToast(msg) {

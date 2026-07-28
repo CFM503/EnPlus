@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>VoiceTutor AI - 3000词进阶与850核心词听读特训</title>
-    <meta name="description" content="AI 驱动的英语 3000 词进阶路线图、850 基础核心词汇卡片与跟读打分应用。支持 300% Web Audio 数字爆破音量增强。">
+    <meta name="description" content="AI 驱动的英语 3000 词进阶路线图、850 基础核心词汇卡片与跟读打分应用。支持自动朗读换卡与例句默认展开。">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#6366f1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,7 +39,7 @@
                 <div class="volume-config">
                     <label for="volumeRange"><i class="fa-solid fa-bullhorn text-amber"></i> 音量增幅:</label>
                     <input type="range" id="volumeRange" min="0.5" max="3.0" step="0.25" value="2.0" class="styled-range" title="支持最大 300% 超强爆破音量">
-                    <span id="volumeValText" class="volume-val-badge">🔥 200% (音量加倍)</span>
+                    <span id="volumeValText" class="volume-val-badge">🔥 200% (加倍)</span>
                 </div>
 
                 <!-- Voice Picker (Strict Native English Voices) -->
@@ -131,7 +131,7 @@
                     </div>
 
                     <div class="mode-info" id="modeTip">
-                        <i class="fa-solid fa-bullhorn text-amber"></i> 已开启 300% 超强数字音量增幅引擎。
+                        <i class="fa-solid fa-circle-info"></i> 已开启释义与例句默认展开，支持自动连续播放换卡！
                     </div>
                 </div>
 
@@ -151,9 +151,25 @@
                         </div>
                     </div>
 
-                    <!-- Flashcard interactive area -->
+                    <!-- Auto Play Bar & Speed Selector -->
+                    <div class="autoplay-bar">
+                        <button class="btn btn-primary" id="autoPlayToggleBtn">
+                            <i class="fa-solid fa-play"></i> 开启自动连续换卡
+                        </button>
+                        <div class="interval-config">
+                            <label for="autoPlayIntervalSelect"><i class="fa-solid fa-clock text-cyan"></i> 换卡间隔:</label>
+                            <select id="autoPlayIntervalSelect" class="styled-select">
+                                <option value="2000">2 秒 (极速)</option>
+                                <option value="3000" selected>3 秒 (推荐)</option>
+                                <option value="5000">5 秒 (标准)</option>
+                                <option value="8000">8 秒 (深度)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Flashcard interactive area (Expanded by default) -->
                     <div class="flashcard-container">
-                        <div class="flashcard" id="mainFlashcard">
+                        <div class="flashcard expanded-mode" id="mainFlashcard">
                             <div class="card-side card-front">
                                 <div class="card-tag" id="cardCategoryTag">Stage 1: 850 Core Words</div>
                                 <h2 class="card-word" id="cardWord">make</h2>
@@ -161,9 +177,10 @@
                                 <div class="card-audio-btn" id="cardAudioBtn" title="播放最大声朗读">
                                     <i class="fa-solid fa-volume-high"></i>
                                 </div>
-                                <div class="card-flip-hint"><i class="fa-solid fa-arrows-rotate"></i> 点击卡片翻转查看释义与例句</div>
                             </div>
-                            <div class="card-side card-back hidden" id="cardBack">
+
+                            <!-- Back Content Expanded by Default -->
+                            <div class="card-side card-back" id="cardBack">
                                 <span class="card-pos" id="cardPos">v. 制作，做，使得</span>
                                 <p class="card-cn" id="cardCn">做；制造；使得</p>
                                 <div class="card-example-box">
@@ -176,7 +193,7 @@
 
                         <div class="flashcard-controls">
                             <button class="btn btn-secondary" id="prevWordBtn"><i class="fa-solid fa-chevron-left"></i> 上一个</button>
-                            <button class="btn btn-primary" id="toggleCardFlipBtn"><i class="fa-solid fa-eye"></i> 翻转显示释义</button>
+                            <button class="btn btn-outline" id="toggleCardFlipBtn"><i class="fa-solid fa-eye-slash"></i> 折叠/显示释义</button>
                             <button class="btn btn-outline" id="masterWordBtn"><i class="fa-solid fa-check"></i> 标为已掌握</button>
                             <button class="btn btn-secondary" id="nextWordBtn">下一个 <i class="fa-solid fa-chevron-right"></i></button>
                         </div>
