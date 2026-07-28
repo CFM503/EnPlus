@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>VoiceTutor AI - 3000词进阶与850核心词听读特训</title>
-    <meta name="description" content="AI 驱动的英语 3000 词进阶路线图、850 基础核心词汇卡片与跟读打分应用。支持自动朗读换卡与例句默认展开。">
+    <meta name="description" content="AI 驱动的英语 3000 词进阶路线图、850 基础核心词汇卡片与跟读打分应用。支持自动朗读换卡与可选自动朗读例句。">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#6366f1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -131,7 +131,7 @@
                     </div>
 
                     <div class="mode-info" id="modeTip">
-                        <i class="fa-solid fa-circle-info"></i> 已开启释义与例句默认展开，支持自动连续播放换卡！
+                        <i class="fa-solid fa-circle-info"></i> 支持自动顺次播放单词与例句！
                     </div>
                 </div>
 
@@ -151,19 +151,28 @@
                         </div>
                     </div>
 
-                    <!-- Auto Play Bar & Speed Selector -->
+                    <!-- Auto Play Bar & Options (Added read example toggle) -->
                     <div class="autoplay-bar">
                         <button class="btn btn-primary" id="autoPlayToggleBtn">
                             <i class="fa-solid fa-play"></i> 开启自动连续换卡
                         </button>
-                        <div class="interval-config">
-                            <label for="autoPlayIntervalSelect"><i class="fa-solid fa-clock text-cyan"></i> 换卡间隔:</label>
-                            <select id="autoPlayIntervalSelect" class="styled-select">
-                                <option value="2000">2 秒 (极速)</option>
-                                <option value="3000" selected>3 秒 (推荐)</option>
-                                <option value="5000">5 秒 (标准)</option>
-                                <option value="8000">8 秒 (深度)</option>
-                            </select>
+
+                        <div class="autoplay-options">
+                            <!-- Toggle whether to read example sentences during auto play (Checked by default) -->
+                            <label class="checkbox-option" title="勾选后自动播放时将依次朗读单词和英文例句">
+                                <input type="checkbox" id="autoPlayReadExampleCheckbox" checked>
+                                <span><i class="fa-solid fa-quote-left text-emerald"></i> 自动朗读例句</span>
+                            </label>
+
+                            <div class="interval-config">
+                                <label for="autoPlayIntervalSelect"><i class="fa-solid fa-clock text-cyan"></i> 换卡间隔:</label>
+                                <select id="autoPlayIntervalSelect" class="styled-select">
+                                    <option value="2000">2 秒 (极速)</option>
+                                    <option value="3000" selected>3 秒 (推荐)</option>
+                                    <option value="5000">5 秒 (标准)</option>
+                                    <option value="8000">8 秒 (深度)</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 

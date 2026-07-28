@@ -1,5 +1,5 @@
 /**
- * VoiceTutor AI - Expanded Layout & Auto-Play Flashcard Engine
+ * VoiceTutor AI - Expanded Layout & Auto-Play Engine with Example Sentence Toggle
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,7 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const sanitizedText = text.replace(/\[.*?\]|\/.*?\/|\(.*?\)/g, '').replace(/[^a-zA-Z0-9\s,'\.\!\?\-]/g, '').trim();
-        if (!sanitizedText) return;
+        if (!sanitizedText) {
+            if (onEndedCallback) onEndedCallback();
+            return;
+        }
 
         const accentType = (accentSelect && accentSelect.value === 'en-GB') ? '1' : '2';
         const audioUrl = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(sanitizedText)}&type=${accentType}`;
@@ -125,30 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-    const SCENARIOS = {
-        casual: [
-            {
-                id: 'coffee',
-                title: '☕ Ordering Coffee at Starbucks',
-                subtitle: '星巴克点餐常用地道句型',
-                sentences: [
-                    {
-                        en: "Hi, I'd like to order an iced oat milk latte, please.",
-                        cn: "嗨，请给我点一杯冰燕麦奶拿铁。",
-                        ipa: "/haɪ, aɪd laɪk tuː ˈɔːrdər ən aɪst oʊt mɪlk ˈlɑːteɪ, pliːz/",
-                        vocab: [{ word: "oat milk", cn: "燕麦奶" }, { word: "iced latte", cn: "冰拿铁" }]
-                    },
-                    {
-                        en: "Could I get that with less ice and a splash of vanilla syrup?",
-                        cn: "可以少冰并加一点点香草糖浆吗？",
-                        ipa: "/kʊd aɪ ɡet ðæt wɪð les aɪs ænd ə splæʃ əv vəˈnɪlə ˈsɪrəp/",
-                        vocab: [{ word: "splash", cn: "少许" }, { word: "vanilla syrup", cn: "香草糖浆" }]
-                    }
-                ]
-            }
-        ]
-    };
-
     // State
     let currentCategory = 'vocab850';
     let currentTopicIndex = 0;
@@ -159,9 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentVocabList = [...VOCAB_DATA.vocab850];
     let filteredVocabList = [...currentVocabList];
     let currentVocabIndex = 0;
-    let isCardExpanded = true; // DEFAULT EXPANDED ON (修改1: 默认展开例句和释义)
+    let isCardExpanded = true;
 
-    // AUTO PLAY & CAROUSEL SPEED STATE (修改2: 自动播放与换卡速度)
+    // AUTO PLAY STATE
     let isAutoPlaying = false;
     let autoPlayTimer = null;
     let autoPlayInterval = 3000; // Default 3s
@@ -183,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const autoPlayToggleBtn = document.getElementById('autoPlayToggleBtn');
     const autoPlayIntervalSelect = document.getElementById('autoPlayIntervalSelect');
+    const autoPlayReadExampleCheckbox = document.getElementById('autoPlayReadExampleCheckbox'); // Added checkbox
 
     const openSyncModalBtn = document.getElementById('openSyncModalBtn');
     const syncBadgeText = document.getElementById('syncBadgeText');
@@ -230,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         playLoudAudio(text, rate, currentVolume, onEnded);
     }
 
-    // AUTO PLAY CONTROLLER
+    // AUTO PLAY CONTROLLER (With Example Sentence Toggle Support)
     function stopAutoPlay() {
         isAutoPlaying = false;
         if (autoPlayTimer) {
@@ -256,23 +236,41 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isAutoPlaying || filteredVocabList.length === 0) return;
 
         const currentItem = filteredVocabList[currentVocabIndex];
-        
-        // Speak current word, then schedule next word
+        const shouldReadExample = autoPlayReadExampleCheckbox && autoPlayReadExampleCheckbox.checked;
+
+        // Step 1: Read current target word
         speakText(currentItem.word, currentSpeed, () => {
             if (!isAutoPlaying) return;
 
-            autoPlayTimer = setTimeout(() => {
-                if (!isAutoPlaying) return;
-
-                if (currentVocabIndex < filteredVocabList.length - 1) {
-                    currentVocabIndex++;
-                } else {
-                    currentVocabIndex = 0; // Loop back to start
-                }
-                renderFlashcard();
-                playCurrentCardAndScheduleNext();
-            }, autoPlayInterval);
+            // Step 2: Read example sentence if option is checked
+            if (shouldReadExample && currentItem.exEn) {
+                // Short pause before reading example sentence
+                setTimeout(() => {
+                    if (!isAutoPlaying) return;
+                    speakText(currentItem.exEn, currentSpeed, () => {
+                        scheduleNextCard();
+                    });
+                }, 400);
+            } else {
+                scheduleNextCard();
+            }
         });
+    }
+
+    function scheduleNextCard() {
+        if (!isAutoPlaying) return;
+
+        autoPlayTimer = setTimeout(() => {
+            if (!isAutoPlaying) return;
+
+            if (currentVocabIndex < filteredVocabList.length - 1) {
+                currentVocabIndex++;
+            } else {
+                currentVocabIndex = 0; // Loop back to beginning
+            }
+            renderFlashcard();
+            playCurrentCardAndScheduleNext();
+        }, autoPlayInterval);
     }
 
     if (autoPlayToggleBtn) {
@@ -282,7 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 showToast("已暂停自动连续换卡");
             } else {
                 startAutoPlay();
-                showToast("▶️ 已开启自动连续朗读换卡！");
+                const exampleText = (autoPlayReadExampleCheckbox && autoPlayReadExampleCheckbox.checked) ? "（含例句朗读）" : "（仅单词朗读）";
+                showToast(`▶️ 已开启自动连续朗读换卡 ${exampleText}！`);
             }
         });
     }
@@ -298,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Flashcard Render (Expanded By Default)
+    // Flashcard Render
     function renderFlashcard() {
         if (filteredVocabList.length === 0) {
             cardWord.innerText = "No word found";
@@ -329,7 +328,6 @@ document.addEventListener('DOMContentLoaded', () => {
             masterWordBtn.innerHTML = `<i class="fa-solid fa-check"></i> 标为已掌握`;
         }
 
-        // 修改1: 默认展开例句和释义
         if (isCardExpanded) {
             cardBack.classList.remove('hidden');
             toggleCardFlipBtn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> 折叠释义例句`;
