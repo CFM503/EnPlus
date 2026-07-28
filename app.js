@@ -1,5 +1,6 @@
 /**
- * VoiceTutor AI - Expanded Layout & Auto-Play Engine with Example Sentence Toggle
+ * VoiceTutor AI - Full Interactive Engine
+ * Fixes Scenario Rendering, Topic Listing & Mode Switcher
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -77,7 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
         synth.speak(utterance);
     }
 
-    // DATASETS
+    // ==========================================
+    // 1. DATASETS FOR VOCAB & SCENARIO COURSES
+    // ==========================================
     const VOCAB_DATA = {
         vocab850: [
             { word: "make", ipa: "/meɪk/", pos: "v.", cn: "制作；做；使得", cat: "ops", exEn: "Practice makes perfect.", exCn: "熟能生巧。" },
@@ -128,6 +131,152 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
+    const SCENARIOS = {
+        casual: [
+            {
+                id: 'coffee',
+                title: '☕ Ordering Coffee at Starbucks',
+                subtitle: '星巴克点餐常用地道句型',
+                sentences: [
+                    {
+                        en: "Hi, I'd like to order an iced oat milk latte, please.",
+                        cn: "嗨，请给我点一杯冰燕麦奶拿铁。",
+                        ipa: "/haɪ, aɪd laɪk tuː ˈɔːrdər ən aɪst oʊt mɪlk ˈlɑːteɪ, pliːz/",
+                        vocab: [{ word: "oat milk", cn: "燕麦奶" }, { word: "iced latte", cn: "冰拿铁" }]
+                    },
+                    {
+                        en: "Could I get that with less ice and a splash of vanilla syrup?",
+                        cn: "可以少冰并加一点点香草糖浆吗？",
+                        ipa: "/kʊd aɪ ɡet ðæt wɪð les aɪs ænd ə splæʃ əv vəˈnɪlə ˈsɪrəp/",
+                        vocab: [{ word: "splash", cn: "少许" }, { word: "vanilla syrup", cn: "香草糖浆" }]
+                    },
+                    {
+                        en: "Sure thing! What size would you prefer: Tall, Grande, or Venti?",
+                        cn: "没问题！您想要什么杯型：中杯、大杯还是超大杯？",
+                        ipa: "/ʃʊr θɪŋ! wʌt saɪz wʊd juː prɪˈfɜːr/",
+                        vocab: [{ word: "Grande", cn: "大杯" }, { word: "prefer", cn: "偏好" }]
+                    },
+                    {
+                        en: "A Grande will be perfect. I'll pay with Apple Pay.",
+                        cn: "大杯就好，谢谢。我用 Apple Pay 支付。",
+                        ipa: "/ə ˈɡrɑːndeɪ wɪl biː ˈpɜːrfɪkt. aɪl peɪ wɪð ˈæpl peɪ/",
+                        vocab: [{ word: "perfect", cn: "完美/正好" }]
+                    }
+                ]
+            },
+            {
+                id: 'weekend',
+                title: '🌴 Weekend Relaxation & Hobbies',
+                subtitle: '聊聊周末休假与户外活动',
+                sentences: [
+                    {
+                        en: "Do you have any exciting plans for the upcoming weekend?",
+                        cn: "这个周末你有什么有趣的计划吗？",
+                        ipa: "/duː juː hæv ˈeni ɪkˈsaɪtɪŋ plænz fɔːr ðə ˈʌpkʌmɪŋ ˈwiːkend/",
+                        vocab: [{ word: "upcoming", cn: "即将来临的" }]
+                    },
+                    {
+                        en: "I'm thinking about going hiking in the mountains to recharge.",
+                        cn: "我打算去山里徒步，放松充会儿电。",
+                        ipa: "/aɪm ˈθɪŋkɪŋ əˈbaʊt ˈɡoʊɪŋ ˈhaɪkɪŋ ɪn ðə ˈmaʊntnz tuː riːˈtʃɑːrdʒ/",
+                        vocab: [{ word: "recharge", cn: "恢复精力" }]
+                    }
+                ]
+            }
+        ],
+
+        workplace: [
+            {
+                id: 'interview',
+                title: '💼 Job Interview Self-Introduction',
+                subtitle: '求职面试高频自述句型',
+                sentences: [
+                    {
+                        en: "Thank you for giving me this opportunity to introduce myself.",
+                        cn: "感谢您给我这次自我介绍的机会。",
+                        ipa: "/θæŋk juː fɔːr ˈɡɪvɪŋ miː ðɪs ˌɑːpərˈtuːnəti tuː ˌɪntrəˈduːs maɪˈself/",
+                        vocab: [{ word: "opportunity", cn: "机会" }]
+                    },
+                    {
+                        en: "I have over five years of experience in full-stack software engineering.",
+                        cn: "我在全栈软件工程领域拥有超过五年的工作经验。",
+                        ipa: "/aɪ hæv ˈoʊvər faɪv jɪərz əv ɪkˈspɪriəns ɪn fʊl stæk ˈsɔːftwer ˌendʒɪˈnɪrɪŋ/",
+                        vocab: [{ word: "experience", cn: "经验" }]
+                    },
+                    {
+                        en: "My key strength lies in solving complex technical problems under tight deadlines.",
+                        cn: "我的核心优势在于能在紧迫的时间节点下解决复杂的技术问题。",
+                        ipa: "/maɪ kiː streŋθ laɪz ɪn ˈsɑːlvɪŋ kəmˈpleks ˈteknɪkl ˈprɑːbləmz ˈʌndər taɪt ˈdedlaɪnz/",
+                        vocab: [{ word: "tight deadlines", cn: "紧迫的截止日期" }]
+                    }
+                ]
+            },
+            {
+                id: 'meeting',
+                title: '📊 Project Status Meeting Update',
+                subtitle: '团队例会中汇报项目进展',
+                sentences: [
+                    {
+                        en: "I'd like to share a brief status update on our new feature release.",
+                        cn: "我想就新功能发布进展做一个简要汇报。",
+                        ipa: "/aɪd laɪk tuː ʃer ə briːf ˈstætəs ˌʌpˈdeɪt ɑːn aʊər nuː ˈfiːtʃər rɪˈliːs/",
+                        vocab: [{ word: "status update", cn: "进展汇报" }]
+                    },
+                    {
+                        en: "We are currently right on schedule to complete QA testing by Friday afternoon.",
+                        cn: "目前进度正常，预计周五下午前完成质量测试。",
+                        ipa: "/wiː ɑːr ˈkɜːrəntli raɪt ɑːn ˈskedʒuːl tuː kəmˈpliːt testɪŋ baɪ ˈfraɪdeɪ ˌæftərˈnuːn/",
+                        vocab: [{ word: "on schedule", cn: "按计划" }]
+                    }
+                ]
+            }
+        ],
+
+        travel: [
+            {
+                id: 'hotel',
+                title: '🏨 Hotel Check-in & Requests',
+                subtitle: '办理酒店入住与提出房间需求',
+                sentences: [
+                    {
+                        en: "Good evening! I have a reservation under the name Alex Turner.",
+                        cn: "晚上好！我有一份 Alex Turner 名下的预订。",
+                        ipa: "/ɡʊd ˈiːvnɪŋ! aɪ hæv ə ˌrezərˈveɪʃn ˈʌndər ðə neɪm ˈælɪks ˈtɜːrnər/",
+                        vocab: [{ word: "reservation", cn: "预订" }]
+                    },
+                    {
+                        en: "Is it possible to upgrade to a room on a higher floor with an ocean view?",
+                        cn: "可以帮我升房到带海景的高楼层房间吗？",
+                        ipa: "/ɪz ɪt ˈpɑːsəbl tuː ˌʌpˈɡreɪd tuː ə ruːm ɑːn ə ˈhaɪər flɔːr wɪð ən ˈoʊʃn vjuː/",
+                        vocab: [{ word: "ocean view", cn: "海景" }]
+                    }
+                ]
+            }
+        ],
+
+        idioms: [
+            {
+                id: 'golden_phrases',
+                title: '🌟 10 Gold Oral Idioms & Expressions',
+                subtitle: '地道习惯用语与金句卡片',
+                sentences: [
+                    {
+                        en: "Let's call it a day! We've made great progress today.",
+                        cn: "今天就到此为止收工吧！我们今天进展很大。",
+                        ipa: "/lets kɔːl ɪt ə deɪ! wiːv meɪd ɡreɪt ˈprɑːɡres təˈdeɪ/",
+                        vocab: [{ word: "call it a day", cn: "收工/今日到此为止" }]
+                    },
+                    {
+                        en: "You hit the nail on the head! That's exactly what I meant.",
+                        cn: "你说得一针见血！我就是这个意思。",
+                        ipa: "/juː hɪt ðə neɪl ɑːn ðə hed! ðæts ɪɡˈzæktli wʌt aɪ ment/",
+                        vocab: [{ word: "hit the nail on the head", cn: "一针见血/彻底说对" }]
+                    }
+                ]
+            }
+        ]
+    };
+
     // State
     let currentCategory = 'vocab850';
     let currentTopicIndex = 0;
@@ -143,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // AUTO PLAY STATE
     let isAutoPlaying = false;
     let autoPlayTimer = null;
-    let autoPlayInterval = 3000; // Default 3s
+    let autoPlayInterval = 3000;
 
     let userStats = JSON.parse(localStorage.getItem('voicetutor_stats')) || {
         practicedCount: 0,
@@ -159,10 +308,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const volumeRange = document.getElementById('volumeRange');
     const volumeValText = document.getElementById('volumeValText');
     const tabBtns = document.querySelectorAll('.tab-btn');
+    const topicListEl = document.getElementById('topicList'); // FIXED: Element Binding
 
     const autoPlayToggleBtn = document.getElementById('autoPlayToggleBtn');
     const autoPlayIntervalSelect = document.getElementById('autoPlayIntervalSelect');
-    const autoPlayReadExampleCheckbox = document.getElementById('autoPlayReadExampleCheckbox'); // Added checkbox
+    const autoPlayReadExampleCheckbox = document.getElementById('autoPlayReadExampleCheckbox');
 
     const openSyncModalBtn = document.getElementById('openSyncModalBtn');
     const syncBadgeText = document.getElementById('syncBadgeText');
@@ -197,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleCardFlipBtn = document.getElementById('toggleCardFlipBtn');
     const masterWordBtn = document.getElementById('masterWordBtn');
 
-    // Volume Range Listener
+    // Volume Listener
     if (volumeRange) {
         volumeRange.addEventListener('input', (e) => {
             currentVolume = parseFloat(e.target.value);
@@ -210,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
         playLoudAudio(text, rate, currentVolume, onEnded);
     }
 
-    // AUTO PLAY CONTROLLER (With Example Sentence Toggle Support)
+    // AUTO PLAY CONTROLLER
     function stopAutoPlay() {
         isAutoPlaying = false;
         if (autoPlayTimer) {
@@ -238,13 +388,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentItem = filteredVocabList[currentVocabIndex];
         const shouldReadExample = autoPlayReadExampleCheckbox && autoPlayReadExampleCheckbox.checked;
 
-        // Step 1: Read current target word
         speakText(currentItem.word, currentSpeed, () => {
             if (!isAutoPlaying) return;
 
-            // Step 2: Read example sentence if option is checked
             if (shouldReadExample && currentItem.exEn) {
-                // Short pause before reading example sentence
                 setTimeout(() => {
                     if (!isAutoPlaying) return;
                     speakText(currentItem.exEn, currentSpeed, () => {
@@ -266,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentVocabIndex < filteredVocabList.length - 1) {
                 currentVocabIndex++;
             } else {
-                currentVocabIndex = 0; // Loop back to beginning
+                currentVocabIndex = 0;
             }
             renderFlashcard();
             playCurrentCardAndScheduleNext();
@@ -410,6 +557,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // RENDER TOPICS LIST IN SIDEBAR
+    function renderTopics() {
+        if (!topicListEl) return;
+        topicListEl.innerHTML = '';
+        const topics = SCENARIOS[currentCategory] || [];
+        topics.forEach((tp, idx) => {
+            const item = document.createElement('div');
+            item.className = `topic-item ${idx === currentTopicIndex ? 'active' : ''}`;
+            item.innerHTML = `
+                <div class="topic-item-title">${tp.title}</div>
+                <div class="topic-item-subtitle">${tp.subtitle} (${tp.sentences.length}句)</div>
+            `;
+            item.addEventListener('click', () => {
+                currentTopicIndex = idx;
+                currentSentenceIndex = 0;
+                renderTopics();
+                renderSentenceCard();
+            });
+            topicListEl.appendChild(item);
+        });
+    }
+
+    // RENDER SCENARIO SENTENCE CARD
+    function renderSentenceCard() {
+        const topics = SCENARIOS[currentCategory] || [];
+        if (!topics || topics.length === 0) return;
+
+        document.getElementById('topicBanner').classList.remove('hidden');
+        document.getElementById('sentenceCard').classList.remove('hidden');
+        document.getElementById('scriptPanel').classList.remove('hidden');
+
+        const topic = topics[currentTopicIndex];
+        const sentence = topic.sentences[currentSentenceIndex];
+
+        document.getElementById('currentTopicTitle').innerText = topic.title;
+        document.getElementById('currentTopicDesc').innerText = topic.subtitle;
+        document.getElementById('progressText').innerText = `句子 ${currentSentenceIndex + 1} / ${topic.sentences.length}`;
+        document.getElementById('progressFill').style.width = `${((currentSentenceIndex + 1) / topic.sentences.length) * 100}%`;
+
+        document.getElementById('ipaLine').innerText = sentence.ipa || '';
+        document.getElementById('targetSentence').innerText = sentence.en;
+        document.getElementById('cnTranslation').innerText = sentence.cn;
+
+        const vocabChips = document.getElementById('vocabChips');
+        if (vocabChips) {
+            vocabChips.innerHTML = '';
+            if (sentence.vocab) {
+                sentence.vocab.forEach(v => {
+                    const chip = document.createElement('span');
+                    chip.className = 'chip';
+                    chip.innerHTML = `<strong>${v.word}</strong> [${v.cn}]`;
+                    vocabChips.appendChild(chip);
+                });
+            }
+        }
+        renderScriptList(topic);
+    }
+
+    function renderScriptList(topic) {
+        const scriptLinesList = document.getElementById('scriptLinesList');
+        if (!scriptLinesList) return;
+
+        scriptLinesList.innerHTML = '';
+        topic.sentences.forEach((st, idx) => {
+            const row = document.createElement('div');
+            row.className = `script-line-item ${idx === currentSentenceIndex ? 'active' : ''}`;
+            row.innerHTML = `
+                <div>
+                    <div class="line-en">${idx + 1}. ${st.en}</div>
+                    <div class="line-cn">${st.cn}</div>
+                </div>
+                <button class="control-btn icon-only"><i class="fa-solid fa-volume-high"></i></button>
+            `;
+            row.addEventListener('click', (e) => {
+                currentSentenceIndex = idx;
+                renderSentenceCard();
+                if (e.target.closest('.icon-only')) speakText(st.en);
+            });
+            scriptLinesList.appendChild(row);
+        });
+    }
+
+    // SIDEBAR TAB CLICK HANDLER
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             stopAutoPlay();
@@ -429,6 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('sentenceCard').classList.add('hidden');
                 document.getElementById('scriptPanel').classList.add('hidden');
                 document.getElementById('customInputCard').classList.add('hidden');
+                if (topicListEl) topicListEl.innerHTML = '';
                 renderFlashcard();
             } else {
                 vocabModulePanel.classList.add('hidden');
@@ -437,13 +668,59 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('topicBanner').classList.add('hidden');
                     document.getElementById('sentenceCard').classList.add('hidden');
                     document.getElementById('scriptPanel').classList.add('hidden');
+                    if (topicListEl) topicListEl.innerHTML = '';
                 } else {
                     document.getElementById('customInputCard').classList.add('hidden');
+                    renderTopics();
+                    renderSentenceCard();
                 }
             }
             updateStatsUI();
         });
     });
+
+    // SENTENCE CONTROL BUTTONS
+    const playSentenceBtn = document.getElementById('playSentenceBtn');
+    const slowPlayBtn = document.getElementById('slowPlayBtn');
+    const prevSentenceBtn = document.getElementById('prevSentenceBtn');
+    const nextSentenceBtn = document.getElementById('nextSentenceBtn');
+
+    if (playSentenceBtn) {
+        playSentenceBtn.addEventListener('click', () => {
+            const topics = SCENARIOS[currentCategory];
+            if (topics && topics[currentTopicIndex]) {
+                speakText(topics[currentTopicIndex].sentences[currentSentenceIndex].en, currentSpeed);
+            }
+        });
+    }
+
+    if (slowPlayBtn) {
+        slowPlayBtn.addEventListener('click', () => {
+            const topics = SCENARIOS[currentCategory];
+            if (topics && topics[currentTopicIndex]) {
+                speakText(topics[currentTopicIndex].sentences[currentSentenceIndex].en, 0.5);
+            }
+        });
+    }
+
+    if (prevSentenceBtn) {
+        prevSentenceBtn.addEventListener('click', () => {
+            if (currentSentenceIndex > 0) {
+                currentSentenceIndex--;
+                renderSentenceCard();
+            }
+        });
+    }
+
+    if (nextSentenceBtn) {
+        nextSentenceBtn.addEventListener('click', () => {
+            const topics = SCENARIOS[currentCategory];
+            if (topics && topics[currentTopicIndex] && currentSentenceIndex < topics[currentTopicIndex].sentences.length - 1) {
+                currentSentenceIndex++;
+                renderSentenceCard();
+            }
+        });
+    }
 
     function saveStats(triggerSync = true) {
         localStorage.setItem('voicetutor_stats', JSON.stringify(userStats));
