@@ -1,15 +1,15 @@
 /* ==========================================================================
-   EnPlus VoiceTutor AI - Ultra High-Density Single-Screen UI (v3.0)
+   EnPlus VoiceTutor AI - Fullscreen High-Readability UI (v4.0)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
 :root {
-    --bg-dark: #07090e;
-    --bg-card: rgba(18, 24, 38, 0.75);
-    --bg-card-hover: rgba(28, 36, 56, 0.9);
-    --border-light: rgba(255, 255, 255, 0.08);
-    --border-glow: rgba(99, 102, 241, 0.4);
+    --bg-dark: #05070c;
+    --bg-card: rgba(16, 22, 34, 0.85);
+    --bg-card-hover: rgba(26, 34, 52, 0.95);
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-glow: rgba(99, 102, 241, 0.45);
 
     --primary-indigo: #6366f1;
     --primary-purple: #a855f7;
@@ -23,14 +23,14 @@
     --gradient-ios: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
 
     --text-main: #ffffff;
-    --text-muted: #94a3b8;
-    --text-dim: #64748b;
+    --text-muted: #a1a1aa;
+    --text-dim: #71717a;
 
     --font-heading: 'Outfit', -apple-system, sans-serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
 
-    --radius-ios: 16px;
-    --radius-md: 10px;
+    --radius-ios: 18px;
+    --radius-md: 12px;
 
     --transition-fast: all 0.15s ease-out;
 }
@@ -46,8 +46,8 @@ body {
     font-family: var(--font-body);
     background-color: var(--bg-dark);
     background-image: 
-        radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.07) 0%, transparent 45%);
+        radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 45%);
     background-attachment: fixed;
     color: var(--text-main);
     min-height: 100vh;
@@ -55,48 +55,49 @@ body {
     line-height: 1.4;
 }
 
-/* Compact Header */
+/* Header - Fullscreen Stretch */
 .app-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 20px;
-    background: rgba(13, 17, 26, 0.85);
+    padding: 8px 24px;
+    background: rgba(12, 16, 24, 0.9);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-light);
     position: sticky;
     top: 0;
     z-index: 100;
-    height: 52px;
+    height: 54px;
+    width: 100%;
 }
 
 .brand-box {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .logo-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     background: var(--gradient-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
 }
 
 .brand-title {
     font-family: var(--font-heading);
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 800;
     color: #fff;
 }
 
 .brand-subtitle {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--accent-cyan);
     font-weight: 600;
 }
@@ -104,28 +105,28 @@ body {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 .volume-booster-box {
     display: flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 4px 10px;
-    border-radius: 14px;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 4px 12px;
+    border-radius: 16px;
     border: 1px solid var(--border-light);
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .volume-slider {
-    width: 65px;
+    width: 80px;
     accent-color: var(--primary-indigo);
     cursor: pointer;
 }
 
 .vol-badge {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--accent-emerald);
 }
@@ -134,26 +135,27 @@ body {
     background: rgba(255, 255, 255, 0.08);
     color: var(--text-main);
     border: 1px solid var(--border-light);
-    padding: 4px 8px;
-    border-radius: 8px;
-    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 13px;
     font-weight: 600;
     outline: none;
     cursor: pointer;
 }
 
-/* App Container Layout - High Density */
+/* Fullscreen Workspace Grid */
 .app-container {
     display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 14px;
-    padding: 12px 16px;
-    max-width: 1700px;
-    margin: 0 auto;
-    height: calc(100vh - 52px);
+    grid-template-columns: 210px 1fr 240px;
+    gap: 12px;
+    padding: 10px 14px;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    height: calc(100vh - 54px);
 }
 
-/* Compact PC Sidebar */
+/* Left Compact Navigation Sidebar */
 .sidebar-panel {
     background: var(--bg-card);
     backdrop-filter: blur(16px);
@@ -168,7 +170,7 @@ body {
 }
 
 .sidebar-section-title {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -179,7 +181,7 @@ body {
 .nav-group {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 4px;
 }
 
 .nav-btn {
@@ -187,18 +189,18 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 8px 12px;
-    border-radius: 8px;
+    border-radius: 10px;
     background: transparent;
     border: 1px solid transparent;
     color: var(--text-muted);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition-fast);
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.06);
     color: #fff;
 }
 
@@ -238,7 +240,7 @@ body {
     color: var(--text-muted);
 }
 
-/* Main Studio Layout Grid */
+/* Center Workspace Main */
 .workspace-panel {
     display: flex;
     flex-direction: column;
@@ -247,31 +249,31 @@ body {
     overflow-y: auto;
 }
 
-/* Compact Segmented Control Bar */
+/* Mode Switcher Bar */
 .mode-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(22, 28, 42, 0.85);
+    background: rgba(18, 24, 38, 0.9);
     backdrop-filter: blur(16px);
     border: 1px solid var(--border-light);
-    border-radius: 12px;
-    padding: 4px 8px;
+    border-radius: 14px;
+    padding: 6px 12px;
     flex-shrink: 0;
 }
 
 .mode-buttons {
     display: flex;
-    gap: 4px;
+    gap: 6px;
 }
 
 .mode-btn {
-    padding: 6px 14px;
-    border-radius: 8px;
+    padding: 8px 16px;
+    border-radius: 10px;
     background: transparent;
     border: none;
     color: var(--text-muted);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     display: flex;
@@ -280,46 +282,38 @@ body {
 }
 
 .mode-btn.active {
-    background: #252b3b;
+    background: #252e42;
     color: #fff;
     border: 1px solid var(--border-glow);
 }
 
-/* High-Density Split Workspace Grid (Flashcard + Studio Side-by-Side) */
-.split-workspace-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 12px;
-    flex: 1;
-    min-height: 0;
-}
-
-/* Vocab Module */
+/* Main Flashcard Module - LARGE FONTS */
 .vocab-module-card {
     background: var(--bg-card);
     backdrop-filter: blur(16px);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-ios);
-    padding: 14px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    height: 100%;
 }
 
 .search-filter-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 10px;
 }
 
 .search-box {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
-    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 8px 14px;
     flex: 1;
 }
 
@@ -328,22 +322,22 @@ body {
     border: none;
     outline: none;
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
     width: 100%;
 }
 
 .filter-chips {
     display: flex;
-    gap: 4px;
+    gap: 6px;
 }
 
 .chip-btn {
-    padding: 4px 10px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
     border: 1px solid var(--border-light);
     color: var(--text-muted);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -359,183 +353,208 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 6px 12px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 8px 16px;
+    border-radius: 12px;
     border: 1px solid var(--border-light);
-    font-size: 11px;
+    font-size: 13px;
 }
 
 .btn-ios {
     background: var(--gradient-ios);
     color: #fff;
     border: none;
-    padding: 6px 14px;
-    border-radius: 12px;
-    font-size: 12px;
+    padding: 8px 18px;
+    border-radius: 14px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
 }
 
-/* Compact Flashcard */
+/* Large Interactive Flashcard Studio - EXTRA LARGE FONTS */
 .flashcard-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
     flex: 1;
     justify-content: center;
 }
 
 .main-flashcard {
     width: 100%;
-    background: linear-gradient(150deg, #161e2e 0%, #0d131f 100%);
+    background: linear-gradient(150deg, #182235 0%, #0d1422 100%);
     border: 1px solid var(--border-glow);
-    border-radius: 20px;
-    padding: 20px 16px;
+    border-radius: 24px;
+    padding: 28px 24px;
     text-align: center;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
 }
 
 .card-stage-badge {
     position: absolute;
-    top: 10px;
-    left: 12px;
-    font-size: 10px;
+    top: 14px;
+    left: 16px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--accent-cyan);
-    background: rgba(6, 182, 212, 0.12);
-    padding: 2px 8px;
-    border-radius: 8px;
+    background: rgba(6, 182, 212, 0.15);
+    padding: 4px 12px;
+    border-radius: 10px;
 }
 
 .card-word-title {
     font-family: var(--font-heading);
-    font-size: 36px;
-    font-weight: 800;
-    color: #fff;
-    margin-top: 8px;
+    font-size: 54px; /* Extra Large Word Font */
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: 10px;
+    letter-spacing: -1px;
 }
 
 .card-ipa-text {
-    font-size: 15px;
+    font-size: 22px; /* Extra Large IPA Font */
     color: var(--accent-emerald);
-    margin-top: 2px;
+    margin-top: 4px;
+    font-weight: 600;
 }
 
 .audio-play-circle {
-    width: 46px;
-    height: 46px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: var(--gradient-ios);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    margin: 10px auto;
+    font-size: 22px;
+    margin: 14px auto;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 122, 255, 0.5);
 }
 
 .card-back-details {
     border-top: 1px solid var(--border-light);
-    padding-top: 10px;
-    margin-top: 10px;
+    padding-top: 14px;
+    margin-top: 14px;
 }
 
 .card-pos-tag {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     color: var(--accent-amber);
+    text-transform: uppercase;
 }
 
 .card-cn-desc {
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
+    font-size: 24px; /* Extra Large Chinese Font */
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: 2px;
 }
 
 .card-example-box {
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 14px;
+    margin-top: 10px;
+    border: 1px solid var(--border-light);
 }
 
 .ex-en-text {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 18px; /* Extra Large Example Font */
+    font-weight: 700;
     color: var(--accent-cyan);
+    line-height: 1.4;
 }
 
 .ex-cn-text {
-    font-size: 11px;
+    font-size: 14px;
     color: var(--text-muted);
+    margin-top: 4px;
 }
 
 /* Flashcard Controls */
 .card-action-bar {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     justify-content: center;
 }
 
 .btn-action {
-    padding: 6px 12px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.06);
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--border-light);
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
 }
 
-/* Sentence Practice & Script List Card */
+/* Sentence Practice Extra Large Fonts */
 .sentence-practice-card {
     background: var(--bg-card);
     backdrop-filter: blur(16px);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-ios);
-    padding: 14px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .sentence-target-text {
     font-family: var(--font-heading);
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 28px; /* Extra Large Sentence Font */
+    font-weight: 800;
     color: #fff;
+    line-height: 1.4;
 }
 
 .sentence-cn-text {
-    font-size: 14px;
+    font-size: 18px;
     color: var(--text-muted);
 }
 
 .sentence-controls-row {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
-/* Speech Recording Box */
-.speech-recording-card {
+/* Right Studio Panel (Narrow & Collapsible) */
+.right-studio-panel {
     background: var(--bg-card);
     backdrop-filter: blur(16px);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-ios);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    overflow-y: auto;
+    transition: var(--transition-fast);
+}
+
+.right-studio-panel.collapsed {
+    display: none !important;
+}
+
+.speech-recording-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
     padding: 12px;
     display: flex;
     flex-direction: column;
@@ -544,15 +563,15 @@ body {
 }
 
 .mic-circle-btn {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: var(--gradient-primary);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
     border: none;
     box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
@@ -573,12 +592,12 @@ body {
 }
 
 .toast {
-    background: rgba(22, 28, 42, 0.95);
+    background: rgba(16, 22, 34, 0.95);
     border: 1px solid var(--border-glow);
     color: #fff;
-    padding: 8px 14px;
-    border-radius: 12px;
-    font-size: 12px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    font-size: 13px;
     font-weight: 600;
 }
 
@@ -586,9 +605,7 @@ body {
     display: none !important;
 }
 
-/* ==========================================================================
-   MOBILE RESPONSIVE
-   ========================================================================== */
+/* Mobile Responsive Rules */
 @media (max-width: 768px) {
     .app-container {
         grid-template-columns: 1fr;
@@ -597,12 +614,24 @@ body {
         height: auto;
     }
 
-    .split-workspace-grid {
-        grid-template-columns: 1fr;
+    .sidebar-panel, .right-studio-panel {
+        display: none;
     }
 
-    .sidebar-panel {
-        display: none;
+    .card-word-title {
+        font-size: 40px;
+    }
+
+    .card-ipa-text {
+        font-size: 18px;
+    }
+
+    .card-cn-desc {
+        font-size: 20px;
+    }
+
+    .ex-en-text {
+        font-size: 15px;
     }
 
     .ios-bottom-tabbar {
@@ -612,7 +641,7 @@ body {
         left: 0;
         right: 0;
         height: 60px;
-        background: rgba(13, 17, 26, 0.95);
+        background: rgba(12, 16, 24, 0.95);
         backdrop-filter: blur(20px);
         border-top: 1px solid var(--border-light);
         z-index: 1000;

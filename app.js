@@ -649,6 +649,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // RIGHT PANEL COLLAPSE TOGGLE LISTENER
+    const toggleRightPanelBtn = document.getElementById('toggleRightPanelBtn');
+    const rightStudioPanel = document.getElementById('rightStudioPanel');
+    const appContainer = document.getElementById('appContainer');
+    const toggleRightPanelLabel = document.getElementById('toggleRightPanelLabel');
+    let isRightPanelCollapsed = false;
+
+    if (toggleRightPanelBtn && rightStudioPanel && appContainer) {
+        toggleRightPanelBtn.addEventListener('click', () => {
+            isRightPanelCollapsed = !isRightPanelCollapsed;
+            if (isRightPanelCollapsed) {
+                rightStudioPanel.classList.add('collapsed');
+                appContainer.style.gridTemplateColumns = "210px 1fr";
+                if (toggleRightPanelLabel) toggleRightPanelLabel.innerText = "展开侧栏";
+                showToast("已收起右侧侧栏");
+            } else {
+                rightStudioPanel.classList.remove('collapsed');
+                appContainer.style.gridTemplateColumns = "210px 1fr 240px";
+                if (toggleRightPanelLabel) toggleRightPanelLabel.innerText = "收起侧栏";
+                showToast("已展开右侧侧栏");
+            }
+        });
+    }
+
     // INITIALIZE DATASETS
     loadExternalDatasets();
 });
