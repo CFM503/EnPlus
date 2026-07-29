@@ -3,7 +3,7 @@
     {
       "id": "starbucks_master",
       "title": "☕ 1. Starbucks Special Requests & Coffee Customization",
-      "subtitle": "星巴克与精品咖啡特调定制（母语者级）",
+      "subtitle": "星巴克与精品咖啡特调点餐（母语者级）",
       "sentences": [
         {
           "en": "Hi, I'd like an iced oat milk latte with two pumps of sugar-free vanilla syrup, please.",
@@ -13,10 +13,6 @@
             {
               "word": "sugar-free",
               "cn": "无糖的"
-            },
-            {
-              "word": "pumps of syrup",
-              "cn": "几泵糖浆"
             }
           ]
         },
@@ -28,16 +24,12 @@
             {
               "word": "light ice",
               "cn": "少冰"
-            },
-            {
-              "word": "cold foam",
-              "cn": "冷奶泡"
             }
           ]
         },
         {
           "en": "Sure! Would you like an extra shot of espresso to make it stronger?",
-          "cn": "没问题！您需要额外加个浓缩浓缩萃取意式浓缩让口感更浓郁吗？",
+          "cn": "没问题！您需要额外加一份意式浓缩让口感更浓郁吗？",
           "ipa": "/ʃʊr! wʊd juː laɪk ən ˈekstrə ʃɑːt əv eˈspresoʊ tuː meɪk ɪt ˈstrɔːŋɡər/",
           "vocab": [
             {
@@ -83,10 +75,6 @@
             {
               "word": "Animal Style",
               "cn": "秘制酱料款"
-            },
-            {
-              "word": "well-done fries",
-              "cn": "炸透炸脆的薯条"
             }
           ]
         },
@@ -108,36 +96,141 @@
           "vocab": [
             {
               "word": "pull up",
-              "cn": "(开车)驶近/停靠"
+              "cn": "驶近/停靠"
             }
           ]
         }
       ]
     },
     {
-      "id": "happy_hour",
-      "title": "🍻 3. Happy Hour at a Bar & Socializing",
-      "subtitle": "美式酒吧 Happy Hour 点酒与社交破冰",
+      "id": "weekend_plans",
+      "title": "🌴 3. Weekend Relaxation & Outdoor Camping",
+      "subtitle": "聊聊周末露营与户外放松",
       "sentences": [
         {
-          "en": "Hey guys! Is this seat taken, or mind if I join you?",
-          "cn": "嗨伙计们！这个位置有人吗，介意我和你们坐一起吗？",
-          "ipa": "/heɪ ɡaɪz! ɪz ðɪs siːt ˈteɪkən, ɔːr maɪnd ɪf aɪ dʒɔɪn juː/",
+          "en": "Are you up for a weekend camping trip near the lake?",
+          "cn": "这个周末你有兴趣去湖边露营吗？",
+          "ipa": "/ɑːr juː ʌp fɔːr ə ˈwiːkend ˈkæmpɪŋ trɪp nɪər ðə leɪk/",
           "vocab": [
             {
-              "word": "is this seat taken",
-              "cn": "这有人坐吗"
-            },
-            {
-              "word": "join you",
-              "cn": "加入你们"
+              "word": "up for",
+              "cn": "有兴趣参与"
             }
           ]
         },
         {
-          "en": "Not at all, grab a chair! We're just celebrating Friday night.",
-          "cn": "完全不介意，快拉把椅子坐！我们正在庆祝周五夜生活呢。",
-          "ipa": "/nɑːt æt ɔːl, ɡræb ə tʃer! wiːr dʒʌst ˈselɪbreɪtɪŋ ˈfraɪdeɪ naɪt/",
+          "en": "Count me in! I'll bring the s'mores and portable speaker.",
+          "cn": "算我一个！我会带上棉花糖夹心饼干和便携音箱。",
+          "ipa": "/kaʊnt miː ɪn! aɪl brɪŋ ðə s'mores ænd ˈpɔːrtəbl ˈspiːkər/",
+          "vocab": [
+            {
+              "word": "Count me in",
+              "cn": "算我一份"
+            }
+          ]
+        },
+        {
+          "en": "Don't forget to pack insect repellent and a warm sleeping bag.",
+          "cn": "别忘了带上防蚊喷雾和保暖睡袋。",
+          "ipa": "/doʊnt fərˈɡet tuː pæk ˈɪnsekt rɪˈpelənt ænd ə wɔːrm ˈsliːpɪŋ bæɡ/",
+          "vocab": [
+            {
+              "word": "insect repellent",
+              "cn": "防蚊喷雾"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "movies_netflix",
+      "title": "🎬 4. Movies, Binge-Watching & Spoilers",
+      "subtitle": "聊电影、追美剧与防止剧透",
+      "sentences": [
+        {
+          "en": "Did you binge-watch the new season of Stranger Things last night?",
+          "cn": "你昨晚连夜追完《怪奇物语》最新一季了吗？",
+          "ipa": "/dɪd juː bɪndʒ wɑːtʃ ðə nuː ˈsiːzn əv Stranger Things læst naɪt/",
+          "vocab": [
+            {
+              "word": "binge-watch",
+              "cn": "刷剧/连夜追剧"
+            }
+          ]
+        },
+        {
+          "en": "I finished five episodes! The cliffhanger at the end blew my mind.",
+          "cn": "我一口气看了五集！结尾的悬念简直颠覆我的想象。",
+          "ipa": "/aɪ ˈfɪnɪʃt faɪv ˈepɪsoʊdz! ðə ˈklɪfhæŋər æt ðə end bluː maɪ maɪnd/",
+          "vocab": [
+            {
+              "word": "cliffhanger",
+              "cn": "悬念结尾"
+            }
+          ]
+        },
+        {
+          "en": "No spoilers please! I'm only on episode two.",
+          "cn": "请千万不要剧透！我才看到第二集呢。",
+          "ipa": "/noʊ ˈspɔɪlərz pliːz! aɪm ˈoʊnli ɑːn ˈepɪsoʊd tuː/",
+          "vocab": [
+            {
+              "word": "spoilers",
+              "cn": "剧透"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grocery_aisle",
+      "title": "🛒 5. Grocery Shopping & Organic Produce",
+      "subtitle": "超市生鲜挑选与定位探寻",
+      "sentences": [
+        {
+          "en": "Excuse me, which aisle is the gluten-free bread located in?",
+          "cn": "打扰一下，请问无麸质面包在哪个过道？",
+          "ipa": "/ɪkˈskjuːz miː, wɪtʃ aɪl ɪz ðə ˈɡluːtn friː bred loʊˈkeɪtɪd ɪn/",
+          "vocab": [
+            {
+              "word": "gluten-free",
+              "cn": "无麸质的"
+            }
+          ]
+        },
+        {
+          "en": "It's in aisle three, right next to the organic dairy products.",
+          "cn": "在第三过道，就在有机乳制品隔壁。",
+          "ipa": "/ɪts ɪn aɪl θriː, raɪt nekst tuː ðə ɔːrˈɡænɪk ˈderi ˈprɑːdʌkts/",
+          "vocab": [
+            {
+              "word": "dairy products",
+              "cn": "乳制品"
+            }
+          ]
+        },
+        {
+          "en": "Is there a discount on these avocados if I buy a box?",
+          "cn": "如果我买一整盒这种牛油果，有折扣优惠吗？",
+          "ipa": "/ɪz ðer ə ˈdɪskaʊnt ɑːn ðiːz ˌævəˈkɑːdoʊz ɪf aɪ baɪ ə bɑːks/",
+          "vocab": [
+            {
+              "word": "discount",
+              "cn": "折扣"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "happy_hour_master",
+      "title": "🍻 6. Happy Hour & Bar Socializing",
+      "subtitle": "酒吧 Happy Hour 点酒与破冰社交",
+      "sentences": [
+        {
+          "en": "Is this seat taken, or mind if I grab a chair?",
+          "cn": "这个位置有人吗，介意我拉把椅子坐这里吗？",
+          "ipa": "/ɪz ðɪs siːt ˈteɪkən, ɔːr maɪnd ɪf aɪ ɡræb ə tʃer/",
           "vocab": [
             {
               "word": "grab a chair",
@@ -146,105 +239,209 @@
           ]
         },
         {
-          "en": "Bartender, I'll have an Old Fashioned on the rocks, please.",
-          "cn": "调酒师，请给我一杯古典鸡尾酒（Old Fashioned），加冰块。",
-          "ipa": "/ˈbɑːrtendər, aɪl hæv ən oʊld ˈfæʃnd ɑːn ðə rɑːks, pliːz/",
+          "en": "Not at all! Bartender, another IPA on tap for my friend here.",
+          "cn": "完全不介意！调酒师，给我的朋友来一杯扎啤 IPA。",
+          "ipa": "/nɑːt æt ɔːl! ˈbɑːrtendər, əˈnʌðər IPA ɑːn tæp fɔːr maɪ frend hɪər/",
           "vocab": [
             {
-              "word": "on the rocks",
-              "cn": "加冰块(烈酒)"
+              "word": "on tap",
+              "cn": "现压扎啤"
             }
           ]
         },
         {
-          "en": "Cheers to a great weekend ahead!",
-          "cn": "为接下来美好的周末干杯！",
-          "ipa": "/tʃɪərz tuː ə ɡreɪt ˈwiːkend əˈhed/",
+          "en": "Cheers to Friday night and good company!",
+          "cn": "为周五夜晚和绝妙的同伴干杯！",
+          "ipa": "/tʃɪərz tuː ˈfraɪdeɪ naɪt ænd ɡʊd ˈkʌmpəni/",
           "vocab": [
             {
-              "word": "cheers to",
-              "cn": "为...干杯"
+              "word": "good company",
+              "cn": "好的同伴"
             }
           ]
         }
       ]
     },
     {
-      "id": "house_renting",
-      "title": "🏠 4. House Hunting & Apartment Lease Agreement",
+      "id": "house_lease",
+      "title": "🏠 7. Apartment Renting & Lease Agreement",
       "subtitle": "美式租房看房与签署 Lease 协议",
       "sentences": [
         {
-          "en": "Hi, I'm calling about the two-bedroom apartment listed on Zillow.",
-          "cn": "你好，我是打电话咨询 Zillow 上挂牌的那套两居室公寓的。",
-          "ipa": "/haɪ, aɪm ˈkɔːlɪŋ əˈbaʊt ðə tuː ˈbedruːm əˈpɑːrtmənt ˈlɪstɪd ɑːn Zillow/",
+          "en": "Is the security deposit refundable upon moving out?",
+          "cn": "搬走时押金是全额退还的吗？",
+          "ipa": "/ɪz ðə sɪˈkjʊrəti dɪˈpɑːzɪt rɪˈfʌndəbl əˈpɑːn ˈmuːvɪŋ aʊt/",
           "vocab": [
             {
-              "word": "listed",
-              "cn": "挂牌上市的"
+              "word": "refundable",
+              "cn": "可退还的"
             }
           ]
         },
         {
-          "en": "Is the unit fully furnished, and are utilities included in the monthly rent?",
-          "cn": "请问这套房子带有全套家具吗？水电气网杂费包含在月租金里吗？",
-          "ipa": "/ɪz ðə ˈjuːnɪt ˈfʊli ˈfɜːrnɪʃt, ænd ɑːr juːˈtɪlətiz ɪnˈkluːdɪd ɪn ðə ˈmʌnθli rent/",
+          "en": "Yes, provided there is no major damage to the property.",
+          "cn": "是的，只要对房间设施没有重大损坏。",
+          "ipa": "/jes, prəˈvaɪdɪd ðer ɪz noʊ ˈmeɪdʒər ˈdæmɪdʒ tuː ðə ˈprɑːpərti/",
           "vocab": [
             {
-              "word": "fully furnished",
-              "cn": "配齐全套家具的"
-            },
-            {
-              "word": "utilities",
-              "cn": "水电气杂费"
+              "word": "provided",
+              "cn": "前提是"
             }
           ]
         },
         {
-          "en": "It comes with in-unit washer and dryer. Security deposit is one month rent.",
-          "cn": "室内自带洗衣机和烘干机。押金为一个月房租。",
-          "ipa": "/ɪt kʌmz wɪð ɪn ˈjuːnɪt ˈwɑːʃər ænd ˈdraɪər. sɪˈkjʊrəti dɪˈpɑːzɪt ɪz wʌn mʌnθ rent/",
+          "en": "Are pets allowed in the building?",
+          "cn": "大楼里允许养宠物吗？",
+          "ipa": "/ɑːr pets əˈlaʊd ɪn ðə ˈbɪldɪŋ/",
           "vocab": [
             {
-              "word": "washer and dryer",
-              "cn": "洗衣机与烘干机"
-            },
-            {
-              "word": "security deposit",
-              "cn": "租房押金"
+              "word": "pets allowed",
+              "cn": "允许养宠物"
             }
           ]
         }
       ]
     },
     {
-      "id": "pizza_venmo",
-      "title": "🍕 5. Ordering Pizza & Splitting the Bill via Venmo",
-      "subtitle": "美式聚会点披萨与 Venmo 割账分摊",
+      "id": "pizza_venmo_split",
+      "title": "🍕 8. Ordering Pizza & Venmo Bill Splitting",
+      "subtitle": "美式聚会点披萨与 Venmo 分账",
       "sentences": [
         {
-          "en": "Let's order two large pepperoni and mushroom pizzas for the game night.",
-          "cn": "球赛之夜我们来点两份大号意大利香肠蘑菇披萨吧。",
-          "ipa": "/lets ˈɔːrdər tuː lɑːrdʒ ˌpepəˈroʊni ænd ˈmʌʃruːm ˈpiːtsəz fɔːr ðə ɡeɪm naɪt/",
+          "en": "Let's order two large pepperoni pizzas and garlic knots.",
+          "cn": "我们点两份大号意式香肠披萨和大蒜面包结吧。",
+          "ipa": "/lets ˈɔːrdər tuː lɑːrdʒ ˌpepəˈroʊni ˈpiːtsəz ænd ˈɡɑːrlɪk nɑːts/",
           "vocab": [
             {
-              "word": "pepperoni",
-              "cn": "意大利香肠披萨"
+              "word": "garlic knots",
+              "cn": "大蒜面包结"
             }
           ]
         },
         {
-          "en": "Sounds great! Just Venmo me your share once the food arrives.",
-          "cn": "听起来不错！等外卖一送达，直接用 Venmo 把你那份钱转给我就行。",
-          "ipa": "/saʊndz ɡreɪt! dʒʌst Venmo miː jʊər ʃer wʌns ðə fuːd əˈraɪvz/",
+          "en": "Just Venmo me your share once the delivery arrives.",
+          "cn": "外卖一到，直接用 Venmo 把你那份转给我就行。",
+          "ipa": "/dʒʌst Venmo miː jʊər ʃer wʌns ðə dɪˈlɪvəri əˈraɪvz/",
           "vocab": [
             {
               "word": "Venmo me",
-              "cn": "用Venmo转账给我(美式俗语)"
-            },
+              "cn": "转账给我"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gym_workout",
+      "title": "🏃 9. Gym Workout & Personal Training",
+      "subtitle": "健身房锻炼与私人教练计划",
+      "sentences": [
+        {
+          "en": "Are you using this squat rack, or can I work in?",
+          "cn": "你在用这个蹲腿架吗，我可以组间轮流一起用吗？",
+          "ipa": "/ɑːr juː ˈjuːzɪŋ ðɪs skwɑːt ræk, ɔːr kæn aɪ wɜːrk ɪn/",
+          "vocab": [
             {
-              "word": "share",
-              "cn": "份额/应付部分"
+              "word": "work in",
+              "cn": "组间轮流交替使用"
+            }
+          ]
+        },
+        {
+          "en": "Go ahead! I have one set left before finishing.",
+          "cn": "你用吧！我还有最后一组就练完了。",
+          "ipa": "/ɡoʊ əˈhed! aɪ hæv wʌn set left bɪˈfɔːr ˈfɪnɪʃɪŋ/",
+          "vocab": [
+            {
+              "word": "one set left",
+              "cn": "剩下一组"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hair_salon",
+      "title": "💇 10. Hair Salon & Styling Preferences",
+      "subtitle": "理发店剪发与造型需求表达",
+      "sentences": [
+        {
+          "en": "Just a trim on the sides, and keep some length on top, please.",
+          "cn": "两边修剪短一点，上面保留一点长度，谢谢。",
+          "ipa": "/dʒʌst ə trɪm ɑːn ðə saɪdz, ænd kiːp sʌm leŋθ ɑːn tɑːp, pliːz/",
+          "vocab": [
+            {
+              "word": "trim",
+              "cn": "修剪短"
+            }
+          ]
+        },
+        {
+          "en": "Would you like a fade on the back?",
+          "cn": "后脑勺需要推一个渐变层（Fade）吗？",
+          "ipa": "/wʊd juː laɪk ə feɪd ɑːn ðə bæk/",
+          "vocab": [
+            {
+              "word": "fade",
+              "cn": "渐变推短发型"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pet_care",
+      "title": "🐶 11. Pet Care, Vet Visit & Dog Walking",
+      "subtitle": "宠物看兽医与遛狗日常对话",
+      "sentences": [
+        {
+          "en": "My Golden Retriever needs her annual vaccination shot today.",
+          "cn": "我的金毛寻回犬今天需要打年度疫苗。",
+          "ipa": "/maɪ ˈɡoʊldən rɪˈtriːvər niːdz hɜːr ˈænjuəl ˌvæksɪˈneɪʃn ʃɑːt təˈdeɪ/",
+          "vocab": [
+            {
+              "word": "vaccination shot",
+              "cn": "疫苗针"
+            }
+          ]
+        },
+        {
+          "en": "She is super friendly and loves chasing tennis balls in the park.",
+          "cn": "她特别友善，平时最喜欢在公园里追网球玩。",
+          "ipa": "/ʃiː ɪz ˈsuːpər ˈfrendli ænd lʌvz ˈtʃeɪsɪŋ ˈtenɪs bɔːlz ɪn ðə pɑːrk/",
+          "vocab": [
+            {
+              "word": "friendly",
+              "cn": "友善的"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gas_station",
+      "title": "🚗 12. Gas Station & Car Maintenance",
+      "subtitle": "自助加油站与汽油号数选择",
+      "sentences": [
+        {
+          "en": "Fill it up with regular unleaded on pump number four, please.",
+          "cn": "四号加油枪，麻烦请帮我加满 87 号无铅汽油。",
+          "ipa": "/fɪl ɪt ʌp wɪð ˈreɡjələr ʌnˈledɪd ɑːn pʌmp ˈnʌmbər fɔːr, pliːz/",
+          "vocab": [
+            {
+              "word": "regular unleaded",
+              "cn": "普通无铅汽油"
+            }
+          ]
+        },
+        {
+          "en": "Could you check my tire pressure and windshield wiper fluid?",
+          "cn": "能顺便帮我检查下胎压和雨刮水吗？",
+          "ipa": "/kʊd juː tʃek maɪ taɪər ˈpreʃər ænd ˈwɪndʃiːld ˈwaɪpər ˈfluːɪd/",
+          "vocab": [
+            {
+              "word": "tire pressure",
+              "cn": "胎压"
             }
           ]
         }
@@ -253,7 +450,7 @@
   ],
   "workplace": [
     {
-      "id": "elevator_pitch",
+      "id": "elevator_pitch_pro",
       "title": "💼 1. Elevator Pitch & Networking Event",
       "subtitle": "硅谷高管级 30 秒电梯演讲与 Networking 社交",
       "sentences": [
@@ -264,11 +461,7 @@
           "vocab": [
             {
               "word": "leveraging",
-              "cn": "充分利用/杠杆化"
-            },
-            {
-              "word": "generative AI",
-              "cn": "生成式AI"
+              "cn": "充分利用"
             }
           ]
         },
@@ -279,11 +472,7 @@
           "vocab": [
             {
               "word": "onboarding",
-              "cn": "引导/入职/开户流程"
-            },
-            {
-              "word": "quarter-over-quarter",
-              "cn": "环比季度增长"
+              "cn": "引导入职"
             }
           ]
         },
@@ -294,18 +483,14 @@
           "vocab": [
             {
               "word": "traction",
-              "cn": "业务牵引力/增长势头"
-            },
-            {
-              "word": "stay connected",
-              "cn": "保持联系"
+              "cn": "增长势头"
             }
           ]
         }
       ]
     },
     {
-      "id": "agile_sprint",
+      "id": "agile_sprint_pro",
       "title": "📊 2. Product Sprint Planning & Daily Standup",
       "subtitle": "科技公司敏捷开发、Sprint 站会与需求确认",
       "sentences": [
@@ -316,11 +501,7 @@
           "vocab": [
             {
               "word": "kick off",
-              "cn": "开启/拉开帷幕"
-            },
-            {
-              "word": "standup",
-              "cn": "敏捷站会"
+              "cn": "开启"
             }
           ]
         },
@@ -330,12 +511,8 @@
           "ipa": "/ˈjestərdeɪ aɪ riːˈfæktərd ðə API ɔːˌθentɪˈkeɪʃn ˈmɑːdjuːl. noʊ ˈblɑːkərz ɑːn maɪ end/",
           "vocab": [
             {
-              "word": "refactored",
-              "cn": "重构(代码)"
-            },
-            {
               "word": "blockers",
-              "cn": "阻塞卡点"
+              "cn": "阻碍卡点"
             }
           ]
         },
@@ -346,14 +523,14 @@
           "vocab": [
             {
               "word": "production",
-              "cn": "生产环境/线上"
+              "cn": "生产环境"
             }
           ]
         }
       ]
     },
     {
-      "id": "salary_negotiation",
+      "id": "salary_negotiation_pro",
       "title": "🔥 3. Salary Negotiation & Offer Counter",
       "subtitle": "硅谷高薪 Offer 谈判与 Counteroffer 争论",
       "sentences": [
@@ -363,12 +540,8 @@
           "ipa": "/θæŋk juː fɔːr ɪkˈstendɪŋ ðə dʒɑːb ˈɔːfər. aɪm ˈriːəli θrɪld əˈbaʊt ðɪs tiːm/",
           "vocab": [
             {
-              "word": "extending",
-              "cn": "发放/给予"
-            },
-            {
               "word": "thrilled",
-              "cn": "极为激动/欣喜"
+              "cn": "极其激动"
             }
           ]
         },
@@ -377,10 +550,6 @@
           "cn": "基于我的市场价值以及手头的竞争 Offer，我们能探讨下股票期权回报吗？",
           "ipa": "/beɪst ɑːn maɪ ˈmɑːrkɪt ˈvæljuː, kæn wiː dɪˈskʌs stɑːk ˈekwəti ˌkɑːmpenˈseɪʃn/",
           "vocab": [
-            {
-              "word": "competing offers",
-              "cn": "竞争Offer"
-            },
             {
               "word": "equity compensation",
               "cn": "股权期权薪酬"
@@ -393,10 +562,6 @@
           "ipa": "/wiː kæn bʌmp ʌp jʊər ˈsaɪnɪŋ ˈboʊnəs baɪ ˈtwenti pərˈsent tuː brɪdʒ ðə ɡæp/",
           "vocab": [
             {
-              "word": "bump up",
-              "cn": "向上提/增加"
-            },
-            {
               "word": "bridge the gap",
               "cn": "弥补差距"
             }
@@ -405,7 +570,7 @@
       ]
     },
     {
-      "id": "conflict_resolution",
+      "id": "conflict_resolution_pro",
       "title": "🧠 4. Brainstorming & Elegant Objections",
       "subtitle": "高情商头脑风暴与优雅化解团队分歧",
       "sentences": [
@@ -416,11 +581,7 @@
           "vocab": [
             {
               "word": "see where you're coming from",
-              "cn": "理解你的立场与出发点"
-            },
-            {
-              "word": "scalability",
-              "cn": "可扩展性"
+              "cn": "理解你的立场"
             }
           ]
         },
@@ -431,11 +592,65 @@
           "vocab": [
             {
               "word": "valid point",
-              "cn": "中肯切题的要点"
-            },
+              "cn": "切题中肯要点"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vc_pitch",
+      "title": "🚀 5. Startup Fundraising & VC Pitching",
+      "subtitle": "创业项目融资与风投 Pitch",
+      "sentences": [
+        {
+          "en": "Our monthly active user base grew three hundred percent year-over-year.",
+          "cn": "我们的月活跃用户基数同比暴涨了 300%。",
+          "ipa": "/aʊər ˈmʌnθli ˈæktɪv ˈjuːzər beɪs ɡruː θriː ˈhʌndrəd pərˈsent jɪər oʊvər jɪər/",
+          "vocab": [
             {
-              "word": "validate",
-              "cn": "验证/证实"
+              "word": "year-over-year",
+              "cn": "同比暴涨"
+            }
+          ]
+        },
+        {
+          "en": "We are raising a Series A round to accelerate international expansion.",
+          "cn": "我们正在进行 A 轮融资，以加速拓展全球国际市场。",
+          "ipa": "/wiː ɑːr ˈreɪzɪŋ ə ˈsɪriːz A raʊnd tuː əkˈseləreɪt ˌɪntərˈnæʃnəl ɪkˈspænʃn/",
+          "vocab": [
+            {
+              "word": "Series A",
+              "cn": "A轮融资"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "email_alignment",
+      "title": "📧 6. Email Alignment & Project Delivery",
+      "subtitle": "商务邮件对齐与交付时间节点确认",
+      "sentences": [
+        {
+          "en": "Please find attached the updated roadmap for your final review.",
+          "cn": "请查收附件中更新后的路线图供您最终审阅。",
+          "ipa": "/pliːz faɪnd əˈtætʃt ðə ˌʌpˈdeɪtɪd ˈroʊdmæp fɔːr jʊər ˈfaɪnl rɪˈvjuː/",
+          "vocab": [
+            {
+              "word": "attached",
+              "cn": "附件的"
+            }
+          ]
+        },
+        {
+          "en": "Let's touch base tomorrow to confirm the launch checklist.",
+          "cn": "我们明天碰一下，确认上线的 Checklist 清单。",
+          "ipa": "/lets tʌtʃ beɪs təˈmɑːroʊ tuː kənˈfɜːrm ðə lɔːntʃ ˈtʃeklɪst/",
+          "vocab": [
+            {
+              "word": "checklist",
+              "cn": "检查清单"
             }
           ]
         }
@@ -444,7 +659,7 @@
   ],
   "travel": [
     {
-      "id": "flight_rebook",
+      "id": "flight_rebook_pro",
       "title": "✈️ 1. Flight Delay & Rebooking at Airport Desk",
       "subtitle": "美式机场航班延误拉扯与免费改签",
       "sentences": [
@@ -456,10 +671,6 @@
             {
               "word": "connecting flight",
               "cn": "转机航班"
-            },
-            {
-              "word": "severe",
-              "cn": "严重的/恶劣的"
             }
           ]
         },
@@ -471,10 +682,6 @@
             {
               "word": "rebook",
               "cn": "改签"
-            },
-            {
-              "word": "at no extra charge",
-              "cn": "不收额外费用"
             }
           ]
         },
@@ -485,18 +692,14 @@
           "vocab": [
             {
               "word": "meal voucher",
-              "cn": "餐饮券"
-            },
-            {
-              "word": "accommodation",
-              "cn": "住宿安排"
+              "cn": "餐券"
             }
           ]
         }
       ]
     },
     {
-      "id": "car_rental",
+      "id": "car_rental_pro",
       "title": "🚘 2. Renting a Car at Hertz & Insurance Choice",
       "subtitle": "Hertz 海外租车、车型升级与全险选择",
       "sentences": [
@@ -505,10 +708,6 @@
           "cn": "我预订了一辆全尺寸 SUV，准备去加州自驾游玩一周。",
           "ipa": "/aɪ rɪˈzɜːrvd ə fʊl saɪz SUV fɔːr ə wʌn wiːk road trip/",
           "vocab": [
-            {
-              "word": "full-size SUV",
-              "cn": "全尺寸大型SUV"
-            },
             {
               "word": "road trip",
               "cn": "公路自驾游"
@@ -523,17 +722,13 @@
             {
               "word": "collision damage waiver",
               "cn": "车辆碰撞险/CDW"
-            },
-            {
-              "word": "peace of mind",
-              "cn": "买个省心/踏实"
             }
           ]
         }
       ]
     },
     {
-      "id": "medical_er",
+      "id": "medical_er_pro",
       "title": "🚑 3. Urgent Care & Hospital ER Consultation",
       "subtitle": "海外紧急看病 Urgent Care 与医生求助",
       "sentences": [
@@ -544,11 +739,7 @@
           "vocab": [
             {
               "word": "throbbing headache",
-              "cn": "阵痛/跳痛型头痛"
-            },
-            {
-              "word": "high fever",
-              "cn": "高烧"
+              "cn": "阵痛型头痛"
             }
           ]
         },
@@ -558,12 +749,66 @@
           "ipa": "/let miː teɪk jʊər blʌd ˈpreʃər ænd prɪˈskraɪb sʌm ˌæntibaɪˈɑːtɪks fɔːr juː/",
           "vocab": [
             {
-              "word": "blood pressure",
-              "cn": "血压"
-            },
-            {
               "word": "prescribe antibiotics",
               "cn": "开抗生素处方"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fine_dining",
+      "title": "🍽️ 4. Fine Dining & Wine Pairing",
+      "subtitle": "高档米其林餐厅预订与侍酒师配酒",
+      "sentences": [
+        {
+          "en": "Good evening, we have a table reserved for two under Turner.",
+          "cn": "晚上好，我们有一桌 Turner 名下的二人预订。",
+          "ipa": "/ɡʊd ˈiːvnɪŋ, wiː hæv ə ˈteɪbl rɪˈzɜːrvd fɔːr tuː ˈʌndər ˈtɜːrnər/",
+          "vocab": [
+            {
+              "word": "table reserved",
+              "cn": "预订桌位"
+            }
+          ]
+        },
+        {
+          "en": "Which red wine would you recommend pairing with our dry-aged ribeye steak?",
+          "cn": "您推荐哪款红葡萄酒来搭配我们的干式熟成肋眼牛排呢？",
+          "ipa": "/wɪtʃ red waɪn wʊd juː ˌrekəˈmend ˈperɪŋ wɪð aʊər draɪ eɪdʒd ˈrɪbaɪ steɪk/",
+          "vocab": [
+            {
+              "word": "wine pairing",
+              "cn": "葡萄酒搭配"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outlet_shopping",
+      "title": "🛍️ 5. Outlet Shopping & Tax Refunds",
+      "subtitle": "奥特莱斯名牌折扣购物与海关退税",
+      "sentences": [
+        {
+          "en": "Is there an extra discount coupon available for international tourists?",
+          "cn": "请问针对国际游客有额外的折扣优惠券可以领取吗？",
+          "ipa": "/ɪz ðer ən ˈekstrə ˈdɪskaʊnt ˈkuːpɑːn əˈveɪləbl fɔːr ˌɪntərˈnæʃnəl ˈtʊrɪsts/",
+          "vocab": [
+            {
+              "word": "coupon",
+              "cn": "优惠券"
+            }
+          ]
+        },
+        {
+          "en": "Where can I validate my tax refund receipt at the airport?",
+          "cn": "请问在机场的哪里可以盖章核销我的退税单据？",
+          "ipa": "/wer kæn aɪ ˈvælɪdeɪt maɪ tæks ˈriːfʌnd rɪˈsiːt æt ðə ˈerpɔːrt/",
+          "vocab": [
+            {
+              "word": "tax refund",
+              "cn": "退税"
             }
           ]
         }
@@ -572,7 +817,7 @@
   ],
   "idioms": [
     {
-      "id": "tech_buzzwords",
+      "id": "tech_buzzwords_pro",
       "title": "⚡ Pack 1: Silicon Valley Tech Buzzwords",
       "subtitle": "硅谷高管与科技圈必会高频黑话",
       "sentences": [
@@ -583,11 +828,7 @@
           "vocab": [
             {
               "word": "touch base",
-              "cn": "对接/简单碰一下"
-            },
-            {
-              "word": "deep dive",
-              "cn": "深入探究/剖析"
+              "cn": "对接/碰一下"
             }
           ]
         },
@@ -598,11 +839,7 @@
           "vocab": [
             {
               "word": "low-hanging fruit",
-              "cn": "容易落地的成果/好摘的果子"
-            },
-            {
-              "word": "quick wins",
-              "cn": "快速见效的成果"
+              "cn": "容易落地的成果"
             }
           ]
         },
@@ -613,14 +850,14 @@
           "vocab": [
             {
               "word": "paradigm shift",
-              "cn": "范式转移/根本性变革"
+              "cn": "范式转移/重大变革"
             }
           ]
         }
       ]
     },
     {
-      "id": "native_connectors",
+      "id": "native_connectors_pro",
       "title": "💬 Pack 2: Native Conversational Connectors",
       "subtitle": "母语者口头禅与地道连接词宝典",
       "sentences": [
@@ -632,10 +869,6 @@
             {
               "word": "Long story short",
               "cn": "长话短说"
-            },
-            {
-              "word": "at the end of the day",
-              "cn": "归根结底/说到头"
             }
           ]
         },
@@ -646,7 +879,7 @@
           "vocab": [
             {
               "word": "Off the top of my head",
-              "cn": "凭直觉/不假思索地"
+              "cn": "凭第一直觉"
             }
           ]
         },
@@ -658,17 +891,13 @@
             {
               "word": "To be honest",
               "cn": "老实说"
-            },
-            {
-              "word": "as far as I'm concerned",
-              "cn": "就我而言/在我看来"
             }
           ]
         }
       ]
     },
     {
-      "id": "slang_idioms_master",
+      "id": "slang_idioms_master_pro",
       "title": "😎 Pack 3: Street Slang & Modern American Idioms",
       "subtitle": "美式地道口语俚语与流行词汇（高手必备）",
       "sentences": [
@@ -679,7 +908,7 @@
           "vocab": [
             {
               "word": "hits the spot",
-              "cn": "正合心意/非常到位解爽"
+              "cn": "令人满意解爽"
             }
           ]
         },
@@ -701,11 +930,65 @@
           "vocab": [
             {
               "word": "No cap",
-              "cn": "真不吹牛/说真的(美式潮语)"
-            },
+              "cn": "不吹牛/说真的"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "smalltalk_starters",
+      "title": "🔥 Pack 4: Daily Small Talk Starters",
+      "subtitle": "破冰闲聊最高频金句卡片",
+      "sentences": [
+        {
+          "en": "How's your day treating you so far?",
+          "cn": "你今天过得怎么样？至今还顺心吗？",
+          "ipa": "/haʊz jʊər deɪ ˈtriːtɪŋ juː soʊ fɑːr/",
+          "vocab": [
             {
-              "word": "game changer",
-              "cn": "颠覆格局的东西/游戏规则改变者"
+              "word": "treating you",
+              "cn": "过得如何"
+            }
+          ]
+        },
+        {
+          "en": "Can you believe this weather we're having?",
+          "cn": "你能相信今天这种神仙/恶劣天气吗？",
+          "ipa": "/kæn juː bɪˈliːv ðɪs ˈweðər wiːr ˈhævɪŋ/",
+          "vocab": [
+            {
+              "word": "weather talk",
+              "cn": "天气破冰"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "encouragement_pack",
+      "title": "💪 Pack 5: High-Impact Encouragement & Support",
+      "subtitle": "鼓励与支持朋友的地道口语表达",
+      "sentences": [
+        {
+          "en": "Hang in there! You are stronger than you think.",
+          "cn": "咬牙坚持住！你远比你自己想象的更强大。",
+          "ipa": "/hæŋ ɪn ðer! juː ɑːr ˈstrɔːŋɡər ðæn juː θɪŋk/",
+          "vocab": [
+            {
+              "word": "Hang in there",
+              "cn": "坚持住/挺住"
+            }
+          ]
+        },
+        {
+          "en": "I've got your back no matter what happens.",
+          "cn": "无论发生什么事，我都会在背后支持你！",
+          "ipa": "/aɪv ɡɑːt jʊər bæk noʊ ˈmætər wʌt ˈhæpənz/",
+          "vocab": [
+            {
+              "word": "got your back",
+              "cn": "为你撑腰/支持你"
             }
           ]
         }
