@@ -1,163 +1,1133 @@
 {
   "vocab850": [
-    { "word": "make", "ipa": "/meɪk/", "pos": "v.", "cn": "制作；做；使得", "cat": "ops", "exEn": "Practice makes perfect.", "exCn": "熟能生巧。" },
-    { "word": "come", "ipa": "/kʌm/", "pos": "v.", "cn": "来；来到；到达", "cat": "ops", "exEn": "Come and join us for lunch!", "exCn": "快来和我们一起吃午饭吧！" },
-    { "word": "go", "ipa": "/ɡoʊ/", "pos": "v.", "cn": "去；前往；行走", "cat": "ops", "exEn": "Let's go for a walk outside.", "exCn": "我们去外面散散步吧。" },
-    { "word": "get", "ipa": "/ɡet/", "pos": "v.", "cn": "获得；变得；到达", "cat": "ops", "exEn": "Did you get my message?", "exCn": "你收到我的信息了吗？" },
-    { "word": "give", "ipa": "/ɡɪv/", "pos": "v.", "cn": "给予；提供；交给", "cat": "ops", "exEn": "Could you give me a hand?", "exCn": "你能帮我个忙吗？" },
-    { "word": "take", "ipa": "/teɪk/", "pos": "v.", "cn": "拿取；带走；花费", "cat": "ops", "exEn": "Take your time, no rush.", "exCn": "慢慢来，不着急。" },
-    { "word": "put", "ipa": "/pʊt/", "pos": "v.", "cn": "放置；表达", "cat": "ops", "exEn": "Please put the keys on the table.", "exCn": "请把钥匙放在桌上。" },
-    { "word": "keep", "ipa": "/kiːp/", "pos": "v.", "cn": "保持；保留；继续", "cat": "ops", "exEn": "Keep up the good work!", "exCn": "继续保持好状态！" },
-    { "word": "let", "ipa": "/let/", "pos": "v.", "cn": "让；允许；出租", "cat": "ops", "exEn": "Let me check the schedule.", "exCn": "让我查一下时间表。" },
-    { "word": "do", "ipa": "/duː/", "pos": "v.", "cn": "做；执行；干", "cat": "ops", "exEn": "What do you do for fun?", "exCn": "你平时有什么娱乐爱好？" },
-    { "word": "have", "ipa": "/hæv/", "pos": "v.", "cn": "有；拥有；吃喝", "cat": "ops", "exEn": "Have a wonderful day!", "exCn": "祝你有美好的一天！" },
-    { "word": "say", "ipa": "/seɪ/", "pos": "v.", "cn": "说；讲；表明", "cat": "ops", "exEn": "What did you say?", "exCn": "你刚才说了什么？" },
-    { "word": "see", "ipa": "/siː/", "pos": "v.", "cn": "看见；明白；理解", "cat": "ops", "exEn": "I see what you mean.", "exCn": "我明白你的意思了。" },
-    { "word": "send", "ipa": "/send/", "pos": "v.", "cn": "发送；寄出", "cat": "ops", "exEn": "I'll send you an email soon.", "exCn": "我很快会给你发邮件。" },
-    { "word": "may", "ipa": "/meɪ/", "pos": "v.aux.", "cn": "也许；可以", "cat": "ops", "exEn": "May I ask a quick question?", "exCn": "我可以问个小问题吗？" },
-    { "word": "will", "ipa": "/wɪl/", "pos": "v.aux.", "cn": "将要；愿意", "cat": "ops", "exEn": "I will do my best.", "exCn": "我会尽力的。" },
-    { "word": "about", "ipa": "/əˈbaʊt/", "pos": "prep.", "cn": "关于；大约", "cat": "ops", "exEn": "What is the book about?", "exCn": "这本书是关于什么的？" },
-    { "word": "across", "ipa": "/əˈkrɔːs/", "pos": "prep.", "cn": "穿过；跨越", "cat": "ops", "exEn": "Walk across the street carefully.", "exCn": "小心过马路。" },
-    { "word": "after", "ipa": "/ˈæftər/", "pos": "prep.", "cn": "在...之后", "cat": "ops", "exEn": "Let's meet after work.", "exCn": "我们下班后见。" },
-    { "word": "against", "ipa": "/əˈɡenst/", "pos": "prep.", "cn": "反对；依靠", "cat": "ops", "exEn": "Lean against the wall.", "exCn": "靠在墙上。" },
-    { "word": "among", "ipa": "/əˈmʌŋ/", "pos": "prep.", "cn": "在...之中", "cat": "ops", "exEn": "She was standing among friends.", "exCn": "她站在朋友们中间。" },
-    { "word": "before", "ipa": "/bɪˈfɔːr/", "pos": "prep.", "cn": "在...之前", "cat": "ops", "exEn": "Finish your work before dark.", "exCn": "天黑前完成你的工作。" },
-    { "word": "between", "ipa": "/bɪˈtwiːn/", "pos": "prep.", "cn": "在...两者之间", "cat": "ops", "exEn": "Choose between red and blue.", "exCn": "在红色和蓝色之间做选择。" },
-    { "word": "down", "ipa": "/daʊn/", "pos": "adv./prep.", "cn": "向下；沿着", "cat": "ops", "exEn": "Sit down and relax.", "exCn": "坐下放松一下。" },
-    { "word": "from", "ipa": "/frʌm/", "pos": "prep.", "cn": "来自；从", "cat": "ops", "exEn": "Where are you from?", "exCn": "你来自哪里？" },
-    { "word": "through", "ipa": "/θruː/", "pos": "prep.", "cn": "穿过；通过", "cat": "ops", "exEn": "Light shines through the window.", "exCn": "光线穿过窗户射进来。" },
-    { "word": "account", "ipa": "/əˈkaʊnt/", "pos": "n.", "cn": "账户；描述；解释", "cat": "things", "exEn": "I need to open a bank account.", "exCn": "我需要开一个银行账户。" },
-    { "word": "act", "ipa": "/ækt/", "pos": "n./v.", "cn": "行为；行动；表演", "cat": "things", "exEn": "Think carefully before you act.", "exCn": "行动前三思。" },
-    { "word": "addition", "ipa": "/əˈdɪʃn/", "pos": "n.", "cn": "增加；加法", "cat": "things", "exEn": "In addition, we need more time.", "exCn": "此外，我们需要更多时间。" },
-    { "word": "adjustment", "ipa": "/əˈdʒʌstmənt/", "pos": "n.", "cn": "调整；适应", "cat": "things", "exEn": "Make a minor adjustment.", "exCn": "微调一下。" },
-    { "word": "advertisement", "ipa": "/ˌædvərˈtaɪzmənt/", "pos": "n.", "cn": "广告；宣传", "cat": "things", "exEn": "I saw an online advertisement.", "exCn": "我看到了一条线上广告。" },
-    { "word": "agreement", "ipa": "/əˈɡriːmənt/", "pos": "n.", "cn": "协议；同意；一致", "cat": "things", "exEn": "They reached a mutual agreement.", "exCn": "他们达成了共同协议。" },
-    { "word": "air", "ipa": "/er/", "pos": "n.", "cn": "空气；天空", "cat": "things", "exEn": "Fresh air is good for health.", "exCn": "新鲜空气对健康有益。" },
-    { "word": "amount", "ipa": "/əˈmaʊnt/", "pos": "n.", "cn": "数量；总额", "cat": "things", "exEn": "A large amount of work remains.", "exCn": "还有大量的工作要做。" },
-    { "word": "amusement", "ipa": "/əˈmjuːzmənt/", "pos": "n.", "cn": "娱乐；消遣", "cat": "things", "exEn": "The park offers great amusement.", "exCn": "公园提供了很棒的娱乐活动。" },
-    { "word": "animal", "ipa": "/ˈænɪml/", "pos": "n.", "cn": "动物", "cat": "things", "exEn": "Dogs are friendly animals.", "exCn": "狗是友善的动物。" },
-    { "word": "answer", "ipa": "/ˈænsər/", "pos": "n./v.", "cn": "回答；答案", "cat": "things", "exEn": "Do you know the right answer?", "exCn": "你知道正确答案吗？" },
-    { "word": "apparatus", "ipa": "/ˌæpəˈrætəs/", "pos": "n.", "cn": "仪器；设备", "cat": "things", "exEn": "The lab has modern apparatus.", "exCn": "实验室拥有现代化的仪器。" },
-    { "word": "approval", "ipa": "/əˈpruːvl/", "pos": "n.", "cn": "批准；认可", "cat": "things", "exEn": "We await manager approval.", "exCn": "我们等待经理的批准。" },
-    { "word": "argument", "ipa": "/ˈɑːrɡjumənt/", "pos": "n.", "cn": "争论；论据", "cat": "things", "exEn": "They had a peaceful argument.", "exCn": "他们进行了一场理性的辩论。" },
-    { "word": "art", "ipa": "/ɑːrt/", "pos": "n.", "cn": "艺术；美术", "cat": "things", "exEn": "Music is a form of art.", "exCn": "音乐是一种艺术形式。" },
-    { "word": "attack", "ipa": "/əˈtæk/", "pos": "n./v.", "cn": "攻击；袭击", "cat": "things", "exEn": "Defend against any cyber attack.", "exCn": "防御任何网络攻击。" },
-    { "word": "attempt", "ipa": "/əˈtempt/", "pos": "n./v.", "cn": "尝试；努力", "cat": "things", "exEn": "It was a successful attempt.", "exCn": "这是一次成功的尝试。" },
-    { "word": "attention", "ipa": "/əˈtenʃn/", "pos": "n.", "cn": "注意力；关心", "cat": "things", "exEn": "Pay close attention to detail.", "exCn": "密切注意细节。" },
-    { "word": "attraction", "ipa": "/əˈtrækʃn/", "pos": "n.", "cn": "吸引力；名胜", "cat": "things", "exEn": "The city has many tourist attractions.", "exCn": "这座城市有许多旅游胜地。" },
-    { "word": "authority", "ipa": "/əˈθɔːrəti/", "pos": "n.", "cn": "权威；权力；当局", "cat": "things", "exEn": "He spoke with clear authority.", "exCn": "他说话非常有权威感。" },
-    { "word": "back", "ipa": "/bæk/", "pos": "n./adv.", "cn": "背面；后退", "cat": "things", "exEn": "I will be back in ten minutes.", "exCn": "我十分钟后回来。" },
-    { "word": "balance", "ipa": "/ˈbæləns/", "pos": "n./v.", "cn": "平衡；余额", "cat": "things", "exEn": "Keep a healthy work-life balance.", "exCn": "保持健康的工作与生活平衡。" },
-    { "word": "base", "ipa": "/beɪs/", "pos": "n./v.", "cn": "基础；基地", "cat": "things", "exEn": "The building has a solid base.", "exCn": "这座建筑有一个坚固的基座。" },
-    { "word": "behavior", "ipa": "/bɪˈheɪvjər/", "pos": "n.", "cn": "行为；举止", "cat": "things", "exEn": "Good behavior brings respect.", "exCn": "良好的举止赢得尊重。" },
-    { "word": "belief", "ipa": "/bɪˈliːf/", "pos": "n.", "cn": "信仰；信念", "cat": "things", "exEn": "Self-belief leads to achievement.", "exCn": "自信通向成功。" },
-    { "word": "birth", "ipa": "/bɜːrθ/", "pos": "n.", "cn": "出生；诞生", "cat": "things", "exEn": "Happy birthday to you!", "exCn": "祝你生日快乐！" },
-    { "word": "blood", "ipa": "/blʌd/", "pos": "n.", "cn": "血液；血统", "cat": "things", "exEn": "Blood carries oxygen through the body.", "exCn": "血液向全身输送氧气。" },
-    { "word": "body", "ipa": "/ˈbɑːdi/", "pos": "n.", "cn": "身体；主体", "cat": "things", "exEn": "Exercise keeps your body strong.", "exCn": "运动让你的身体强壮。" },
-    { "word": "bread", "ipa": "/bred/", "pos": "n.", "cn": "面包", "cat": "things", "exEn": "Fresh bread smells amazing.", "exCn": "新鲜面包闻起来香极了。" },
-    { "word": "breath", "ipa": "/breθ/", "pos": "n.", "cn": "呼吸；气息", "cat": "things", "exEn": "Take a deep breath and calm down.", "exCn": "深呼吸，冷静下来。" },
-    { "word": "building", "ipa": "/ˈbɪldɪŋ/", "pos": "n.", "cn": "建筑物；大楼", "cat": "things", "exEn": "They live in a tall modern building.", "exCn": "他们住在一栋现代高楼里。" },
-    { "word": "business", "ipa": "/ˈbɪznəs/", "pos": "n.", "cn": "商业；生意；事务", "cat": "things", "exEn": "Mind your own business.", "exCn": "管好你自己的事。" },
-    { "word": "butter", "ipa": "/ˈbʌtər/", "pos": "n.", "cn": "黄油；奶油", "cat": "things", "exEn": "Spread butter on toast.", "exCn": "在吐司上抹黄油。" },
-    { "word": "care", "ipa": "/ker/", "pos": "n./v.", "cn": "照顾；关心", "cat": "things", "exEn": "Take good care of yourself.", "exCn": "好好照顾你自己。" },
-    { "word": "cause", "ipa": "/kɔːz/", "pos": "n./v.", "cn": "原因；引起", "cat": "things", "exEn": "What is the main cause of the issue?", "exCn": "这个问题的起因是什么？" },
-    { "word": "chance", "ipa": "/tʃæns/", "pos": "n.", "cn": "机会；概率", "cat": "things", "exEn": "Don't miss this rare chance.", "exCn": "不要错过这难得的机会。" },
-    { "word": "change", "ipa": "/tʃeɪndʒ/", "pos": "n./v.", "cn": "改变；零钱", "cat": "things", "exEn": "Change is the only constant.", "exCn": "改变是唯一的永恒。" },
-    { "word": "cloth", "ipa": "/klɔːθ/", "pos": "n.", "cn": "布料；抹布", "cat": "things", "exEn": "Clean the table with a soft cloth.", "exCn": "用软布擦桌子。" },
-    { "word": "color", "ipa": "/ˈkʌlər/", "pos": "n./v.", "cn": "颜色；色彩", "cat": "things", "exEn": "What is your favorite color?", "exCn": "你最喜欢的颜色是什么？" },
-    { "word": "comfort", "ipa": "/ˈkʌmfərt/", "pos": "n./v.", "cn": "舒适；安慰", "cat": "things", "exEn": "Home is a place of comfort.", "exCn": "家是温暖舒适的港湾。" },
-    { "word": "company", "ipa": "/ˈkʌmpəni/", "pos": "n.", "cn": "公司；陪伴；同伴", "cat": "things", "exEn": "She works for a tech company.", "exCn": "她在一家科技公司工作。" },
-    { "word": "comparison", "ipa": "/kəmˈpærɪsn/", "pos": "n.", "cn": "比较；对照", "cat": "things", "exEn": "By comparison, this option is better.", "exCn": "相比之下，这个选项更好。" },
-    { "word": "competition", "ipa": "/ˌkɑːmpəˈtɪʃn/", "pos": "n.", "cn": "竞争；比赛", "cat": "things", "exEn": "She won first place in the competition.", "exCn": "她在比赛中荣获第一名。" },
-    { "word": "condition", "ipa": "/kənˈdɪʃn/", "pos": "n.", "cn": "条件；状况", "cat": "things", "exEn": "The car is in excellent condition.", "exCn": "这辆车车况极佳。" },
-    { "word": "control", "ipa": "/kənˈtroʊl/", "pos": "n./v.", "cn": "控制；操纵", "cat": "things", "exEn": "Stay in full control of your emotion.", "exCn": "全面掌控你自己的情绪。" },
-    { "word": "cook", "ipa": "/kʊk/", "pos": "v./n.", "cn": "烹饪；厨师", "cat": "things", "exEn": "My mother is a fantastic cook.", "exCn": "我妈妈做饭棒极了。" },
-    { "word": "country", "ipa": "/ˈkʌntri/", "pos": "n.", "cn": "国家；乡村", "cat": "things", "exEn": "China is a vast and ancient country.", "exCn": "中国是一个广袤古老的国家。" },
-    { "word": "cover", "ipa": "/ˈkʌvər/", "pos": "v./n.", "cn": "覆盖；封面", "cat": "things", "exEn": "Don't judge a book by its cover.", "exCn": "人不可貌相，书不可看皮。" },
-    { "word": "credit", "ipa": "/ˈkredɪt/", "pos": "n.", "cn": "信用；积分", "cat": "things", "exEn": "Can I pay by credit card?", "exCn": "可以用信用卡支付吗？" },
-    { "word": "crime", "ipa": "/kraɪm/", "pos": "n.", "cn": "犯罪；罪行", "cat": "things", "exEn": "Crime rates have dropped significantly.", "exCn": "犯罪率大幅下降。" },
-    { "word": "current", "ipa": "/ˈkɜːrənt/", "pos": "n./adj.", "cn": "水流；电流；当前的", "cat": "things", "exEn": "What is your current status?", "exCn": "你目前的现状是什么？" },
-    { "word": "damage", "ipa": "/ˈdæmɪdʒ/", "pos": "n./v.", "cn": "损害；破坏", "cat": "things", "exEn": "The storm caused minor damage.", "exCn": "风暴造成了轻微损坏。" },
-    { "word": "danger", "ipa": "/ˈdeɪndʒər/", "pos": "n.", "cn": "危险", "cat": "things", "exEn": "Warning! Keep out of danger.", "exCn": "警告！远离危险。" },
-    { "word": "daughter", "ipa": "/ˈdɔːtər/", "pos": "n.", "cn": "女儿", "cat": "things", "exEn": "Their daughter is studying medicine.", "exCn": "他们的女儿正在学医。" },
-    { "word": "day", "ipa": "/deɪ/", "pos": "n.", "cn": "白昼；一天", "cat": "things", "exEn": "Have a wonderful day ahead!", "exCn": "祝你有美好的一天！" },
-    { "word": "death", "ipa": "/deθ/", "pos": "n.", "cn": "死亡；毁灭", "cat": "things", "exEn": "Life and death are natural cycles.", "exCn": "生死是自然的规律。" },
-    { "word": "decision", "ipa": "/dɪˈsɪʒn/", "pos": "n.", "cn": "决定；决断", "cat": "things", "exEn": "It was a tough decision to make.", "exCn": "这是一个艰难的决定。" },
-    { "word": "degree", "ipa": "/dɪˈɡriː/", "pos": "n.", "cn": "程度；学位；度数", "cat": "things", "exEn": "She earned a master's degree.", "exCn": "她获得了硕士学位。" },
-    { "word": "design", "ipa": "/dɪˈzaɪn/", "pos": "n./v.", "cn": "设计；图案", "cat": "things", "exEn": "The web design looks modern and clean.", "exCn": "网页设计看起来现代干爽。" },
-
-    { "word": "able", "ipa": "/ˈeɪbl/", "pos": "adj.", "cn": "有能力的；能干的", "cat": "qualities", "exEn": "Will you be able to come tonight?", "exCn": "你今晚能来吗？" },
-    { "word": "acid", "ipa": "/ˈæsɪd/", "pos": "n./adj.", "cn": "酸的；酸性的", "cat": "qualities", "exEn": "Lemons have an acid taste.", "exCn": "柠檬带有酸味。" },
-    { "word": "angry", "ipa": "/ˈæŋɡri/", "pos": "adj.", "cn": "发怒的；生气的", "cat": "qualities", "exEn": "There is no need to get angry.", "exCn": "没必要生气。" },
-    { "word": "automatic", "ipa": "/ˌɔːtəˈmætɪk/", "pos": "adj.", "cn": "自动的", "cat": "qualities", "exEn": "The doors have automatic sensors.", "exCn": "门装有自动感应器。" },
-    { "word": "beautiful", "ipa": "/ˈbjuːtɪfl/", "pos": "adj.", "cn": "美丽的；出色的", "cat": "qualities", "exEn": "What a beautiful sunset!", "exCn": "多么迷人的日落啊！" },
-    { "word": "black", "ipa": "/blæk/", "pos": "adj./n.", "cn": "黑色的", "cat": "qualities", "exEn": "He wore a sleek black suit.", "exCn": "他穿了一身帅气的黑西装。" },
-    { "word": "bright", "ipa": "/braɪt/", "pos": "adj.", "cn": "明亮的；聪慧的", "cat": "qualities", "exEn": "She has a bright future ahead.", "exCn": "她拥有光明的前景。" },
-    { "word": "cheap", "ipa": "/tʃiːp/", "pos": "adj.", "cn": "便宜的；廉价的", "cat": "qualities", "exEn": "Good quality doesn't have to be cheap.", "exCn": "好品质不一定非要便宜。" },
-    { "word": "clean", "ipa": "/kliːn/", "pos": "adj./v.", "cn": "干净的；打扫", "cat": "qualities", "exEn": "Keep your workspace clean.", "exCn": "保持你的工作台整洁。" },
-    { "word": "clear", "ipa": "/klɪər/", "pos": "adj.", "cn": "清晰的；晴朗的；明白的", "cat": "qualities", "exEn": "Is the explanation clear to you?", "exCn": "这个解释你听明白了吗？" },
-    { "word": "cold", "ipa": "/koʊld/", "pos": "adj.", "cn": "寒冷的；冷漠的", "cat": "qualities", "exEn": "Drink hot tea when it's cold.", "exCn": "天冷时喝杯热茶。" },
-    { "word": "common", "ipa": "/ˈkɑːmən/", "pos": "adj.", "cn": "常见的；共同的", "cat": "qualities", "exEn": "Flu is a common winter illness.", "exCn": "感冒是冬季常见疾病。" },
-    { "word": "deep", "ipa": "/diːp/", "pos": "adj.", "cn": "深的；深刻的", "cat": "qualities", "exEn": "Take a deep breath.", "exCn": "做个深呼吸。" },
-    { "word": "different", "ipa": "/ˈdɪfrənt/", "pos": "adj.", "cn": "不同的；各种各样的", "cat": "qualities", "exEn": "We have completely different ideas.", "exCn": "我们有截然不同的想法。" },
-    { "word": "early", "ipa": "/ˈɜːrli/", "pos": "adj./adv.", "cn": "早的；提早的", "cat": "qualities", "exEn": "Early birds catch the worm.", "exCn": "早起的鸟儿有虫吃。" },
-    { "word": "equal", "ipa": "/ˈiːkwəl/", "pos": "adj.", "cn": "平等的；相等的", "cat": "qualities", "exEn": "Everyone deserves equal opportunities.", "exCn": "每个人都配享有平等机会。" },
-    { "word": "first", "ipa": "/fɜːrst/", "pos": "adj./adv.", "cn": "第一的；首先", "cat": "qualities", "exEn": "First impression matters a lot.", "exCn": "第一印象至关重要。" },
-    { "word": "free", "ipa": "/friː/", "pos": "adj.", "cn": "自由的；免费的", "cat": "qualities", "exEn": "Feel free to ask any questions.", "exCn": "随时提问，别客气。" },
-    { "word": "full", "ipa": "/fʊl/", "pos": "adj.", "cn": "满的；饱的", "cat": "qualities", "exEn": "The glass is half full.", "exCn": "杯子是半满的。" },
-    { "word": "general", "ipa": "/ˈdʒenrəl/", "pos": "adj.", "cn": "普遍的；概括的", "cat": "qualities", "exEn": "In general, people prefer simple design.", "exCn": "大体而言，人们偏爱简洁设计。" },
-    { "word": "good", "ipa": "/ɡʊd/", "pos": "adj.", "cn": "好的；优良的", "cat": "qualities", "exEn": "Good work deserves praise.", "exCn": "优秀的工作值得表扬。" },
-    { "word": "great", "ipa": "/ɡreɪt/", "pos": "adj.", "cn": "伟大的；极好的", "cat": "qualities", "exEn": "That's a great idea!", "exCn": "那真是个绝妙的主意！" },
-    { "word": "happy", "ipa": "/ˈhæpi/", "pos": "adj.", "cn": "快乐的；幸福的", "cat": "qualities", "exEn": "Wish you a happy life!", "exCn": "祝你生活幸福快乐！" },
-    { "word": "hard", "ipa": "/hɑːrd/", "pos": "adj./adv.", "cn": "坚硬的；困难的；努力", "cat": "qualities", "exEn": "Work hard and stay humble.", "exCn": "努力工作，保持谦逊。" },
-    { "word": "healthy", "ipa": "/ˈhelθi/", "pos": "adj.", "cn": "健康的", "cat": "qualities", "exEn": "Eat healthy food every day.", "exCn": "每天吃健康食品。" },
-    { "word": "high", "ipa": "/haɪ/", "pos": "adj.", "cn": "高的；高品质的", "cat": "qualities", "exEn": "Set high standards for yourself.", "exCn": "给自己设定高标准。" },
-    { "word": "important", "ipa": "/ɪmˈpɔːrtnt/", "pos": "adj.", "cn": "重要的；重大的", "cat": "qualities", "exEn": "Health is the most important thing.", "exCn": "健康是最重要的事情。" },
-    { "word": "kind", "ipa": "/kaɪnd/", "pos": "adj./n.", "cn": "仁慈的；种类", "cat": "qualities", "exEn": "Be kind to people around you.", "exCn": "对身边的人要友善。" },
-    { "word": "late", "ipa": "/leɪt/", "pos": "adj./adv.", "cn": "迟到的；晚的", "cat": "qualities", "exEn": "Better late than never.", "exCn": "迟到总比不到好。" },
-    { "word": "long", "ipa": "/lɔːŋ/", "pos": "adj.", "cn": "长的；长久的", "cat": "qualities", "exEn": "It has been a long journey.", "exCn": "这是一段长途旅程。" },
-    { "word": "natural", "ipa": "/ˈnætʃrəl/", "pos": "adj.", "cn": "自然的；天然的", "cat": "qualities", "exEn": "Enjoy the natural scenery.", "exCn": "享受大自然风光。" },
-    { "word": "necessary", "ipa": "/ˈnesəseri/", "pos": "adj.", "cn": "必要的；必需的", "cat": "qualities", "exEn": "Sleep is necessary for good health.", "exCn": "充足的睡眠对健康非常必要。" },
-    { "word": "new", "ipa": "/nuː/", "pos": "adj.", "cn": "新的；崭新的", "cat": "qualities", "exEn": "Welcome to a new day!", "exCn": "欢迎开启新的一天！" },
-    { "word": "open", "ipa": "/ˈoʊpən/", "pos": "adj./v.", "cn": "敞开的；营业", "cat": "qualities", "exEn": "Keep your mind open to new ideas.", "exCn": "保持开放心态接受新想法。" },
-    { "word": "possible", "ipa": "/ˈpɑːsəbl/", "pos": "adj.", "cn": "可能的；潜在的", "cat": "qualities", "exEn": "Anything is possible if you try.", "exCn": "只要尝试，一切皆有可能。" },
-    { "word": "quick", "ipa": "/kwɪk/", "pos": "adj.", "cn": "快的；敏捷的", "cat": "qualities", "exEn": "He gave a quick response.", "exCn": "他做出了快速回应。" },
-    { "word": "quiet", "ipa": "/ˈkwaɪət/", "pos": "adj.", "cn": "安静的；宁静的", "cat": "qualities", "exEn": "Please keep quiet in the library.", "exCn": "请在图书馆内保持安静。" },
-    { "word": "ready", "ipa": "/ˈredi/", "pos": "adj.", "cn": "准备好的", "cat": "qualities", "exEn": "Are you ready to start?", "exCn": "你准备好开始了吗？" },
-    { "word": "right", "ipa": "/raɪt/", "pos": "adj./n.", "cn": "正确的；右边的", "cat": "qualities", "exEn": "You made the right choice.", "exCn": "你做出了正确的选择。" },
-    { "word": "same", "ipa": "/seɪm/", "pos": "adj.", "cn": "相同的；一样的", "cat": "qualities", "exEn": "We share the same vision.", "exCn": "我们拥有共同的愿景。" },
-    { "word": "simple", "ipa": "/ˈsɪmpl/", "pos": "adj.", "cn": "简单的；朴素的", "cat": "qualities", "exEn": "Keep it simple and direct.", "exCn": "保持简单明了。" },
-    { "word": "slow", "ipa": "/sloʊ/", "pos": "adj.", "cn": "慢的；迟缓的", "cat": "qualities", "exEn": "Slow and steady wins the race.", "exCn": "稳扎稳打方能致胜。" },
-    { "word": "small", "ipa": "/smɔːl/", "pos": "adj.", "cn": "小的；微小的", "cat": "qualities", "exEn": "Small steps lead to big progress.", "exCn": "小进步汇聚成大突破。" },
-    { "word": "strong", "ipa": "/strɔːŋ/", "pos": "adj.", "cn": "强壮的；坚固的", "cat": "qualities", "exEn": "Stay strong and stay positive.", "exCn": "保持坚强与积极。" },
-    { "word": "sweet", "ipa": "/swiːt/", "pos": "adj.", "cn": "甜的；芳香的", "cat": "qualities", "exEn": "Have sweet dreams tonight!", "exCn": "今晚做个好梦！" },
-    { "word": "young", "ipa": "/jʌŋ/", "pos": "adj.", "cn": "年轻的；有朝气的", "cat": "qualities", "exEn": "Keep a young heart forever.", "exCn": "永远保持一颗年轻的心。" }
+    {
+      "word": "make",
+      "ipa": "/meɪk/",
+      "pos": "v.",
+      "cn": "制作；做；使得",
+      "cat": "ops",
+      "exEn": "Practice makes perfect.",
+      "exCn": "熟能生巧。"
+    },
+    {
+      "word": "come",
+      "ipa": "/kʌm/",
+      "pos": "v.",
+      "cn": "来；来到；到达",
+      "cat": "ops",
+      "exEn": "Come and join us for lunch!",
+      "exCn": "快来和我们一起吃午饭吧！"
+    },
+    {
+      "word": "go",
+      "ipa": "/ɡoʊ/",
+      "pos": "v.",
+      "cn": "去；前往；行走",
+      "cat": "ops",
+      "exEn": "Let's go for a walk outside.",
+      "exCn": "我们去外面散散步吧。"
+    },
+    {
+      "word": "get",
+      "ipa": "/ɡet/",
+      "pos": "v.",
+      "cn": "获得；变得；到达",
+      "cat": "ops",
+      "exEn": "Did you get my message?",
+      "exCn": "你收到我的信息了吗？"
+    },
+    {
+      "word": "give",
+      "ipa": "/ɡɪv/",
+      "pos": "v.",
+      "cn": "给予；提供；交给",
+      "cat": "ops",
+      "exEn": "Could you give me a hand?",
+      "exCn": "你能帮我个忙吗？"
+    },
+    {
+      "word": "take",
+      "ipa": "/teɪk/",
+      "pos": "v.",
+      "cn": "拿取；带走；花费",
+      "cat": "ops",
+      "exEn": "Take your time, no rush.",
+      "exCn": "慢慢来，不着急。"
+    },
+    {
+      "word": "put",
+      "ipa": "/pʊt/",
+      "pos": "v.",
+      "cn": "放置；表达",
+      "cat": "ops",
+      "exEn": "Please put the keys on the table.",
+      "exCn": "请把钥匙放在桌上。"
+    },
+    {
+      "word": "keep",
+      "ipa": "/kiːp/",
+      "pos": "v.",
+      "cn": "保持；保留；继续",
+      "cat": "ops",
+      "exEn": "Keep up the good work!",
+      "exCn": "继续保持好状态！"
+    },
+    {
+      "word": "let",
+      "ipa": "/let/",
+      "pos": "v.",
+      "cn": "让；允许；出租",
+      "cat": "ops",
+      "exEn": "Let me check the schedule.",
+      "exCn": "让我查一下时间表。"
+    },
+    {
+      "word": "do",
+      "ipa": "/duː/",
+      "pos": "v.",
+      "cn": "做；执行；干",
+      "cat": "ops",
+      "exEn": "What do you do for fun?",
+      "exCn": "你平时有什么娱乐爱好？"
+    },
+    {
+      "word": "have",
+      "ipa": "/hæv/",
+      "pos": "v.",
+      "cn": "有；拥有；吃喝",
+      "cat": "ops",
+      "exEn": "Have a wonderful day!",
+      "exCn": "祝你有美好的一天！"
+    },
+    {
+      "word": "say",
+      "ipa": "/seɪ/",
+      "pos": "v.",
+      "cn": "说；讲；表明",
+      "cat": "ops",
+      "exEn": "What did you say?",
+      "exCn": "你刚才说了什么？"
+    },
+    {
+      "word": "see",
+      "ipa": "/siː/",
+      "pos": "v.",
+      "cn": "看见；明白；理解",
+      "cat": "ops",
+      "exEn": "I see what you mean.",
+      "exCn": "我明白你的意思了。"
+    },
+    {
+      "word": "send",
+      "ipa": "/send/",
+      "pos": "v.",
+      "cn": "发送；寄出",
+      "cat": "ops",
+      "exEn": "I'll send you an email soon.",
+      "exCn": "我很快会给你发邮件。"
+    },
+    {
+      "word": "may",
+      "ipa": "/meɪ/",
+      "pos": "v.aux.",
+      "cn": "也许；可以",
+      "cat": "ops",
+      "exEn": "May I ask a quick question?",
+      "exCn": "我可以问个小问题吗？"
+    },
+    {
+      "word": "will",
+      "ipa": "/wɪl/",
+      "pos": "v.aux.",
+      "cn": "将要；愿意",
+      "cat": "ops",
+      "exEn": "I will do my best.",
+      "exCn": "我会尽力的。"
+    },
+    {
+      "word": "about",
+      "ipa": "/əˈbaʊt/",
+      "pos": "prep.",
+      "cn": "关于；大约",
+      "cat": "ops",
+      "exEn": "What is the book about?",
+      "exCn": "这本书是关于什么的？"
+    },
+    {
+      "word": "across",
+      "ipa": "/əˈkrɔːs/",
+      "pos": "prep.",
+      "cn": "穿过；跨越",
+      "cat": "ops",
+      "exEn": "Walk across the street carefully.",
+      "exCn": "小心过马路。"
+    },
+    {
+      "word": "after",
+      "ipa": "/ˈæftər/",
+      "pos": "prep.",
+      "cn": "在...之后",
+      "cat": "ops",
+      "exEn": "Let's meet after work.",
+      "exCn": "我们下班后见。"
+    },
+    {
+      "word": "against",
+      "ipa": "/əˈɡenst/",
+      "pos": "prep.",
+      "cn": "反对；依靠",
+      "cat": "ops",
+      "exEn": "Lean against the wall.",
+      "exCn": "靠在墙上。"
+    },
+    {
+      "word": "among",
+      "ipa": "/əˈmʌŋ/",
+      "pos": "prep.",
+      "cn": "在...之中",
+      "cat": "ops",
+      "exEn": "She was standing among friends.",
+      "exCn": "她站在朋友们中间。"
+    },
+    {
+      "word": "before",
+      "ipa": "/bɪˈfɔːr/",
+      "pos": "prep.",
+      "cn": "在...之前",
+      "cat": "ops",
+      "exEn": "Finish your work before dark.",
+      "exCn": "天黑前完成你的工作。"
+    },
+    {
+      "word": "between",
+      "ipa": "/bɪˈtwiːn/",
+      "pos": "prep.",
+      "cn": "在...两者之间",
+      "cat": "ops",
+      "exEn": "Choose between red and blue.",
+      "exCn": "在红色和蓝色之间做选择。"
+    },
+    {
+      "word": "down",
+      "ipa": "/daʊn/",
+      "pos": "adv./prep.",
+      "cn": "向下；沿着",
+      "cat": "ops",
+      "exEn": "Sit down and relax.",
+      "exCn": "坐下放松一下。"
+    },
+    {
+      "word": "from",
+      "ipa": "/frʌm/",
+      "pos": "prep.",
+      "cn": "来自；从",
+      "cat": "ops",
+      "exEn": "Where are you from?",
+      "exCn": "你来自哪里？"
+    },
+    {
+      "word": "through",
+      "ipa": "/θruː/",
+      "pos": "prep.",
+      "cn": "穿过；通过",
+      "cat": "ops",
+      "exEn": "Light shines through the window.",
+      "exCn": "光线穿过窗户射进来。"
+    },
+    {
+      "word": "under",
+      "ipa": "/ˈʌndər/",
+      "pos": "prep.",
+      "cn": "在...下面",
+      "cat": "ops",
+      "exEn": "The cat is under the chair.",
+      "exCn": "猫在椅子下面。"
+    },
+    {
+      "word": "with",
+      "ipa": "/wɪð/",
+      "pos": "prep.",
+      "cn": "和...一起；用",
+      "cat": "ops",
+      "exEn": "I agree with your suggestion.",
+      "exCn": "我赞同你的建议。"
+    },
+    {
+      "word": "account",
+      "ipa": "/əˈkaʊnt/",
+      "pos": "n.",
+      "cn": "账户；描述；解释",
+      "cat": "things",
+      "exEn": "I need to open a bank account.",
+      "exCn": "我需要开一个银行账户。"
+    },
+    {
+      "word": "act",
+      "ipa": "/ækt/",
+      "pos": "n./v.",
+      "cn": "行为；行动；表演",
+      "cat": "things",
+      "exEn": "Think carefully before you act.",
+      "exCn": "行动前三思。"
+    },
+    {
+      "word": "addition",
+      "ipa": "/əˈdɪʃn/",
+      "pos": "n.",
+      "cn": "增加；加法",
+      "cat": "things",
+      "exEn": "In addition, we need more time.",
+      "exCn": "此外，我们需要更多时间。"
+    },
+    {
+      "word": "adjustment",
+      "ipa": "/əˈdʒʌstmənt/",
+      "pos": "n.",
+      "cn": "调整；适应",
+      "cat": "things",
+      "exEn": "Make a minor adjustment.",
+      "exCn": "微调一下。"
+    },
+    {
+      "word": "advertisement",
+      "ipa": "/ˌædvərˈtaɪzmənt/",
+      "pos": "n.",
+      "cn": "广告；宣传",
+      "cat": "things",
+      "exEn": "I saw an online advertisement.",
+      "exCn": "我看到了一条线上广告。"
+    },
+    {
+      "word": "agreement",
+      "ipa": "/əˈɡriːmənt/",
+      "pos": "n.",
+      "cn": "协议；同意；一致",
+      "cat": "things",
+      "exEn": "They reached a mutual agreement.",
+      "exCn": "他们达成了共同协议。"
+    },
+    {
+      "word": "air",
+      "ipa": "/er/",
+      "pos": "n.",
+      "cn": "空气；天空",
+      "cat": "things",
+      "exEn": "Fresh air is good for health.",
+      "exCn": "新鲜空气对健康有益。"
+    },
+    {
+      "word": "amount",
+      "ipa": "/əˈmaʊnt/",
+      "pos": "n.",
+      "cn": "数量；总额",
+      "cat": "things",
+      "exEn": "A large amount of work remains.",
+      "exCn": "还有大量的工作要做。"
+    },
+    {
+      "word": "amusement",
+      "ipa": "/əˈmjuːzmənt/",
+      "pos": "n.",
+      "cn": "娱乐；消遣",
+      "cat": "things",
+      "exEn": "The park offers great amusement.",
+      "exCn": "公园提供了很棒的娱乐活动。"
+    },
+    {
+      "word": "animal",
+      "ipa": "/ˈænɪml/",
+      "pos": "n.",
+      "cn": "动物",
+      "cat": "things",
+      "exEn": "Dogs are friendly animals.",
+      "exCn": "狗是友善的动物。"
+    },
+    {
+      "word": "answer",
+      "ipa": "/ˈænsər/",
+      "pos": "n./v.",
+      "cn": "回答；答案",
+      "cat": "things",
+      "exEn": "Do you know the right answer?",
+      "exCn": "你知道正确答案吗？"
+    },
+    {
+      "word": "approval",
+      "ipa": "/əˈpruːvl/",
+      "pos": "n.",
+      "cn": "批准；认可",
+      "cat": "things",
+      "exEn": "We await manager approval.",
+      "exCn": "我们等待经理的批准。"
+    },
+    {
+      "word": "argument",
+      "ipa": "/ˈɑːrɡjumənt/",
+      "pos": "n.",
+      "cn": "争论；论据",
+      "cat": "things",
+      "exEn": "They had a peaceful argument.",
+      "exCn": "他们进行了一场理性的辩论。"
+    },
+    {
+      "word": "art",
+      "ipa": "/ɑːrt/",
+      "pos": "n.",
+      "cn": "艺术；美术",
+      "cat": "things",
+      "exEn": "Music is a form of art.",
+      "exCn": "音乐是一种艺术形式。"
+    },
+    {
+      "word": "attack",
+      "ipa": "/əˈtæk/",
+      "pos": "n./v.",
+      "cn": "攻击；袭击",
+      "cat": "things",
+      "exEn": "Defend against any cyber attack.",
+      "exCn": "防御任何网络攻击。"
+    },
+    {
+      "word": "attempt",
+      "ipa": "/əˈtempt/",
+      "pos": "n./v.",
+      "cn": "尝试；努力",
+      "cat": "things",
+      "exEn": "It was a successful attempt.",
+      "exCn": "这是一次成功的尝试。"
+    },
+    {
+      "word": "attention",
+      "ipa": "/əˈtenʃn/",
+      "pos": "n.",
+      "cn": "注意力；关心",
+      "cat": "things",
+      "exEn": "Pay close attention to detail.",
+      "exCn": "密切注意细节。"
+    },
+    {
+      "word": "attraction",
+      "ipa": "/əˈtrækʃn/",
+      "pos": "n.",
+      "cn": "吸引力；名胜",
+      "cat": "things",
+      "exEn": "The city has many tourist attractions.",
+      "exCn": "这座城市有许多旅游胜地。"
+    },
+    {
+      "word": "authority",
+      "ipa": "/əˈθɔːrəti/",
+      "pos": "n.",
+      "cn": "权威；权力",
+      "cat": "things",
+      "exEn": "He spoke with clear authority.",
+      "exCn": "他说话非常有权威感。"
+    },
+    {
+      "word": "back",
+      "ipa": "/bæk/",
+      "pos": "n./adv.",
+      "cn": "背面；后退",
+      "cat": "things",
+      "exEn": "I will be back in ten minutes.",
+      "exCn": "我十分钟后回来。"
+    },
+    {
+      "word": "balance",
+      "ipa": "/ˈbæləns/",
+      "pos": "n./v.",
+      "cn": "平衡；余额",
+      "cat": "things",
+      "exEn": "Keep a healthy work-life balance.",
+      "exCn": "保持健康的工作与生活平衡。"
+    },
+    {
+      "word": "base",
+      "ipa": "/beɪs/",
+      "pos": "n./v.",
+      "cn": "基础；基地",
+      "cat": "things",
+      "exEn": "The building has a solid base.",
+      "exCn": "这座建筑有一个坚固的基座。"
+    },
+    {
+      "word": "behavior",
+      "ipa": "/bɪˈheɪvjər/",
+      "pos": "n.",
+      "cn": "行为；举止",
+      "cat": "things",
+      "exEn": "Good behavior brings respect.",
+      "exCn": "良好的举止赢得尊重。"
+    },
+    {
+      "word": "belief",
+      "ipa": "/bɪˈliːf/",
+      "pos": "n.",
+      "cn": "信仰；信念",
+      "cat": "things",
+      "exEn": "Self-belief leads to achievement.",
+      "exCn": "自信通向成功。"
+    },
+    {
+      "word": "birth",
+      "ipa": "/bɜːrθ/",
+      "pos": "n.",
+      "cn": "出生；诞生",
+      "cat": "things",
+      "exEn": "Happy birthday to you!",
+      "exCn": "祝你生日快乐！"
+    },
+    {
+      "word": "blood",
+      "ipa": "/blʌd/",
+      "pos": "n.",
+      "cn": "血液；血统",
+      "cat": "things",
+      "exEn": "Blood carries oxygen through the body.",
+      "exCn": "血液向全身输送氧气。"
+    },
+    {
+      "word": "body",
+      "ipa": "/ˈbɑːdi/",
+      "pos": "n.",
+      "cn": "身体；主体",
+      "cat": "things",
+      "exEn": "Exercise keeps your body strong.",
+      "exCn": "运动让你的身体强壮。"
+    },
+    {
+      "word": "bread",
+      "ipa": "/bred/",
+      "pos": "n.",
+      "cn": "面包",
+      "cat": "things",
+      "exEn": "Fresh bread smells amazing.",
+      "exCn": "新鲜面包闻起来香极了。"
+    },
+    {
+      "word": "breath",
+      "ipa": "/breθ/",
+      "pos": "n.",
+      "cn": "呼吸；气息",
+      "cat": "things",
+      "exEn": "Take a deep breath and calm down.",
+      "exCn": "深呼吸，冷静下来。"
+    },
+    {
+      "word": "building",
+      "ipa": "/ˈbɪldɪŋ/",
+      "pos": "n.",
+      "cn": "建筑物；大楼",
+      "cat": "things",
+      "exEn": "They live in a tall modern building.",
+      "exCn": "他们住在一栋现代高楼里。"
+    },
+    {
+      "word": "business",
+      "ipa": "/ˈbɪznəs/",
+      "pos": "n.",
+      "cn": "商业；生意",
+      "cat": "things",
+      "exEn": "Mind your own business.",
+      "exCn": "管好你自己的事。"
+    },
+    {
+      "word": "butter",
+      "ipa": "/ˈbʌtər/",
+      "pos": "n.",
+      "cn": "黄油；奶油",
+      "cat": "things",
+      "exEn": "Spread butter on toast.",
+      "exCn": "在吐司上抹黄油。"
+    },
+    {
+      "word": "care",
+      "ipa": "/ker/",
+      "pos": "n./v.",
+      "cn": "照顾；关心",
+      "cat": "things",
+      "exEn": "Take good care of yourself.",
+      "exCn": "好好照顾你自己。"
+    },
+    {
+      "word": "cause",
+      "ipa": "/kɔːz/",
+      "pos": "n./v.",
+      "cn": "原因；引起",
+      "cat": "things",
+      "exEn": "What is the main cause of the issue?",
+      "exCn": "这个问题的起因是什么？"
+    },
+    {
+      "word": "chance",
+      "ipa": "/tʃæns/",
+      "pos": "n.",
+      "cn": "机会；概率",
+      "cat": "things",
+      "exEn": "Don't miss this rare chance.",
+      "exCn": "不要错过这难得的机会。"
+    },
+    {
+      "word": "change",
+      "ipa": "/tʃeɪndʒ/",
+      "pos": "n./v.",
+      "cn": "改变；零钱",
+      "cat": "things",
+      "exEn": "Change is the only constant.",
+      "exCn": "改变是唯一的永恒。"
+    },
+    {
+      "word": "color",
+      "ipa": "/ˈkʌlər/",
+      "pos": "n./v.",
+      "cn": "颜色；色彩",
+      "cat": "things",
+      "exEn": "What is your favorite color?",
+      "exCn": "你最喜欢的颜色是什么？"
+    },
+    {
+      "word": "comfort",
+      "ipa": "/ˈkʌmfərt/",
+      "pos": "n./v.",
+      "cn": "舒适；安慰",
+      "cat": "things",
+      "exEn": "Home is a place of comfort.",
+      "exCn": "家是温暖舒适的港湾。"
+    },
+    {
+      "word": "company",
+      "ipa": "/ˈkʌmpəni/",
+      "pos": "n.",
+      "cn": "公司；陪伴",
+      "cat": "things",
+      "exEn": "She works for a tech company.",
+      "exCn": "她在一家科技公司工作。"
+    },
+    {
+      "word": "country",
+      "ipa": "/ˈkʌntri/",
+      "pos": "n.",
+      "cn": "国家；乡村",
+      "cat": "things",
+      "exEn": "China is a vast and ancient country.",
+      "exCn": "中国是一个广袤古老的国家。"
+    },
+    {
+      "word": "cover",
+      "ipa": "/ˈkʌvər/",
+      "pos": "v./n.",
+      "cn": "覆盖；封面",
+      "cat": "things",
+      "exEn": "Don't judge a book by its cover.",
+      "exCn": "人不可貌相，书不可看皮。"
+    },
+    {
+      "word": "credit",
+      "ipa": "/ˈkredɪt/",
+      "pos": "n.",
+      "cn": "信用；积分",
+      "cat": "things",
+      "exEn": "Can I pay by credit card?",
+      "exCn": "可以用信用卡支付吗？"
+    },
+    {
+      "word": "able",
+      "ipa": "/ˈeɪbl/",
+      "pos": "adj.",
+      "cn": "有能力的；能干的",
+      "cat": "qualities",
+      "exEn": "Will you be able to come tonight?",
+      "exCn": "你今晚能来吗？"
+    },
+    {
+      "word": "acid",
+      "ipa": "/ˈæsɪd/",
+      "pos": "n./adj.",
+      "cn": "酸的；酸性的",
+      "cat": "qualities",
+      "exEn": "Lemons have an acid taste.",
+      "exCn": "柠檬带有酸味。"
+    },
+    {
+      "word": "angry",
+      "ipa": "/ˈæŋɡri/",
+      "pos": "adj.",
+      "cn": "发怒的；生气的",
+      "cat": "qualities",
+      "exEn": "There is no need to get angry.",
+      "exCn": "没必要生气。"
+    },
+    {
+      "word": "automatic",
+      "ipa": "/ˌɔːtəˈmætɪk/",
+      "pos": "adj.",
+      "cn": "自动的",
+      "cat": "qualities",
+      "exEn": "The doors have automatic sensors.",
+      "exCn": "门装有自动感应器。"
+    },
+    {
+      "word": "beautiful",
+      "ipa": "/ˈbjuːtɪfl/",
+      "pos": "adj.",
+      "cn": "美丽的；出色的",
+      "cat": "qualities",
+      "exEn": "What a beautiful sunset!",
+      "exCn": "多么迷人的日落啊！"
+    },
+    {
+      "word": "bright",
+      "ipa": "/braɪt/",
+      "pos": "adj.",
+      "cn": "明亮的；聪慧的",
+      "cat": "qualities",
+      "exEn": "She has a bright future ahead.",
+      "exCn": "她拥有光明的前景。"
+    },
+    {
+      "word": "cheap",
+      "ipa": "/tʃiːp/",
+      "pos": "adj.",
+      "cn": "便宜的；廉价的",
+      "cat": "qualities",
+      "exEn": "Good quality doesn't have to be cheap.",
+      "exCn": "好品质不一定非要便宜。"
+    },
+    {
+      "word": "clean",
+      "ipa": "/kliːn/",
+      "pos": "adj./v.",
+      "cn": "干净的；打扫",
+      "cat": "qualities",
+      "exEn": "Keep your workspace clean.",
+      "exCn": "保持你的工作台整洁。"
+    },
+    {
+      "word": "clear",
+      "ipa": "/klɪər/",
+      "pos": "adj.",
+      "cn": "清晰的；晴朗的",
+      "cat": "qualities",
+      "exEn": "Is the explanation clear to you?",
+      "exCn": "这个解释你听明白了吗？"
+    },
+    {
+      "word": "cold",
+      "ipa": "/koʊld/",
+      "pos": "adj.",
+      "cn": "寒冷的；冷漠的",
+      "cat": "qualities",
+      "exEn": "Drink hot tea when it's cold.",
+      "exCn": "天冷时喝杯热茶。"
+    },
+    {
+      "word": "common",
+      "ipa": "/ˈkɑːmən/",
+      "pos": "adj.",
+      "cn": "常见的；共同的",
+      "cat": "qualities",
+      "exEn": "Flu is a common winter illness.",
+      "exCn": "感冒是冬季常见疾病。"
+    },
+    {
+      "word": "different",
+      "ipa": "/ˈdɪfrənt/",
+      "pos": "adj.",
+      "cn": "不同的；各种各样的",
+      "cat": "qualities",
+      "exEn": "We have completely different ideas.",
+      "exCn": "我们有截然不同的想法。"
+    },
+    {
+      "word": "early",
+      "ipa": "/ˈɜːrli/",
+      "pos": "adj./adv.",
+      "cn": "早的；提早的",
+      "cat": "qualities",
+      "exEn": "Early birds catch the worm.",
+      "exCn": "早起的鸟儿有虫吃。"
+    },
+    {
+      "word": "equal",
+      "ipa": "/ˈiːkwəl/",
+      "pos": "adj.",
+      "cn": "平等的；相等的",
+      "cat": "qualities",
+      "exEn": "Everyone deserves equal opportunities.",
+      "exCn": "每个人都配享有平等机会。"
+    },
+    {
+      "word": "free",
+      "ipa": "/friː/",
+      "pos": "adj.",
+      "cn": "自由的；免费的",
+      "cat": "qualities",
+      "exEn": "Feel free to ask any questions.",
+      "exCn": "随时提问，别客气。"
+    },
+    {
+      "word": "full",
+      "ipa": "/fʊl/",
+      "pos": "adj.",
+      "cn": "满的；饱的",
+      "cat": "qualities",
+      "exEn": "The glass is half full.",
+      "exCn": "杯子是半满的。"
+    },
+    {
+      "word": "general",
+      "ipa": "/ˈdʒenrəl/",
+      "pos": "adj.",
+      "cn": "普遍的；概括的",
+      "cat": "qualities",
+      "exEn": "In general, people prefer simple design.",
+      "exCn": "大体而言，人们偏爱简洁设计。"
+    },
+    {
+      "word": "good",
+      "ipa": "/ɡʊd/",
+      "pos": "adj.",
+      "cn": "好的；优良的",
+      "cat": "qualities",
+      "exEn": "Good work deserves praise.",
+      "exCn": "优秀的工作值得表扬。"
+    },
+    {
+      "word": "great",
+      "ipa": "/ɡreɪt/",
+      "pos": "adj.",
+      "cn": "伟大的；极好的",
+      "cat": "qualities",
+      "exEn": "That's a great idea!",
+      "exCn": "那真是个绝妙的主意！"
+    },
+    {
+      "word": "happy",
+      "ipa": "/ˈhæpi/",
+      "pos": "adj.",
+      "cn": "快乐的；幸福的",
+      "cat": "qualities",
+      "exEn": "Wish you a happy life!",
+      "exCn": "祝你生活幸福快乐！"
+    },
+    {
+      "word": "hard",
+      "ipa": "/hɑːrd/",
+      "pos": "adj./adv.",
+      "cn": "坚硬的；困难的",
+      "cat": "qualities",
+      "exEn": "Work hard and stay humble.",
+      "exCn": "努力工作，保持谦逊。"
+    },
+    {
+      "word": "healthy",
+      "ipa": "/ˈhelθi/",
+      "pos": "adj.",
+      "cn": "健康的",
+      "cat": "qualities",
+      "exEn": "Eat healthy food every day.",
+      "exCn": "每天吃健康食品。"
+    },
+    {
+      "word": "important",
+      "ipa": "/ɪmˈpɔːrtnt/",
+      "pos": "adj.",
+      "cn": "重要的；重大的",
+      "cat": "qualities",
+      "exEn": "Health is the most important thing.",
+      "exCn": "健康是最重要的事情。"
+    },
+    {
+      "word": "necessary",
+      "ipa": "/ˈnesəseri/",
+      "pos": "adj.",
+      "cn": "必要的；必需的",
+      "cat": "qualities",
+      "exEn": "Sleep is necessary for good health.",
+      "exCn": "充足的睡眠对健康非常必要。"
+    },
+    {
+      "word": "new",
+      "ipa": "/nuː/",
+      "pos": "adj.",
+      "cn": "新的；崭新的",
+      "cat": "qualities",
+      "exEn": "Welcome to a new day!",
+      "exCn": "欢迎开启新的一天！"
+    },
+    {
+      "word": "open",
+      "ipa": "/ˈoʊpən/",
+      "pos": "adj./v.",
+      "cn": "敞开的；营业",
+      "cat": "qualities",
+      "exEn": "Keep your mind open to new ideas.",
+      "exCn": "保持开放心态接受新想法。"
+    },
+    {
+      "word": "possible",
+      "ipa": "/ˈpɑːsəbl/",
+      "pos": "adj.",
+      "cn": "可能的；潜在的",
+      "cat": "qualities",
+      "exEn": "Anything is possible if you try.",
+      "exCn": "只要尝试，一切皆有可能。"
+    },
+    {
+      "word": "quick",
+      "ipa": "/kwɪk/",
+      "pos": "adj.",
+      "cn": "快的；敏捷的",
+      "cat": "qualities",
+      "exEn": "He gave a quick response.",
+      "exCn": "他做出了快速回应。"
+    },
+    {
+      "word": "quiet",
+      "ipa": "/ˈkwaɪət/",
+      "pos": "adj.",
+      "cn": "安静的；宁静的",
+      "cat": "qualities",
+      "exEn": "Please keep quiet in the library.",
+      "exCn": "请在图书馆内保持安静。"
+    },
+    {
+      "word": "ready",
+      "ipa": "/ˈredi/",
+      "pos": "adj.",
+      "cn": "准备好的",
+      "cat": "qualities",
+      "exEn": "Are you ready to start?",
+      "exCn": "你准备好开始了吗？"
+    },
+    {
+      "word": "simple",
+      "ipa": "/ˈsɪmpl/",
+      "pos": "adj.",
+      "cn": "简单的；朴素的",
+      "cat": "qualities",
+      "exEn": "Keep it simple and direct.",
+      "exCn": "保持简单明了。"
+    },
+    {
+      "word": "strong",
+      "ipa": "/strɔːŋ/",
+      "pos": "adj.",
+      "cn": "强壮的；坚固的",
+      "cat": "qualities",
+      "exEn": "Stay strong and stay positive.",
+      "exCn": "保持坚强与积极。"
+    }
   ],
   "vocab2000": [
-    { "word": "achieve", "ipa": "/əˈtʃiːv/", "pos": "v.", "cn": "实现；达到", "cat": "ops", "exEn": "You can achieve your goal with persistence.", "exCn": "坚持就能实现目标。" },
-    { "word": "advantage", "ipa": "/ədˈvæntɪdʒ/", "pos": "n.", "cn": "优势；有利条件", "cat": "things", "exEn": "Taking initiative gives you a huge advantage.", "exCn": "采取主动会给你带来巨大优势。" },
-    { "word": "advice", "ipa": "/ədˈvaɪs/", "pos": "n.", "cn": "建议；忠告", "cat": "things", "exEn": "Thanks for your valuable advice.", "exCn": "谢谢你宝贵的建议。" },
-    { "word": "afford", "ipa": "/əˈfɔːrd/", "pos": "v.", "cn": "负担得起；买得起", "cat": "ops", "exEn": "We can afford to buy a new computer.", "exCn": "我们买得起一台新电脑。" },
-    { "word": "allow", "ipa": "/əˈlaʊ/", "pos": "v.", "cn": "允许；准许", "cat": "ops", "exEn": "Please allow me to introduce myself.", "exCn": "请允许我自我介绍。" },
-    { "word": "announce", "ipa": "/əˈnaʊns/", "pos": "v.", "cn": "宣布；宣告", "cat": "ops", "exEn": "They will announce the final results tomorrow.", "exCn": "他们明天将公布最终结果。" },
-    { "word": "apologize", "ipa": "/əˈpɑːlədʒaɪz/", "pos": "v.", "cn": "道歉；谢罪", "cat": "ops", "exEn": "I sincerely apologize for the delay.", "exCn": "我为延迟表示诚挚的歉意。" },
-    { "word": "attitude", "ipa": "/ˈætɪtuːd/", "pos": "n.", "cn": "态度；看法", "cat": "things", "exEn": "A positive attitude changes everything.", "exCn": "积极的态度改变一切。" },
-    { "word": "benefit", "ipa": "/ˈbenɪfɪt/", "pos": "n./v.", "cn": "利益；好处", "cat": "things", "exEn": "Regular exercise has immense health benefits.", "exCn": "规律运动对健康大有裨益。" },
-    { "word": "challenge", "ipa": "/ˈtʃælɪndʒ/", "pos": "n./v.", "cn": "挑战；质疑", "cat": "things", "exEn": "Welcome every new challenge with courage.", "exCn": "用勇气迎接入每一个新挑战。" },
-    { "word": "comfortable", "ipa": "/ˈkʌmftəbl/", "pos": "adj.", "cn": "舒适的；自在的", "cat": "qualities", "exEn": "Make yourself comfortable in the living room.", "exCn": "在客厅请自便，随便坐。" },
-    { "word": "confident", "ipa": "/ˈkɑːnfɪdənt/", "pos": "adj.", "cn": "自信的；确信的", "cat": "qualities", "exEn": "Speak loudly and stay confident.", "exCn": "大声说话并保持自信。" },
-    { "word": "consider", "ipa": "/kənˈsɪdər/", "pos": "v.", "cn": "考虑；认为", "cat": "ops", "exEn": "Please consider all factors carefully.", "exCn": "请仔细考虑所有因素。" },
-    { "word": "create", "ipa": "/kriˈeɪt/", "pos": "v.", "cn": "创造；创作；引起", "cat": "ops", "exEn": "Creativity helps create solutions.", "exCn": "创造力有助于找到解决办法。" }
+    {
+      "word": "achieve",
+      "ipa": "/əˈtʃiːv/",
+      "pos": "v.",
+      "cn": "实现；达到",
+      "cat": "ops",
+      "exEn": "You can achieve your goal with persistence.",
+      "exCn": "坚持就能实现目标。"
+    },
+    {
+      "word": "advantage",
+      "ipa": "/ədˈvæntɪdʒ/",
+      "pos": "n.",
+      "cn": "优势；有利条件",
+      "cat": "things",
+      "exEn": "Taking initiative gives you a huge advantage.",
+      "exCn": "采取主动会给你带来巨大优势。"
+    },
+    {
+      "word": "advice",
+      "ipa": "/ədˈvaɪs/",
+      "pos": "n.",
+      "cn": "建议；忠告",
+      "cat": "things",
+      "exEn": "Thanks for your valuable advice.",
+      "exCn": "谢谢你宝贵的建议。"
+    },
+    {
+      "word": "afford",
+      "ipa": "/əˈfɔːrd/",
+      "pos": "v.",
+      "cn": "负担得起；买得起",
+      "cat": "ops",
+      "exEn": "We can afford to buy a new computer.",
+      "exCn": "我们买得起一台新电脑。"
+    },
+    {
+      "word": "allow",
+      "ipa": "/əˈlaʊ/",
+      "pos": "v.",
+      "cn": "允许；准许",
+      "cat": "ops",
+      "exEn": "Please allow me to introduce myself.",
+      "exCn": "请允许我自我介绍。"
+    },
+    {
+      "word": "announce",
+      "ipa": "/əˈnaʊns/",
+      "pos": "v.",
+      "cn": "宣布；宣告",
+      "cat": "ops",
+      "exEn": "They will announce the final results tomorrow.",
+      "exCn": "他们明天将公布最终结果。"
+    },
+    {
+      "word": "apologize",
+      "ipa": "/əˈpɑːlədʒaɪz/",
+      "pos": "v.",
+      "cn": "道歉；谢罪",
+      "cat": "ops",
+      "exEn": "I sincerely apologize for the delay.",
+      "exCn": "我为延迟表示诚挚的歉意。"
+    },
+    {
+      "word": "attitude",
+      "ipa": "/ˈætɪtuːd/",
+      "pos": "n.",
+      "cn": "态度；看法",
+      "cat": "things",
+      "exEn": "A positive attitude changes everything.",
+      "exCn": "积极的态度改变一切。"
+    },
+    {
+      "word": "benefit",
+      "ipa": "/ˈbenɪfɪt/",
+      "pos": "n./v.",
+      "cn": "利益；好处",
+      "cat": "things",
+      "exEn": "Regular exercise has immense health benefits.",
+      "exCn": "规律运动对健康大有裨益。"
+    },
+    {
+      "word": "challenge",
+      "ipa": "/ˈtʃælɪndʒ/",
+      "pos": "n./v.",
+      "cn": "挑战；质疑",
+      "cat": "things",
+      "exEn": "Welcome every new challenge with courage.",
+      "exCn": "用勇气迎接入每一个新挑战。"
+    },
+    {
+      "word": "comfortable",
+      "ipa": "/ˈkʌmftəbl/",
+      "pos": "adj.",
+      "cn": "舒适的；自在的",
+      "cat": "qualities",
+      "exEn": "Make yourself comfortable in the living room.",
+      "exCn": "在客厅请自便，随便坐。"
+    },
+    {
+      "word": "confident",
+      "ipa": "/ˈkɑːnfɪdənt/",
+      "pos": "adj.",
+      "cn": "自信的；确信的",
+      "cat": "qualities",
+      "exEn": "Speak loudly and stay confident.",
+      "exCn": "大声说话并保持自信。"
+    },
+    {
+      "word": "consider",
+      "ipa": "/kənˈsɪdər/",
+      "pos": "v.",
+      "cn": "考虑；认为",
+      "cat": "ops",
+      "exEn": "Please consider all factors carefully.",
+      "exCn": "请仔细考虑所有因素。"
+    },
+    {
+      "word": "create",
+      "ipa": "/kriˈeɪt/",
+      "pos": "v.",
+      "cn": "创造；创作；引起",
+      "cat": "ops",
+      "exEn": "Creativity helps create solutions.",
+      "exCn": "创造力有助于找到解决办法。"
+    }
   ],
   "vocab3000": [
-    { "word": "approximate", "ipa": "/əˈprɑːksɪmət/", "pos": "adj.", "cn": "近似的；大概的", "cat": "qualities", "exEn": "What is the approximate cost of this project?", "exCn": "这个项目的预计大概成本是多少？" },
-    { "word": "collaborate", "ipa": "/kəˈlæbəreɪt/", "pos": "v.", "cn": "合作；协作", "cat": "ops", "exEn": "Our teams collaborate closely to deliver results.", "exCn": "我们团队密切合作以交付成果。" },
-    { "word": "demonstrate", "ipa": "/ˈdemənstreɪt/", "pos": "v.", "cn": "演示；证明", "cat": "ops", "exEn": "She will demonstrate the new software feature.", "exCn": "她将演示新的软件功能。" },
-    { "word": "efficient", "ipa": "/ɪˈfɪʃnt/", "pos": "adj.", "cn": "高效的；有能力的", "cat": "qualities", "exEn": "An efficient workflow saves time and resources.", "exCn": "高效的工作流程省时省资源。" },
-    { "word": "extraordinary", "ipa": "/ɪkˈstrɔːrdəneri/", "pos": "adj.", "cn": "非凡的；特别的", "cat": "qualities", "exEn": "The speaker gave an extraordinary performance.", "exCn": "演讲者带来了非凡的表现。" },
-    { "word": "fundamental", "ipa": "/ˌfʌndəˈmentl/", "pos": "adj.", "cn": "根本的；基础的", "cat": "qualities", "exEn": "Trust is a fundamental pillar of teamwork.", "exCn": "信任是团队合作的基础基石。" },
-    { "word": "guarantee", "ipa": "/ˌɡærənˈtiː/", "pos": "v./n.", "cn": "保证；担保", "cat": "ops", "exEn": "Quality execution guarantees satisfaction.", "exCn": "高质量的执行保证满意度。" },
-    { "word": "innovation", "ipa": "/ˌɪnəˈveɪʃn/", "pos": "n.", "cn": "创新；革新", "cat": "things", "exEn": "Innovation drives business growth.", "exCn": "创新推动业务增长。" },
-    { "word": "perspective", "ipa": "/pərˈspektɪv/", "pos": "n.", "cn": "视角；观点", "cat": "things", "exEn": "Looking from a fresh perspective brings insights.", "exCn": "从全新视角看待能带来灵感。" }
+    {
+      "word": "approximate",
+      "ipa": "/əˈprɑːksɪmət/",
+      "pos": "adj.",
+      "cn": "近似的；大概的",
+      "cat": "qualities",
+      "exEn": "What is the approximate cost of this project?",
+      "exCn": "这个项目的预计大概成本是多少？"
+    },
+    {
+      "word": "collaborate",
+      "ipa": "/kəˈlæbəreɪt/",
+      "pos": "v.",
+      "cn": "合作；协作",
+      "cat": "ops",
+      "exEn": "Our teams collaborate closely to deliver results.",
+      "exCn": "我们团队密切合作以交付成果。"
+    },
+    {
+      "word": "demonstrate",
+      "ipa": "/ˈdemənstreɪt/",
+      "pos": "v.",
+      "cn": "演示；证明",
+      "cat": "ops",
+      "exEn": "She will demonstrate the new software feature.",
+      "exCn": "她将演示新的软件功能。"
+    },
+    {
+      "word": "efficient",
+      "ipa": "/ɪˈfɪʃnt/",
+      "pos": "adj.",
+      "cn": "高效的；有能力的",
+      "cat": "qualities",
+      "exEn": "An efficient workflow saves time and resources.",
+      "exCn": "高效的工作流程省时省资源。"
+    },
+    {
+      "word": "extraordinary",
+      "ipa": "/ɪkˈstrɔːrdəneri/",
+      "pos": "adj.",
+      "cn": "非凡的；特别的",
+      "cat": "qualities",
+      "exEn": "The speaker gave an extraordinary performance.",
+      "exCn": "演讲者带来了非凡的表现。"
+    },
+    {
+      "word": "fundamental",
+      "ipa": "/ˌfʌndəˈmentl/",
+      "pos": "adj.",
+      "cn": "根本的；基础的",
+      "cat": "qualities",
+      "exEn": "Trust is a fundamental pillar of teamwork.",
+      "exCn": "信任是团队合作的基础基石。"
+    },
+    {
+      "word": "guarantee",
+      "ipa": "/ˌɡærənˈtiː/",
+      "pos": "v./n.",
+      "cn": "保证；担保",
+      "cat": "ops",
+      "exEn": "Quality execution guarantees satisfaction.",
+      "exCn": "高质量的执行保证满意度。"
+    },
+    {
+      "word": "innovation",
+      "ipa": "/ˌɪnəˈveɪʃn/",
+      "pos": "n.",
+      "cn": "创新；革新",
+      "cat": "things",
+      "exEn": "Innovation drives business growth.",
+      "exCn": "创新推动业务增长。"
+    },
+    {
+      "word": "perspective",
+      "ipa": "/pərˈspektɪv/",
+      "pos": "n.",
+      "cn": "视角；观点",
+      "cat": "things",
+      "exEn": "Looking from a fresh perspective brings insights.",
+      "exCn": "从全新视角看待能带来灵感。"
+    }
   ]
 }
