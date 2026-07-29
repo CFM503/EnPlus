@@ -631,6 +631,105 @@
       "exCn": "可以用信用卡支付吗？"
     },
     {
+      "word": "crime",
+      "ipa": "/kraɪm/",
+      "pos": "n.",
+      "cn": "犯罪；罪行",
+      "cat": "things",
+      "exEn": "Crime rates dropped significantly.",
+      "exCn": "犯罪率大幅下降。"
+    },
+    {
+      "word": "day",
+      "ipa": "/deɪ/",
+      "pos": "n.",
+      "cn": "天；白昼",
+      "cat": "things",
+      "exEn": "Have a wonderful day ahead!",
+      "exCn": "祝你有美好的一天！"
+    },
+    {
+      "word": "decision",
+      "ipa": "/dɪˈsɪʒn/",
+      "pos": "n.",
+      "cn": "决定；决断",
+      "cat": "things",
+      "exEn": "It was a tough decision to make.",
+      "exCn": "这是一个艰难的决定。"
+    },
+    {
+      "word": "degree",
+      "ipa": "/dɪˈɡriː/",
+      "pos": "n.",
+      "cn": "程度；学位",
+      "cat": "things",
+      "exEn": "She earned a master's degree.",
+      "exCn": "她获得了硕士学位。"
+    },
+    {
+      "word": "design",
+      "ipa": "/dɪˈzaɪn/",
+      "pos": "n./v.",
+      "cn": "设计；图案",
+      "cat": "things",
+      "exEn": "The web design looks modern.",
+      "exCn": "网页设计看起来很现代。"
+    },
+    {
+      "word": "development",
+      "ipa": "/dɪˈveləpmənt/",
+      "pos": "n.",
+      "cn": "发展；开发",
+      "cat": "things",
+      "exEn": "Software development takes practice.",
+      "exCn": "软件开发需要不断实践。"
+    },
+    {
+      "word": "direction",
+      "ipa": "/dəˈrekʃn/",
+      "pos": "n.",
+      "cn": "方向；指导",
+      "cat": "things",
+      "exEn": "We need a clear strategic direction.",
+      "exCn": "我们需要清晰的战略方向。"
+    },
+    {
+      "word": "discovery",
+      "ipa": "/dɪˈskʌvəri/",
+      "pos": "n.",
+      "cn": "发现；发掘",
+      "cat": "things",
+      "exEn": "Science leads to great discoveries.",
+      "exCn": "科学带来伟大的发现。"
+    },
+    {
+      "word": "discussion",
+      "ipa": "/dɪˈskʌʃn/",
+      "pos": "n.",
+      "cn": "讨论；商讨",
+      "cat": "things",
+      "exEn": "We had a fruitful discussion.",
+      "exCn": "我们展开了富有成果的讨论。"
+    },
+    {
+      "word": "distance",
+      "ipa": "/ˈdɪstəns/",
+      "pos": "n.",
+      "cn": "距离；远方",
+      "cat": "things",
+      "exEn": "Long distance test resilience.",
+      "exCn": "长距离考验耐力。"
+    },
+    {
+      "word": "earth",
+      "ipa": "/ɜːrθ/",
+      "pos": "n.",
+      "cn": "地球；陆地",
+      "cat": "things",
+      "exEn": "Protect our home planet Earth.",
+      "exCn": "保护我们的家园地球。"
+    },
+    {
       "word": "able",
       "ipa": "/ˈeɪbl/",
       "pos": "adj.",
@@ -1041,10 +1140,118 @@
       "word": "create",
       "ipa": "/kriˈeɪt/",
       "pos": "v.",
-      "cn": "创造；创作；引起",
+      "cn": "创造；创作",
       "cat": "ops",
       "exEn": "Creativity helps create solutions.",
       "exCn": "创造力有助于找到解决办法。"
+    },
+    {
+      "word": "culture",
+      "ipa": "/ˈkʌltʃər/",
+      "pos": "n.",
+      "cn": "文化；文明",
+      "cat": "things",
+      "exEn": "Learning a language reflects its culture.",
+      "exCn": "学习一门语言反映其文化。"
+    },
+    {
+      "word": "customer",
+      "ipa": "/ˈkʌstəmər/",
+      "pos": "n.",
+      "cn": "顾客；客户",
+      "cat": "things",
+      "exEn": "Customer satisfaction is our priority.",
+      "exCn": "客户满意是我们的首要任务。"
+    },
+    {
+      "word": "decision",
+      "ipa": "/dɪˈsɪʒn/",
+      "pos": "n.",
+      "cn": "决定；决心",
+      "cat": "things",
+      "exEn": "Stand firm by your decision.",
+      "exCn": "坚定地支持你的决定。"
+    },
+    {
+      "word": "demand",
+      "ipa": "/dɪˈmænd/",
+      "pos": "n./v.",
+      "cn": "需求；要求",
+      "cat": "things",
+      "exEn": "Market demand continues to rise.",
+      "exCn": "市场需求持续增长。"
+    },
+    {
+      "word": "describe",
+      "ipa": "/dɪˈskraɪb/",
+      "pos": "v.",
+      "cn": "描述；形容",
+      "cat": "ops",
+      "exEn": "Can you describe the situation clearly?",
+      "exCn": "你能清晰描述一下情况吗？"
+    },
+    {
+      "word": "determine",
+      "ipa": "/dɪˈtɜːrmɪn/",
+      "pos": "v.",
+      "cn": "决定；确定",
+      "cat": "ops",
+      "exEn": "Hard work determines success.",
+      "exCn": "努力决定成功。"
+    },
+    {
+      "word": "discover",
+      "ipa": "/dɪˈskʌvər/",
+      "pos": "v.",
+      "cn": "发现；发掘",
+      "cat": "ops",
+      "exEn": "Discover your potential every day.",
+      "exCn": "每天发掘你的潜力。"
+    },
+    {
+      "word": "economy",
+      "ipa": "/ɪˈkɑːnəmi/",
+      "pos": "n.",
+      "cn": "经济；节约",
+      "cat": "things",
+      "exEn": "A booming economy creates jobs.",
+      "exCn": "繁荣的经济创造就业岗位。"
+    },
+    {
+      "word": "efficient",
+      "ipa": "/ɪˈfɪʃnt/",
+      "pos": "adj.",
+      "cn": "高效的",
+      "cat": "qualities",
+      "exEn": "Work smarter and be efficient.",
+      "exCn": "聪明地工作，保持高效。"
+    },
+    {
+      "word": "environment",
+      "ipa": "/ɪnˈvaɪrənmənt/",
+      "pos": "n.",
+      "cn": "环境；自然环境",
+      "cat": "things",
+      "exEn": "Protect the natural environment.",
+      "exCn": "保护自然环境。"
+    },
+    {
+      "word": "establish",
+      "ipa": "/ɪˈstæblɪʃ/",
+      "pos": "v.",
+      "cn": "建立；创办",
+      "cat": "ops",
+      "exEn": "Establish a healthy daily routine.",
+      "exCn": "建立健康的工作作息。"
+    },
+    {
+      "word": "explore",
+      "ipa": "/ɪkˈsplɔːr/",
+      "pos": "v.",
+      "cn": "探索；探险",
+      "cat": "ops",
+      "exEn": "Explore new horizons with curiosity.",
+      "exCn": "怀着好奇心探索新视界。"
     }
   ],
   "vocab3000": [
@@ -1128,6 +1335,42 @@
       "cat": "things",
       "exEn": "Looking from a fresh perspective brings insights.",
       "exCn": "从全新视角看待能带来灵感。"
+    },
+    {
+      "word": "strategic",
+      "ipa": "/strəˈtiːdʒɪk/",
+      "pos": "adj.",
+      "cn": "战略的；策略的",
+      "cat": "qualities",
+      "exEn": "Formulate a long-term strategic plan.",
+      "exCn": "制定长期的战略规划。"
+    },
+    {
+      "word": "substantial",
+      "ipa": "/səbˈstænʃl/",
+      "pos": "adj.",
+      "cn": "大量的；实质的",
+      "cat": "qualities",
+      "exEn": "They made substantial progress this quarter.",
+      "exCn": "本季度他们取得了重大突破。"
+    },
+    {
+      "word": "transformation",
+      "ipa": "/ˌtrænsfərˈmeɪʃn/",
+      "pos": "n.",
+      "cn": "转型；变革",
+      "cat": "things",
+      "exEn": "Digital transformation reshapes industries.",
+      "exCn": "数字化转型重塑各大行业。"
+    },
+    {
+      "word": "ultimate",
+      "ipa": "/ˈʌltɪmət/",
+      "pos": "adj.",
+      "cn": "终极的；极限的",
+      "cat": "qualities",
+      "exEn": "Achieving mastery is the ultimate goal.",
+      "exCn": "融会贯通是终极目标。"
     }
   ]
 }

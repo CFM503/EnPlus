@@ -1,5 +1,5 @@
 /**
- * VoiceTutor AI - Full Dynamic Vocabulary & Scenario Engine
+ * VoiceTutor AI - Dynamic Stats & Complete Vocab Dataset Loader
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         synth.speak(utterance);
     }
 
-    // BUILT-IN VOCABULARY DATASET (FALLBACK)
+    // BUILT-IN VOCABULARY DATASET
     let VOCAB_DATA = {
         vocab850: [
             { word: "make", ipa: "/meɪk/", pos: "v.", cn: "制作；做；使得", cat: "ops", exEn: "Practice makes perfect.", exCn: "熟能生巧。" },
@@ -705,15 +705,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateStatsUI() {
+        const totalInCurrentStage = (VOCAB_DATA[currentCategory] || []).length;
         const mastered = (userStats.masteredVocab || []).length;
-        masteredVocabCountEl.innerText = `${mastered} / 850`;
+
+        if (['vocab850', 'vocab2000', 'vocab3000'].includes(currentCategory)) {
+            masteredVocabCountEl.innerText = `${mastered} / ${totalInCurrentStage}`;
+        } else {
+            masteredVocabCountEl.innerText = `${mastered} / 850`;
+        }
 
         const percent = ((mastered / 3000) * 100).toFixed(1);
         goalProgressPercentEl.innerText = `${percent}%`;
 
-        if (currentCategory === 'vocab850') currentLevelTag.innerText = "L1: 850核心词";
-        else if (currentCategory === 'vocab2000') currentLevelTag.innerText = "L2: 2000日常词";
-        else if (currentCategory === 'vocab3000') currentLevelTag.innerText = "L3: 3000黄金词";
+        if (currentCategory === 'vocab850') currentLevelTag.innerText = `L1: 850核心词 (${totalInCurrentStage}词)`;
+        else if (currentCategory === 'vocab2000') currentLevelTag.innerText = `L2: 2000日常词 (${totalInCurrentStage}词)`;
+        else if (currentCategory === 'vocab3000') currentLevelTag.innerText = `L3: 3000黄金词 (${totalInCurrentStage}词)`;
         else currentLevelTag.innerText = "对话场景特训";
     }
 
