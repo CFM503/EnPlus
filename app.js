@@ -1,5 +1,5 @@
 /**
- * VoiceTutor AI - Dynamic Stats & Complete Vocab Dataset Loader
+ * VoiceTutor AI - Dynamic Stats & Complete Vocab/Scenarios Dataset Loader
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -82,53 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
         vocab850: [
             { word: "make", ipa: "/meɪk/", pos: "v.", cn: "制作；做；使得", cat: "ops", exEn: "Practice makes perfect.", exCn: "熟能生巧。" },
             { word: "come", ipa: "/kʌm/", pos: "v.", cn: "来；来到；到达", cat: "ops", exEn: "Come and join us for lunch!", exCn: "快来和我们一起吃午饭吧！" },
-            { word: "go", ipa: "/ɡoʊ/", pos: "v.", cn: "去；前往；行走", cat: "ops", exEn: "Let's go for a walk outside.", exCn: "我们去外面散散步吧。" },
-            { word: "get", ipa: "/ɡet/", pos: "v.", cn: "获得；变得；到达", cat: "ops", exEn: "Did you get my message?", exCn: "你收到我的信息了吗？" },
-            { word: "give", ipa: "/ɡɪv/", pos: "v.", cn: "给予；提供；交给", cat: "ops", exEn: "Could you give me a hand?", exCn: "你能帮我个忙吗？" },
-            { word: "take", ipa: "/teɪk/", pos: "v.", cn: "拿取；带走；花费", cat: "ops", exEn: "Take your time, no rush.", exCn: "慢慢来，不着急。" },
-            { word: "put", ipa: "/pʊt/", pos: "v.", cn: "放置；表达", cat: "ops", exEn: "Please put the keys on the table.", exCn: "请把钥匙放在桌上。" },
-            { word: "keep", ipa: "/kiːp/", pos: "v.", cn: "保持；保留；继续", cat: "ops", exEn: "Keep up the good work!", exCn: "继续保持好状态！" },
-            { word: "let", ipa: "/let/", pos: "v.", cn: "让；允许；出租", cat: "ops", exEn: "Let me check the schedule.", exCn: "让我查一下时间表。" },
-            { word: "do", ipa: "/duː/", pos: "v.", cn: "做；执行；干", cat: "ops", exEn: "What do you do for fun?", exCn: "你平时有什么娱乐爱好？" },
-            { word: "have", ipa: "/hæv/", pos: "v.", cn: "有；拥有；吃喝", cat: "ops", exEn: "Have a wonderful day!", exCn: "祝你有美好的一天！" },
-            { word: "say", ipa: "/seɪ/", pos: "v.", cn: "说；讲；表明", cat: "ops", exEn: "What did you say?", exCn: "你刚才说了什么？" },
-            { word: "see", ipa: "/siː/", pos: "v.", cn: "看见；明白；理解", cat: "ops", exEn: "I see what you mean.", exCn: "我明白你的意思了。" },
-            { word: "send", ipa: "/send/", pos: "v.", cn: "发送；寄出", cat: "ops", exEn: "I'll send you an email soon.", exCn: "我很快会给你发邮件。" },
-            { word: "account", ipa: "/əˈkaʊnt/", pos: "n.", cn: "账户；描述；解释", cat: "things", exEn: "I need to open a bank account.", exCn: "我需要开一个银行账户。" },
-            { word: "agreement", ipa: "/əˈɡriːmənt/", pos: "n.", cn: "协议；同意；一致", cat: "things", exEn: "They reached a mutual agreement.", exCn: "他们达成了共同协议。" },
-            { word: "amount", ipa: "/əˈmaʊnt/", pos: "n.", cn: "数量；总额", cat: "things", exEn: "A large amount of work remains.", exCn: "还有大量的工作要做。" },
-            { word: "business", ipa: "/ˈbɪznəs/", pos: "n.", cn: "商业；生意；事务", cat: "things", exEn: "Mind your own business.", exCn: "管好你自己的事。" },
-            { word: "company", ipa: "/ˈkʌmpəni/", pos: "n.", cn: "公司；陪伴；同伴", cat: "things", exEn: "She works for a tech company.", exCn: "她在一家科技公司工作。" },
-            { word: "able", ipa: "/ˈeɪbl/", pos: "adj.", cn: "有能力的；能干的", cat: "qualities", exEn: "Will you be able to come tonight?", exCn: "你今晚能来吗？" },
-            { word: "beautiful", ipa: "/ˈbjuːtɪfl/", pos: "adj.", cn: "美丽的；出色的", cat: "qualities", exEn: "What a beautiful sunset!", exCn: "多么迷人的日落啊！" },
-            { word: "clear", ipa: "/klɪər/", pos: "adj.", cn: "清晰的；晴朗的；明白的", cat: "qualities", exEn: "Is the explanation clear to you?", exCn: "这个解释你听明白了吗？" },
-            { word: "different", ipa: "/ˈdɪfrənt/", pos: "adj.", cn: "不同的；各种各样的", cat: "qualities", exEn: "We have completely different ideas.", exCn: "我们有截然不同的想法。" },
-            { word: "important", ipa: "/ɪmˈpɔːrtnt/", pos: "adj.", cn: "重要的；重大的", cat: "qualities", exEn: "Health is the most important thing.", exCn: "健康是最重要的事情。" }
+            { word: "go", ipa: "/ɡoʊ/", pos: "v.", cn: "去；前往；行走", cat: "ops", exEn: "Let's go for a walk outside.", exCn: "我们去外面散散步吧。" }
         ],
-
         vocab2000: [
-            { word: "achieve", ipa: "/əˈtʃiːv/", pos: "v.", cn: "实现；达到", cat: "ops", exEn: "You can achieve your goal with persistence.", exCn: "坚持就能实现目标。" },
-            { word: "advantage", ipa: "/ədˈvæntɪdʒ/", pos: "n.", cn: "优势；有利条件", cat: "things", exEn: "Taking initiative gives you a huge advantage.", exCn: "采取主动会给你带来巨大优势。" },
-            { word: "advice", ipa: "/ədˈvaɪs/", pos: "n.", cn: "建议；忠告", cat: "things", exEn: "Thanks for your valuable advice.", exCn: "谢谢你宝贵的建议。" },
-            { word: "afford", ipa: "/əˈfɔːrd/", pos: "v.", cn: "负担得起；买得起", cat: "ops", exEn: "We can afford to buy a new computer.", exCn: "我们买得起一台新电脑。" },
-            { word: "allow", ipa: "/əˈlaʊ/", pos: "v.", cn: "允许；准许", cat: "ops", exEn: "Please allow me to introduce myself.", exCn: "请允许我自我介绍。" },
-            { word: "apologize", ipa: "/əˈpɑːlədʒaɪz/", pos: "v.", cn: "道歉；谢罪", cat: "ops", exEn: "I sincerely apologize for the delay.", exCn: "我为延迟表示诚挚的歉意。" },
-            { word: "attitude", ipa: "/ˈætɪtuːd/", pos: "n.", cn: "态度；看法", cat: "things", exEn: "A positive attitude changes everything.", exCn: "积极的态度改变一切。" },
-            { word: "benefit", ipa: "/ˈbenɪfɪt/", pos: "n./v.", cn: "利益；好处", cat: "things", exEn: "Regular exercise has immense health benefits.", exCn: "规律运动对健康大有裨益。" },
-            { word: "challenge", ipa: "/ˈtʃælɪndʒ/", pos: "n./v.", cn: "挑战；质疑", cat: "things", exEn: "Welcome every new challenge with courage.", exCn: "用勇气迎接入每一个新挑战。" },
-            { word: "confident", ipa: "/ˈkɑːnfɪdənt/", pos: "adj.", cn: "自信的；确信的", cat: "qualities", exEn: "Speak loudly and stay confident.", exCn: "大声说话并保持自信。" }
+            { word: "achieve", ipa: "/əˈtʃiːv/", pos: "v.", cn: "实现；达到", cat: "ops", exEn: "You can achieve your goal with persistence.", exCn: "坚持就能实现目标。" }
         ],
-
         vocab3000: [
-            { word: "approximate", ipa: "/əˈprɑːksɪmət/", pos: "adj.", cn: "近似的；大概的", cat: "qualities", exEn: "What is the approximate cost of this project?", exCn: "这个项目的预计大概成本是多少？" },
-            { word: "collaborate", ipa: "/kəˈlæbəreɪt/", pos: "v.", cn: "合作；协作", cat: "ops", exEn: "Our teams collaborate closely to deliver results.", exCn: "我们团队密切合作以交付成果。" },
-            { word: "demonstrate", ipa: "/ˈdemənstreɪt/", pos: "v.", cn: "演示；证明", cat: "ops", exEn: "She will demonstrate the new software feature.", exCn: "她将演示新的软件功能。" },
-            { word: "efficient", ipa: "/ɪˈfɪʃnt/", pos: "adj.", cn: "高效的；有能力的", cat: "qualities", exEn: "An efficient workflow saves time and resources.", exCn: "高效的工作流程省时省资源。" },
-            { word: "extraordinary", ipa: "/ɪkˈstrɔːrdəneri/", pos: "adj.", cn: "非凡的；特别的", cat: "qualities", exEn: "The speaker gave an extraordinary performance.", exCn: "演讲者带来了非凡的表现。" }
+            { word: "approximate", ipa: "/əˈprɑːksɪmət/", pos: "adj.", cn: "近似的；大概的", cat: "qualities", exEn: "What is the approximate cost of this project?", exCn: "这个项目的预计大概成本是多少？" }
         ]
     };
 
-    const SCENARIOS = {
+    let SCENARIOS = {
         casual: [
             {
                 id: 'coffee',
@@ -146,132 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         cn: "可以少冰并加一点点香草糖浆吗？",
                         ipa: "/kʊd aɪ ɡet ðæt wɪð les aɪs ænd ə splæʃ əv vəˈnɪlə ˈsɪrəp/",
                         vocab: [{ word: "splash", cn: "少许" }, { word: "vanilla syrup", cn: "香草糖浆" }]
-                    },
-                    {
-                        en: "Sure thing! What size would you prefer: Tall, Grande, or Venti?",
-                        cn: "没问题！您想要什么杯型：中杯、大杯还是超大杯？",
-                        ipa: "/ʃʊr θɪŋ! wʌt saɪz wʊd juː prɪˈfɜːr/",
-                        vocab: [{ word: "Grande", cn: "大杯" }, { word: "prefer", cn: "偏好" }]
-                    },
-                    {
-                        en: "A Grande will be perfect. I'll pay with Apple Pay.",
-                        cn: "大杯就好，谢谢。我用 Apple Pay 支付。",
-                        ipa: "/ə ˈɡrɑːndeɪ wɪl biː ˈpɜːrfɪkt. aɪl peɪ wɪð ˈæpl peɪ/",
-                        vocab: [{ word: "perfect", cn: "完美/正好" }]
-                    }
-                ]
-            },
-            {
-                id: 'weekend',
-                title: '🌴 Weekend Relaxation & Hobbies',
-                subtitle: '聊聊周末休假与户外活动',
-                sentences: [
-                    {
-                        en: "Do you have any exciting plans for the upcoming weekend?",
-                        cn: "这个周末你有什么有趣的计划吗？",
-                        ipa: "/duː juː hæv ˈeni ɪkˈsaɪtɪŋ plænz fɔːr ðə ˈʌpkʌmɪŋ ˈwiːkend/",
-                        vocab: [{ word: "upcoming", cn: "即将来临的" }]
-                    },
-                    {
-                        en: "I'm thinking about going hiking in the mountains to recharge.",
-                        cn: "我打算去山里徒步，放松充会儿电。",
-                        ipa: "/aɪm ˈθɪŋkɪŋ əˈbaʊt ˈɡoʊɪŋ ˈhaɪkɪŋ ɪn ðə ˈmaʊntnz tuː riːˈtʃɑːrdʒ/",
-                        vocab: [{ word: "recharge", cn: "恢复精力" }]
                     }
                 ]
             }
         ],
-
-        workplace: [
-            {
-                id: 'interview',
-                title: '💼 Job Interview Self-Introduction',
-                subtitle: '求职面试高频自述句型',
-                sentences: [
-                    {
-                        en: "Thank you for giving me this opportunity to introduce myself.",
-                        cn: "感谢您给我这次自我介绍的机会。",
-                        ipa: "/θæŋk juː fɔːr ˈɡɪvɪŋ miː ðɪs ˌɑːpərˈtuːnəti tuː ˌɪntrəˈduːs maɪˈself/",
-                        vocab: [{ word: "opportunity", cn: "机会" }]
-                    },
-                    {
-                        en: "I have over five years of experience in full-stack software engineering.",
-                        cn: "我在全栈软件工程领域拥有超过五年的工作经验。",
-                        ipa: "/aɪ hæv ˈoʊvər faɪv jɪərz əv ɪkˈspɪriəns ɪn fʊl stæk ˈsɔːftwer ˌendʒɪˈnɪrɪŋ/",
-                        vocab: [{ word: "experience", cn: "经验" }]
-                    },
-                    {
-                        en: "My key strength lies in solving complex technical problems under tight deadlines.",
-                        cn: "我的核心优势在于能在紧迫的时间节点下解决复杂的技术问题。",
-                        ipa: "/maɪ kiː streŋθ laɪz ɪn ˈsɑːlvɪŋ kəmˈpleks ˈteknɪkl ˈprɑːbləmz ˈʌndər taɪt ˈdedlaɪnz/",
-                        vocab: [{ word: "tight deadlines", cn: "紧迫的截止日期" }]
-                    }
-                ]
-            },
-            {
-                id: 'meeting',
-                title: '📊 Project Status Meeting Update',
-                subtitle: '团队例会中汇报项目进展',
-                sentences: [
-                    {
-                        en: "I'd like to share a brief status update on our new feature release.",
-                        cn: "我想就新功能发布进展做一个简要汇报。",
-                        ipa: "/aɪd laɪk tuː ʃer ə briːf ˈstætəs ˌʌpˈdeɪt ɑːn aʊər nuː ˈfiːtʃər rɪˈliːs/",
-                        vocab: [{ word: "status update", cn: "进展汇报" }]
-                    },
-                    {
-                        en: "We are currently right on schedule to complete QA testing by Friday afternoon.",
-                        cn: "目前进度正常，预计周五下午前完成质量测试。",
-                        ipa: "/wiː ɑːr ˈkɜːrəntli raɪt ɑːn ˈskedʒuːl tuː kəmˈpliːt testɪŋ baɪ ˈfraɪdeɪ ˌæftərˈnuːn/",
-                        vocab: [{ word: "on schedule", cn: "按计划" }]
-                    }
-                ]
-            }
-        ],
-
-        travel: [
-            {
-                id: 'hotel',
-                title: '🏨 Hotel Check-in & Requests',
-                subtitle: '办理酒店入住与提出房间需求',
-                sentences: [
-                    {
-                        en: "Good evening! I have a reservation under the name Alex Turner.",
-                        cn: "晚上好！我有一份 Alex Turner 名下的预订。",
-                        ipa: "/ɡʊd ˈiːvnɪŋ! aɪ hæv ə ˌrezərˈveɪʃn ˈʌndər ðə neɪm ˈælɪks ˈtɜːrnər/",
-                        vocab: [{ word: "reservation", cn: "预订" }]
-                    },
-                    {
-                        en: "Is it possible to upgrade to a room on a higher floor with an ocean view?",
-                        cn: "可以帮我升房到带海景的高楼层房间吗？",
-                        ipa: "/ɪz ɪt ˈpɑːsəbl tuː ˌʌpˈɡreɪd tuː ə ruːm ɑːn ə ˈhaɪər flɔːr wɪð ən ˈoʊʃn vjuː/",
-                        vocab: [{ word: "ocean view", cn: "海景" }]
-                    }
-                ]
-            }
-        ],
-
-        idioms: [
-            {
-                id: 'golden_phrases',
-                title: '🌟 10 Gold Oral Idioms & Expressions',
-                subtitle: '地道习惯用语与金句卡片',
-                sentences: [
-                    {
-                        en: "Let's call it a day! We've made great progress today.",
-                        cn: "今天就到此为止收工吧！我们今天进展很大。",
-                        ipa: "/lets kɔːl ɪt ə deɪ! wiːv meɪd ɡreɪt ˈprɑːɡres təˈdeɪ/",
-                        vocab: [{ word: "call it a day", cn: "收工/今日到此为止" }]
-                    },
-                    {
-                        en: "You hit the nail on the head! That's exactly what I meant.",
-                        cn: "你说得一针见血！我就是这个意思。",
-                        ipa: "/juː hɪt ðə neɪl ɑːn ðə hed! ðæts ɪɡˈzæktli wʌt aɪ ment/",
-                        vocab: [{ word: "hit the nail on the head", cn: "一针见血/彻底说对" }]
-                    }
-                ]
-            }
-        ]
+        workplace: [],
+        travel: [],
+        idioms: []
     };
 
     // Load External vocab.json dataset
@@ -291,6 +136,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (e) {
             console.warn("Using built-in dataset:", e);
+        }
+    }
+
+    // Load External scenarios.json dataset
+    async function loadExternalScenariosDataset() {
+        try {
+            const res = await fetch('./data/scenarios.json');
+            if (res.ok) {
+                const fetchedScenarios = await res.json();
+                if (fetchedScenarios && fetchedScenarios.casual) {
+                    SCENARIOS = fetchedScenarios;
+                    if (!['vocab850', 'vocab2000', 'vocab3000', 'custom'].includes(currentCategory)) {
+                        renderTopics();
+                        renderSentenceCard();
+                    }
+                }
+            }
+        } catch (e) {
+            console.warn("Using built-in scenarios dataset:", e);
         }
     }
 
@@ -731,7 +595,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => toast.remove(), 3500);
     }
 
-    // Load External Vocab Dataset
+    // Load External Vocab & Scenarios Datasets
     loadExternalVocabDataset();
+    loadExternalScenariosDataset();
     renderFlashcard();
 });
