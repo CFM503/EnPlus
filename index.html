@@ -143,11 +143,11 @@
                             <input type="text" id="vocabSearchInput" placeholder="在当前词库中搜索单词... (例: make, time, happy)">
                         </div>
                         <div class="vocab-filter-btns">
-                            <button class="filter-chip active" data-vcat="all">全部单词</button>
-                            <button class="filter-chip" data-vcat="ops">动作/动词 (100)</button>
-                            <button class="filter-chip" data-vcat="things">基础名词 (400)</button>
-                            <button class="filter-chip" data-vcat="qualities">形容词 (150)</button>
-                            <button class="filter-chip" data-vcat="unmastered">待复习错题本</button>
+                            <button class="filter-chip active" data-vcat="all" id="chipAll">全部单词 (<span id="cntAll">0</span>)</button>
+                            <button class="filter-chip" data-vcat="ops" id="chipOps">动作/动词 (<span id="cntOps">0</span>)</button>
+                            <button class="filter-chip" data-vcat="things" id="chipThings">基础名词 (<span id="cntThings">0</span>)</button>
+                            <button class="filter-chip" data-vcat="qualities" id="chipQualities">形容词 (<span id="cntQualities">0</span>)</button>
+                            <button class="filter-chip" data-vcat="unmastered" id="chipUnmastered">待复习错题本 (<span id="cntUnmastered">0</span>)</button>
                         </div>
                     </div>
 

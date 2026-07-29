@@ -568,6 +568,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function updateFilterChipCounts() {
+        const list = VOCAB_DATA[currentCategory] || [];
+        const mastered = userStats.masteredVocab || [];
+
+        const cntAll = list.length;
+        const cntOps = list.filter(item => item.cat === 'ops').length;
+        const cntThings = list.filter(item => item.cat === 'things').length;
+        const cntQualities = list.filter(item => item.cat === 'qualities').length;
+        const cntUnmastered = list.filter(item => !mastered.includes(item.word)).length;
+
+        const elAll = document.getElementById('cntAll');
+        const elOps = document.getElementById('cntOps');
+        const elThings = document.getElementById('cntThings');
+        const elQualities = document.getElementById('cntQualities');
+        const elUnmastered = document.getElementById('cntUnmastered');
+
+        if (elAll) elAll.innerText = cntAll;
+        if (elOps) elOps.innerText = cntOps;
+        if (elThings) elThings.innerText = cntThings;
+        if (elQualities) elQualities.innerText = cntQualities;
+        if (elUnmastered) elUnmastered.innerText = cntUnmastered;
+    }
+
     function updateStatsUI() {
         const totalInCurrentStage = (VOCAB_DATA[currentCategory] || []).length;
         const mastered = (userStats.masteredVocab || []).length;
@@ -585,6 +608,8 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (currentCategory === 'vocab2000') currentLevelTag.innerText = `L2: 2000日常词 (${totalInCurrentStage}词)`;
         else if (currentCategory === 'vocab3000') currentLevelTag.innerText = `L3: 3000黄金词 (${totalInCurrentStage}词)`;
         else currentLevelTag.innerText = "对话场景特训";
+
+        updateFilterChipCounts();
     }
 
     function showToast(msg) {
