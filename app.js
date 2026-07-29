@@ -620,6 +620,155 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => toast.remove(), 3500);
     }
 
+    // Sentence Card Audio Controls (Red Box Buttons)
+    const playSentenceBtn = document.getElementById('playSentenceBtn');
+    const slowPlayBtn = document.getElementById('slowPlayBtn');
+    const prevSentenceBtn = document.getElementById('prevSentenceBtn');
+    const nextSentenceBtn = document.getElementById('nextSentenceBtn');
+
+    if (playSentenceBtn) {
+        playSentenceBtn.addEventListener('click', () => {
+            const topics = SCENARIOS[currentCategory] || [];
+            if (topics.length > 0 && topics[currentTopicIndex] && topics[currentTopicIndex].sentences[currentSentenceIndex]) {
+                const text = topics[currentTopicIndex].sentences[currentSentenceIndex].en;
+                speakText(text, currentSpeed);
+            }
+        });
+    }
+
+    if (slowPlayBtn) {
+        slowPlayBtn.addEventListener('click', () => {
+            const topics = SCENARIOS[currentCategory] || [];
+            if (topics.length > 0 && topics[currentTopicIndex] && topics[currentTopicIndex].sentences[currentSentenceIndex]) {
+                const text = topics[currentTopicIndex].sentences[currentSentenceIndex].en;
+                speakText(text, 0.5);
+            }
+        });
+    }
+
+    if (prevSentenceBtn) {
+        prevSentenceBtn.addEventListener('click', () => {
+            if (currentSentenceIndex > 0) {
+                currentSentenceIndex--;
+                renderSentenceCard();
+            } else {
+                showToast("已是当前话题的首句");
+            }
+        });
+    }
+
+    if (nextSentenceBtn) {
+        nextSentenceBtn.addEventListener('click', () => {
+            const topics = SCENARIOS[currentCategory] || [];
+            if (topics.length > 0 && topics[currentTopicIndex]) {
+                const totalSentences = topics[currentTopicIndex].sentences.length;
+                if (currentSentenceIndex < totalSentences - 1) {
+                    currentSentenceIndex++;
+                    renderSentenceCard();
+                } else {
+                    showToast("🌟 当前话题所有句子已朗读完毕！");
+                }
+            }
+        });
+    }
+
+    // Web Speech Recognition for Recording Assessment
+    const recordBtn = document.getElementById('recordBtn');
+    const recordLabel = document.getElementById('recordLabel');
+    const recordingWave = document.getElementById('recordingWave');
+    const micStatusBadge = document.getElementById('micStatusBadge');
+    let recognition = null;
+    let isRecording = false;
+
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        recognition = new SpeechRecognition();
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        recognition.onstart = () => {
+            isRecording = true;
+            if (recordLabel) recordLabel.innerText = "正在倾听中，请朗读上述英文...";
+            if (recordingWave) recordingWave.classList.remove('hidden');
+            if (micStatusBadge) micStatusBadge.innerHTML = `<i class="fa-solid fa-microphone text-rose"></i> 正在录音测评中...`;
+        };
+
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+            showToast(`🎙️ 识别到您的发音: "${transcript}"`);
+
+            let target = "";
+            if (['vocab850', 'vocab2000', 'vocab3000'].includes(currentCategory)) {
+                if (filteredVocabList[currentVocabIndex]) target = filteredVocabList[currentVocabIndex].word;
+            } else {
+                const topics = SCENARIOS[currentCategory] || [];
+                if (topics[currentTopicIndex] && topics[currentTopicIndex].sentences[currentSentenceIndex]) {
+                    target = topics[currentTopicIndex].sentences[currentSentenceIndex].en;
+                }
+            }
+
+            if (target) {
+                const similarity = calculateSimilarity(transcript.toLowerCase(), target.toLowerCase());
+                const score = Math.round(similarity * 100);
+                if (score >= 80) {
+                    showToast(`🌟 完美发音！匹配度: ${score}%`);
+                } else if (score >= 50) {
+                    showToast(`👍 良好发音！匹配度: ${score}%，继续加油！`);
+                } else {
+                    showToast(`💡 匹配度: ${score}%，建议点击朗读多听几遍。`);
+                }
+            }
+        };
+
+        recognition.onerror = (e) => {
+            console.warn("Speech recognition error:", e.error);
+            stopRecordingUI();
+            if (e.error === 'not-allowed') {
+                showToast("⚠️ 请在浏览器弹窗中允许使用麦克风权限！");
+            }
+        };
+
+        recognition.onend = () => {
+            stopRecordingUI();
+        };
+    }
+
+    function stopRecordingUI() {
+        isRecording = false;
+        if (recordLabel) recordLabel.innerText = "点击朗读当前单词或句子";
+        if (recordingWave) recordingWave.classList.add('hidden');
+        if (micStatusBadge) micStatusBadge.innerHTML = `<i class="fa-solid fa-microphone"></i> 麦克风准备就绪`;
+    }
+
+    if (recordBtn) {
+        recordBtn.addEventListener('click', () => {
+            if (!recognition) {
+                showToast("⚠️ 当前浏览器不支持语音识别，推荐使用 Chrome 或 Edge 浏览器");
+                return;
+            }
+            if (isRecording) {
+                recognition.stop();
+            } else {
+                try {
+                    recognition.start();
+                } catch (err) {
+                    recognition.stop();
+                }
+            }
+        });
+    }
+
+    function calculateSimilarity(str1, str2) {
+        const words1 = str1.replace(/[^a-z0-9\s]/g, '').split(/\s+/);
+        const words2 = str2.replace(/[^a-z0-9\s]/g, '').split(/\s+/);
+        let matches = 0;
+        words1.forEach(w => {
+            if (words2.includes(w)) matches++;
+        });
+        return matches / Math.max(words1.length, words2.length, 1);
+    }
+
     // Load External Vocab & Scenarios Datasets
     loadExternalVocabDataset();
     loadExternalScenariosDataset();
