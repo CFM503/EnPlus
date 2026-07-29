@@ -1,6 +1,5 @@
 /**
- * VoiceTutor AI - Full Interactive Engine
- * Fixes Scenario Rendering, Topic Listing & Mode Switcher
+ * VoiceTutor AI - Full Dynamic Vocabulary & Scenario Engine
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -78,10 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
         synth.speak(utterance);
     }
 
-    // ==========================================
-    // 1. DATASETS FOR VOCAB & SCENARIO COURSES
-    // ==========================================
-    const VOCAB_DATA = {
+    // BUILT-IN VOCABULARY DATASET (FALLBACK)
+    let VOCAB_DATA = {
         vocab850: [
             { word: "make", ipa: "/meɪk/", pos: "v.", cn: "制作；做；使得", cat: "ops", exEn: "Practice makes perfect.", exCn: "熟能生巧。" },
             { word: "come", ipa: "/kʌm/", pos: "v.", cn: "来；来到；到达", cat: "ops", exEn: "Come and join us for lunch!", exCn: "快来和我们一起吃午饭吧！" },
@@ -277,6 +274,26 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
+    // Load External vocab.json dataset
+    async function loadExternalVocabDataset() {
+        try {
+            const res = await fetch('./data/vocab.json');
+            if (res.ok) {
+                const fetchedData = await res.json();
+                if (fetchedData && fetchedData.vocab850) {
+                    VOCAB_DATA = fetchedData;
+                    currentVocabList = [...VOCAB_DATA[currentCategory]];
+                    filteredVocabList = [...currentVocabList];
+                    currentVocabIndex = 0;
+                    renderFlashcard();
+                    updateStatsUI();
+                }
+            }
+        } catch (e) {
+            console.warn("Using built-in dataset:", e);
+        }
+    }
+
     // State
     let currentCategory = 'vocab850';
     let currentTopicIndex = 0;
@@ -308,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const volumeRange = document.getElementById('volumeRange');
     const volumeValText = document.getElementById('volumeValText');
     const tabBtns = document.querySelectorAll('.tab-btn');
-    const topicListEl = document.getElementById('topicList'); // FIXED: Element Binding
+    const topicListEl = document.getElementById('topicList');
 
     const autoPlayToggleBtn = document.getElementById('autoPlayToggleBtn');
     const autoPlayIntervalSelect = document.getElementById('autoPlayIntervalSelect');
@@ -679,49 +696,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // SENTENCE CONTROL BUTTONS
-    const playSentenceBtn = document.getElementById('playSentenceBtn');
-    const slowPlayBtn = document.getElementById('slowPlayBtn');
-    const prevSentenceBtn = document.getElementById('prevSentenceBtn');
-    const nextSentenceBtn = document.getElementById('nextSentenceBtn');
-
-    if (playSentenceBtn) {
-        playSentenceBtn.addEventListener('click', () => {
-            const topics = SCENARIOS[currentCategory];
-            if (topics && topics[currentTopicIndex]) {
-                speakText(topics[currentTopicIndex].sentences[currentSentenceIndex].en, currentSpeed);
-            }
-        });
-    }
-
-    if (slowPlayBtn) {
-        slowPlayBtn.addEventListener('click', () => {
-            const topics = SCENARIOS[currentCategory];
-            if (topics && topics[currentTopicIndex]) {
-                speakText(topics[currentTopicIndex].sentences[currentSentenceIndex].en, 0.5);
-            }
-        });
-    }
-
-    if (prevSentenceBtn) {
-        prevSentenceBtn.addEventListener('click', () => {
-            if (currentSentenceIndex > 0) {
-                currentSentenceIndex--;
-                renderSentenceCard();
-            }
-        });
-    }
-
-    if (nextSentenceBtn) {
-        nextSentenceBtn.addEventListener('click', () => {
-            const topics = SCENARIOS[currentCategory];
-            if (topics && topics[currentTopicIndex] && currentSentenceIndex < topics[currentTopicIndex].sentences.length - 1) {
-                currentSentenceIndex++;
-                renderSentenceCard();
-            }
-        });
-    }
-
     function saveStats(triggerSync = true) {
         localStorage.setItem('voicetutor_stats', JSON.stringify(userStats));
         updateStatsUI();
@@ -743,99 +717,6 @@ document.addEventListener('DOMContentLoaded', () => {
         else currentLevelTag.innerText = "对话场景特训";
     }
 
-    // Modal UI Listeners
-    openSyncModalBtn.addEventListener('click', () => {
-        syncTokenInput.value = syncToken;
-        syncModal.classList.remove('hidden');
-    });
-
-    closeSyncModalBtn.addEventListener('click', () => syncModal.classList.add('hidden'));
-
-    saveSyncTokenBtn.addEventListener('click', () => {
-        const token = syncTokenInput.value.trim();
-        if (!token) {
-            showToast("请先输入自定的同步密钥！");
-            return;
-        }
-        syncToken = token;
-        localStorage.setItem('voicetutor_sync_token', syncToken);
-        syncModal.classList.add('hidden');
-        showToast("已设置同步密钥，正在与云端进行同步...");
-        fetchFromCloud();
-    });
-
-    exportProgressBtn.addEventListener('click', () => {
-        const jsonStr = JSON.stringify(userStats, null, 2);
-        const blob = new Blob([jsonStr], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `voicetutor_progress_${new Date().toISOString().slice(0,10)}.json`;
-        a.click();
-        showToast("已导出学习进度 JSON 备份文件！");
-    });
-
-    importProgressBtn.addEventListener('click', () => importFileInput.click());
-
-    importFileInput.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            try {
-                const imported = JSON.parse(event.target.result);
-                if (imported && Array.isArray(imported.masteredVocab)) {
-                    userStats = imported;
-                    saveStats();
-                    showToast("🎉 学习进度成功导入！");
-                    syncModal.classList.add('hidden');
-                }
-            } catch (err) {
-                showToast("导入失败，文件格式有误。");
-            }
-        };
-        reader.readAsText(file);
-    });
-
-    async function syncToCloud() {
-        if (!syncToken) return;
-        syncBadgeText.innerText = "同步中...";
-        try {
-            const res = await fetch(`/api/sync`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ token: syncToken, data: userStats })
-            });
-            const result = await res.json();
-            if (result.success) {
-                openSyncModalBtn.className = "sync-badge synced";
-                syncBadgeText.innerText = "☁️ 已同步到云端";
-            }
-        } catch (err) {
-            openSyncModalBtn.className = "sync-badge";
-            syncBadgeText.innerText = "☁️ 本地保存";
-        }
-    }
-
-    async function fetchFromCloud() {
-        if (!syncToken) return;
-        try {
-            const res = await fetch(`/api/sync?token=${encodeURIComponent(syncToken)}`);
-            const result = await res.json();
-            if (result.success && result.data) {
-                const cloudMastered = result.data.masteredVocab || [];
-                const localMastered = userStats.masteredVocab || [];
-                const merged = Array.from(new Set([...localMastered, ...cloudMastered]));
-                userStats = { ...userStats, ...result.data, masteredVocab: merged };
-                saveStats(false);
-                openSyncModalBtn.className = "sync-badge synced";
-                syncBadgeText.innerText = "☁️ 已同步到云端";
-                showToast("✅ 已成功同步手机/电脑端学习数据！");
-            }
-        } catch (err) {}
-    }
-
     function showToast(msg) {
         const toast = document.createElement('div');
         toast.className = 'toast';
@@ -844,13 +725,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => toast.remove(), 3500);
     }
 
-    if (syncToken) {
-        syncBadgeText.innerText = "☁️ 启用云同步";
-        openSyncModalBtn.className = "sync-badge synced";
-        fetchFromCloud();
-    } else {
-        updateStatsUI();
-    }
-
+    // Load External Vocab Dataset
+    loadExternalVocabDataset();
     renderFlashcard();
 });
