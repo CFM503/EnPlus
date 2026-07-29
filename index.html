@@ -2,9 +2,14 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>EnPlus VoiceTutor AI - 美式地道英语听读与口语大师</title>
     <meta name="description" content="包含850核心词、2000日常词、3000黄金词及5850句地道例句的AI智能英语口语听读与跟读测评平台。">
+    <!-- Apple PWA Web App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+
     <!-- FontAwesome & CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -18,24 +23,24 @@
                 <i class="fa-solid fa-microphone-lines"></i>
             </div>
             <div>
-                <h1 class="brand-title">EnPlus VoiceTutor AI</h1>
+                <h1 class="brand-title">VoiceTutor AI</h1>
                 <span class="brand-subtitle"><i class="fa-solid fa-bolt text-amber"></i> 美式口语大师训练终端</span>
             </div>
         </div>
 
         <div class="header-actions">
             <!-- Hardware Volume Booster Slider -->
-            <div class="volume-booster-box" title="Web Audio API 200%-300% 硬件级发音增强">
+            <div class="volume-booster-box" title="Web Audio API 250% 硬件级音量增强">
                 <i class="fa-solid fa-volume-high text-cyan"></i>
                 <input type="range" id="volumeRange" class="volume-slider" min="1.0" max="3.0" step="0.1" value="2.5">
-                <span class="vol-badge" id="volumeValText">🔥 250% (音量加倍)</span>
+                <span class="vol-badge" id="volumeValText">250%</span>
             </div>
 
             <!-- Accent Selector -->
             <div class="accent-selector">
                 <select id="accentSelect" class="styled-select">
-                    <option value="en-US" selected>🇺🇸 美式标准发音 (US)</option>
-                    <option value="en-GB">🇬🇧 英式标准发音 (UK)</option>
+                    <option value="en-US" selected>🇺🇸 美音</option>
+                    <option value="en-GB">🇬🇧 英音</option>
                 </select>
             </div>
         </div>
@@ -44,22 +49,22 @@
     <!-- Main Container -->
     <div class="app-container">
 
-        <!-- Left Navigation Sidebar -->
+        <!-- Left Navigation Sidebar (PC View) -->
         <aside class="sidebar-panel">
             <div>
                 <div class="sidebar-section-title">📚 核心词汇阶段</div>
                 <div class="nav-group">
                     <button class="nav-btn active" data-category="vocab850">
-                        <div class="nav-btn-content"><i class="fa-solid fa-layer-group text-indigo"></i> 阶段1: 850核心词</div>
+                        <span><i class="fa-solid fa-layer-group text-indigo"></i> 阶段1: 850核心词</span>
                     </button>
                     <button class="nav-btn" data-category="vocab2000">
-                        <div class="nav-btn-content"><i class="fa-solid fa-stairs text-cyan"></i> 阶段2: 2000日常词</div>
+                        <span><i class="fa-solid fa-stairs text-cyan"></i> 阶段2: 2000日常词</span>
                     </button>
                     <button class="nav-btn" data-category="vocab3000">
-                        <div class="nav-btn-content"><i class="fa-solid fa-crown text-amber"></i> 阶段3: 3000黄金词</div>
+                        <span><i class="fa-solid fa-crown text-amber"></i> 阶段3: 3000黄金词</span>
                     </button>
                     <button class="nav-btn" data-category="vocab_examples">
-                        <div class="nav-btn-content"><i class="fa-solid fa-book-open text-emerald"></i> 📖 5850例句全集</div>
+                        <span><i class="fa-solid fa-book-open text-emerald"></i> 📖 5850例句全集</span>
                     </button>
                 </div>
             </div>
@@ -68,16 +73,16 @@
                 <div class="sidebar-section-title">🗣️ 美式口语场景特训</div>
                 <div class="nav-group">
                     <button class="nav-btn" data-category="casual">
-                        <div class="nav-btn-content"><i class="fa-solid fa-mug-hot text-amber"></i> ☕ 日常对话听读</div>
+                        <span><i class="fa-solid fa-mug-hot text-amber"></i> ☕ 日常对话听读</span>
                     </button>
                     <button class="nav-btn" data-category="workplace">
-                        <div class="nav-btn-content"><i class="fa-solid fa-briefcase text-purple"></i> 💼 职场商务听读</div>
+                        <span><i class="fa-solid fa-briefcase text-purple"></i> 💼 职场商务听读</span>
                     </button>
                     <button class="nav-btn" data-category="travel">
-                        <div class="nav-btn-content"><i class="fa-solid fa-plane text-cyan"></i> ✈️ 旅游点餐听读</div>
+                        <span><i class="fa-solid fa-plane text-cyan"></i> ✈️ 旅游点餐听读</span>
                     </button>
                     <button class="nav-btn" data-category="idioms">
-                        <div class="nav-btn-content"><i class="fa-solid fa-star text-rose"></i> 🌟 口语地道短语</div>
+                        <span><i class="fa-solid fa-star text-rose"></i> 🌟 口语地道短语</span>
                     </button>
                 </div>
             </div>
@@ -86,73 +91,64 @@
                 <div class="sidebar-section-title">✍️ 高级自定义</div>
                 <div class="nav-group">
                     <button class="nav-btn" data-category="custom">
-                        <div class="nav-btn-content"><i class="fa-solid fa-pen-to-square text-emerald"></i> 自定义短文听读</div>
+                        <span><i class="fa-solid fa-pen-to-square text-emerald"></i> 自定义短文听读</span>
                     </button>
                 </div>
             </div>
 
             <!-- Topic Submenu List -->
-            <div class="topic-list-box" id="topicList">
-                <!-- Injected dynamically by JS -->
-            </div>
+            <div class="topic-list-box" id="topicList"></div>
         </aside>
 
         <!-- Main Workspace -->
         <main class="workspace-panel">
 
-            <!-- Mode Switcher -->
+            <!-- iOS Segmented Control Bar -->
             <div class="mode-bar">
                 <div class="mode-buttons">
-                    <button class="mode-btn active" data-mode="vocab-card"><i class="fa-solid fa-clone"></i> 🎴 词卡听读</button>
-                    <button class="mode-btn" data-mode="listen-read"><i class="fa-solid fa-headphones"></i> 🎧 句型听读</button>
-                    <button class="mode-btn" data-mode="blind"><i class="fa-solid fa-eye-slash"></i> 🙈 盲听挑战</button>
-                    <button class="mode-btn" data-mode="speak"><i class="fa-solid fa-microphone"></i> 🎙️ 跟读测评</button>
-                </div>
-                <div style="font-size: 13px; color: var(--accent-cyan); font-weight: 600;" id="currentLevelTag">
-                    L1: 850核心词 (850词)
+                    <button class="mode-btn active" data-mode="vocab-card"><i class="fa-solid fa-clone"></i> 词卡</button>
+                    <button class="mode-btn" data-mode="listen-read"><i class="fa-solid fa-headphones"></i> 句型</button>
+                    <button class="mode-btn" data-mode="blind"><i class="fa-solid fa-eye-slash"></i> 盲听</button>
+                    <button class="mode-btn" data-mode="speak"><i class="fa-solid fa-microphone"></i> 跟读</button>
                 </div>
             </div>
 
             <!-- Vocab Module Panel (Card Practice) -->
             <div class="vocab-module-card" id="vocabModulePanel">
                 
-                <!-- Search & Dynamic Filter Chips Row -->
+                <!-- Search & Filter Chips Row -->
                 <div class="search-filter-row">
                     <div class="search-box">
                         <i class="fa-solid fa-magnifying-glass text-muted"></i>
-                        <input type="text" id="vocabSearchInput" placeholder="在当前词库中搜索单词... (例: make, time, happy)">
+                        <input type="text" id="vocabSearchInput" placeholder="在词库中搜索单词... (例: make, time)">
                     </div>
 
                     <div class="filter-chips">
-                        <button class="chip-btn active" data-vcat="all">全部单词 (<span id="cntAll">0</span>)</button>
-                        <button class="chip-btn" data-vcat="ops">动作/动词 (<span id="cntOps">0</span>)</button>
-                        <button class="chip-btn" data-vcat="things">基础名词 (<span id="cntThings">0</span>)</button>
+                        <button class="chip-btn active" data-vcat="all">全部 (<span id="cntAll">0</span>)</button>
+                        <button class="chip-btn" data-vcat="ops">动词 (<span id="cntOps">0</span>)</button>
+                        <button class="chip-btn" data-vcat="things">名词 (<span id="cntThings">0</span>)</button>
                         <button class="chip-btn" data-vcat="qualities">形容词 (<span id="cntQualities">0</span>)</button>
-                        <button class="chip-btn" data-vcat="unmastered">待复习错题本 (<span id="cntUnmastered">0</span>)</button>
+                        <button class="chip-btn" data-vcat="unmastered">错题本 (<span id="cntUnmastered">0</span>)</button>
                     </div>
                 </div>
 
-                <!-- Auto-Play Carousel Controller -->
+                <!-- Auto-Play Controller Bar -->
                 <div class="autoplay-bar">
-                    <button class="btn-gradient" id="autoPlayToggleBtn">
-                        <i class="fa-solid fa-play"></i> 开启自动连续换卡
+                    <button class="btn-ios" id="autoPlayToggleBtn">
+                        <i class="fa-solid fa-play"></i> 开启自动换卡
                     </button>
 
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; cursor: pointer;">
-                            <input type="checkbox" id="autoPlayReadExampleCheckbox" checked style="accent-color: var(--primary-indigo);">
-                            <span><i class="fa-solid fa-quote-left text-emerald"></i> 自动朗读例句</span>
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">
+                            <input type="checkbox" id="autoPlayReadExampleCheckbox" checked style="accent-color: #007aff;">
+                            <span>朗读例句</span>
                         </label>
 
-                        <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;">
-                            <span>⏱️ 换卡间隔:</span>
-                            <select id="autoPlayIntervalSelect" class="styled-select">
-                                <option value="2000">2 秒 (极速)</option>
-                                <option value="3000" selected>3 秒 (推荐)</option>
-                                <option value="5000">5 秒 (标准)</option>
-                                <option value="8000">8 秒 (深度)</option>
-                            </select>
-                        </div>
+                        <select id="autoPlayIntervalSelect" class="styled-select">
+                            <option value="2000">2s 极速</option>
+                            <option value="3000" selected>3s 推荐</option>
+                            <option value="5000">5s 标准</option>
+                        </select>
                     </div>
                 </div>
 
@@ -173,7 +169,7 @@
                             <div class="card-example-box">
                                 <div class="ex-en-text" id="cardExEn">"Practice makes perfect."</div>
                                 <div class="ex-cn-text" id="cardExCn">熟能生巧。</div>
-                                <button class="chip-btn" id="cardExPlayBtn" style="margin-top: 10px;"><i class="fa-solid fa-play"></i> 朗读例句</button>
+                                <button class="chip-btn" id="cardExPlayBtn" style="margin-top: 8px;"><i class="fa-solid fa-play"></i> 朗读例句</button>
                             </div>
                         </div>
                     </div>
@@ -181,40 +177,36 @@
                     <!-- Flashcard Controls -->
                     <div class="card-action-bar">
                         <button class="btn-action" id="prevWordBtn"><i class="fa-solid fa-chevron-left"></i> 上一个</button>
-                        <button class="btn-action" id="toggleCardFlipBtn"><i class="fa-solid fa-eye-slash"></i> 折叠/显示释义</button>
-                        <button class="btn-action" id="masterWordBtn"><i class="fa-solid fa-check text-emerald"></i> 标为已掌握</button>
+                        <button class="btn-action" id="toggleCardFlipBtn"><i class="fa-solid fa-eye-slash"></i> 折叠/释义</button>
+                        <button class="btn-action" id="masterWordBtn"><i class="fa-solid fa-check text-emerald"></i> 已掌握</button>
                         <button class="btn-action" id="nextWordBtn">下一个 <i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
 
             <!-- Scenario & Sentence Practice Module -->
-            <div class="scenario-banner hidden" id="topicBanner">
-                <div>
-                    <h2 id="currentTopicTitle" style="font-size: 22px; font-weight: 800;">Ordering Coffee at Starbucks</h2>
-                    <p id="currentTopicDesc" style="font-size: 14px; color: var(--text-muted);">掌握常用的咖啡点餐句型与地道回答</p>
-                </div>
-                <div style="text-align: right;">
-                    <div id="progressText" style="font-size: 13px; font-weight: 700; color: var(--accent-cyan);">句子 1 / 5</div>
-                    <div style="width: 140px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-top: 6px; overflow: hidden;">
-                        <div id="progressFill" style="width: 20%; height: 100%; background: var(--gradient-cyan);"></div>
+            <div class="sentence-practice-card hidden" id="topicBanner">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div>
+                        <h2 id="currentTopicTitle" style="font-size: 18px; font-weight: 800;">Ordering Coffee at Starbucks</h2>
+                        <p id="currentTopicDesc" style="font-size: 12px; color: var(--text-muted);">掌握常用的咖啡点餐句型与回答</p>
                     </div>
+                    <div id="progressText" style="font-size: 12px; font-weight: 700; color: var(--accent-cyan);">1 / 5</div>
                 </div>
             </div>
 
-            <!-- Sentence Practice Card -->
             <div class="sentence-practice-card hidden" id="sentenceCard">
-                <div class="ipa-line" id="ipaLine" style="font-size: 16px; color: var(--accent-emerald); font-weight: 600;">/haɪ, aɪd laɪk tuː ˈɔːrdər ən aɪst oʊt mɪlk ˈlɑːteɪ, pliːz/</div>
+                <div class="card-ipa-text" id="ipaLine">/haɪ, aɪd laɪk tuː ˈɔːrdər ən aɪst oʊt mɪlk ˈlɑːteɪ, pliːz/</div>
                 <div class="sentence-target-text" id="targetSentence">
                     Hi, I'd like to order an iced oat milk latte, please.
                 </div>
                 <div class="sentence-cn-text" id="cnTranslation">
                     嗨，请给我点一杯冰燕麦奶拿铁。
                 </div>
-                <div id="vocabChips" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;"></div>
+                <div id="vocabChips" style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px;"></div>
 
                 <div class="sentence-controls-row">
-                    <button class="btn-gradient" id="playSentenceBtn" title="播放标准发音">
+                    <button class="btn-ios" id="playSentenceBtn" title="播放标准发音">
                         <i class="fa-solid fa-play"></i> 播放读音
                     </button>
                     <button class="btn-action" id="slowPlayBtn" title="0.5x 慢速朗读">
@@ -227,36 +219,60 @@
 
             <!-- Script Lines List Section -->
             <div class="vocab-module-card hidden" id="scriptPanel">
-                <h4 style="font-size: 16px; font-weight: 700; color: var(--text-main);"><i class="fa-solid fa-list-check text-indigo"></i> 当前话题全部台词跟读清单</h4>
-                <div id="scriptLinesList" style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;"></div>
+                <h4 style="font-size: 15px; font-weight: 700; color: var(--text-main);"><i class="fa-solid fa-list-check text-indigo"></i> 话台词跟读清单</h4>
+                <div id="scriptLinesList" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;"></div>
             </div>
 
             <!-- Custom Text Editor Section -->
             <div class="vocab-module-card hidden" id="customInputCard">
-                <h4 style="font-size: 18px; font-weight: 800;"><i class="fa-solid fa-paste text-indigo"></i> 粘贴你想要练习听读的英文文章/段落</h4>
-                <textarea id="customTextInput" style="width: 100%; height: 160px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 16px; color: #fff; font-size: 15px; outline: none; margin-top: 12px;" placeholder="Paste English text here... (e.g. Practice makes perfect.)"></textarea>
-                <div style="display: flex; gap: 12px; margin-top: 14px;">
-                    <button class="btn-gradient" id="loadCustomTextBtn"><i class="fa-solid fa-bolt"></i> 生成听读课件</button>
+                <h4 style="font-size: 16px; font-weight: 800;"><i class="fa-solid fa-paste text-indigo"></i> 粘贴你想要练习听读的英文文章</h4>
+                <textarea id="customTextInput" style="width: 100%; height: 140px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-light); border-radius: 14px; padding: 14px; color: #fff; font-size: 14px; outline: none; margin-top: 10px;" placeholder="Paste English text here..."></textarea>
+                <div style="display: flex; gap: 10px; margin-top: 12px;">
+                    <button class="btn-ios" id="loadCustomTextBtn"><i class="fa-solid fa-bolt"></i> 生成课件</button>
                     <button class="btn-action" id="clearCustomTextBtn">清空</button>
                 </div>
             </div>
 
-            <!-- Speech Recording & Assessment Studio -->
+            <!-- Speech Recording Studio -->
             <div class="speech-recording-card" id="recordingCard">
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-                    <h4 style="font-size: 16px; font-weight: 700;"><i class="fa-solid fa-microphone-lines text-indigo"></i> 语音跟读与发音测评</h4>
-                    <span id="micStatusBadge" style="font-size: 13px; font-weight: 600; color: var(--text-muted);"><i class="fa-solid fa-microphone"></i> 麦克风准备就绪</span>
+                    <h4 style="font-size: 14px; font-weight: 700;"><i class="fa-solid fa-microphone-lines text-indigo"></i> 语音跟读测评</h4>
+                    <span id="micStatusBadge" style="font-size: 11px; font-weight: 600; color: var(--text-muted);"><i class="fa-solid fa-microphone"></i> 就绪</span>
                 </div>
 
                 <button class="mic-circle-btn" id="recordBtn" title="点击开始跟读测评">
                     <i class="fa-solid fa-microphone"></i>
                 </button>
-                <span id="recordLabel" style="font-size: 14px; font-weight: 700; color: var(--text-main);">点击朗读当前单词或句子</span>
-                <div class="hidden" id="recordingWave" style="font-size: 13px; color: var(--accent-rose); font-weight: 700;">🌊 录音测评中...</div>
+                <span id="recordLabel" style="font-size: 13px; font-weight: 700; color: var(--text-main);">点击朗读当前英文</span>
+                <div class="hidden" id="recordingWave" style="font-size: 12px; color: var(--accent-rose); font-weight: 700;">🌊 录音测评中...</div>
             </div>
 
         </main>
     </div>
+
+    <!-- Native iOS Bottom Tab Bar (Visible on Mobile) -->
+    <nav class="ios-bottom-tabbar">
+        <button class="ios-tab-item active" data-mobile-category="vocab850">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>850核心</span>
+        </button>
+        <button class="ios-tab-item" data-mobile-category="vocab2000">
+            <i class="fa-solid fa-stairs"></i>
+            <span>2000日常</span>
+        </button>
+        <button class="ios-tab-item" data-mobile-category="vocab3000">
+            <i class="fa-solid fa-crown"></i>
+            <span>3000黄金</span>
+        </button>
+        <button class="ios-tab-item" data-mobile-category="vocab_examples">
+            <i class="fa-solid fa-book-open"></i>
+            <span>5850例句</span>
+        </button>
+        <button class="ios-tab-item" data-mobile-category="casual">
+            <i class="fa-solid fa-comments"></i>
+            <span>口语场景</span>
+        </button>
+    </nav>
 
     <!-- Toast Notifications Container -->
     <div class="toast-container" id="toastContainer"></div>

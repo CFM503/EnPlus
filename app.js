@@ -500,6 +500,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // iOS Bottom Tab Bar Event Listener (Mobile Users)
+    const mobileTabItems = document.querySelectorAll('.ios-tab-item');
+    mobileTabItems.forEach(tab => {
+        tab.addEventListener('click', () => {
+            stopAutoPlay();
+            mobileTabItems.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const mcat = tab.dataset.mobileCategory;
+            currentCategory = mcat;
+            currentTopicIndex = 0;
+            currentSentenceIndex = 0;
+
+            navBtns.forEach(b => {
+                if (b.dataset.category === mcat) b.classList.add('active');
+                else b.classList.remove('active');
+            });
+
+            if (['vocab850', 'vocab2000', 'vocab3000'].includes(currentCategory)) {
+                currentVocabList = [...(VOCAB_DATA[currentCategory] || [])];
+                filteredVocabList = [...currentVocabList];
+                currentVocabIndex = 0;
+
+                vocabModulePanel.classList.remove('hidden');
+                if (topicBanner) topicBanner.classList.add('hidden');
+                if (sentenceCard) sentenceCard.classList.add('hidden');
+                if (scriptPanel) scriptPanel.classList.add('hidden');
+                if (customInputCard) customInputCard.classList.add('hidden');
+                if (topicListEl) topicListEl.innerHTML = '';
+
+                renderFlashcard();
+            } else {
+                vocabModulePanel.classList.add('hidden');
+                if (currentCategory === 'custom') {
+                    if (customInputCard) customInputCard.classList.remove('hidden');
+                    if (topicBanner) topicBanner.classList.add('hidden');
+                    if (sentenceCard) sentenceCard.classList.add('hidden');
+                    if (scriptPanel) scriptPanel.classList.add('hidden');
+                    if (topicListEl) topicListEl.innerHTML = '';
+                } else {
+                    if (customInputCard) customInputCard.classList.add('hidden');
+                    renderTopics();
+                    renderSentenceCard();
+                }
+            }
+            updateStatsAndChips();
+        });
+    });
+
     // MODE BUTTONS LISTENER
     modeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
