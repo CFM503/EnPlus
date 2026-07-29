@@ -446,14 +446,77 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (nextSentenceBtn) {
-        nextSentenceBtn.addEventListener('click', () => {
-            const topics = SCENARIOS[currentCategory] || [];
-            if (topics[currentTopicIndex]) {
-                if (currentSentenceIndex < topics[currentTopicIndex].sentences.length - 1) {
+    // SENTENCE / SCENARIO / EXAMPLES / PHRASES AUTOPLAY CONTROLLER
+    const sentenceAutoPlayToggleBtn = document.getElementById('sentenceAutoPlayToggleBtn');
+    const sentenceAutoPlayIntervalSelect = document.getElementById('sentenceAutoPlayIntervalSelect');
+    let isSentenceAutoPlaying = false;
+    let sentenceAutoPlayTimer = null;
+    let sentenceAutoPlayInterval = 3000;
+
+    function stopSentenceAutoPlay() {
+        isSentenceAutoPlaying = false;
+        if (sentenceAutoPlayTimer) { clearTimeout(sentenceAutoPlayTimer); sentenceAutoPlayTimer = null; }
+        if (sentenceAutoPlayToggleBtn) {
+            sentenceAutoPlayToggleBtn.innerHTML = `<i class="fa-solid fa-play"></i> 开启自动连续播放`;
+        }
+    }
+
+    function startSentenceAutoPlay() {
+        isSentenceAutoPlaying = true;
+        if (sentenceAutoPlayToggleBtn) {
+            sentenceAutoPlayToggleBtn.innerHTML = `<i class="fa-solid fa-pause"></i> 暂停自动朗读`;
+        }
+        playCurrentSentenceAndScheduleNext();
+    }
+
+    function playCurrentSentenceAndScheduleNext() {
+        if (!isSentenceAutoPlaying) return;
+        const topics = SCENARIOS[currentCategory] || [];
+        if (topics.length === 0 || !topics[currentTopicIndex]) return;
+
+        const sentence = topics[currentTopicIndex].sentences[currentSentenceIndex];
+        if (!sentence) return;
+
+        speakText(sentence.en, currentSpeed, () => {
+            if (!isSentenceAutoPlaying) return;
+            sentenceAutoPlayTimer = setTimeout(() => {
+                if (!isSentenceAutoPlaying) return;
+                const totalSentences = topics[currentTopicIndex].sentences.length;
+                if (currentSentenceIndex < totalSentences - 1) {
                     currentSentenceIndex++;
-                    renderSentenceCard();
-                } else showToast("🌟 当前话题所有句子已朗读完毕！");
+                } else {
+                    if (currentTopicIndex < topics.length - 1) {
+                        currentTopicIndex++;
+                        currentSentenceIndex = 0;
+                    } else {
+                        currentTopicIndex = 0;
+                        currentSentenceIndex = 0;
+                    }
+                }
+                renderSentenceCard();
+                playCurrentSentenceAndScheduleNext();
+            }, sentenceAutoPlayInterval);
+        });
+    }
+
+    if (sentenceAutoPlayToggleBtn) {
+        sentenceAutoPlayToggleBtn.addEventListener('click', () => {
+            if (isSentenceAutoPlaying) {
+                stopSentenceAutoPlay();
+                showToast("已暂停句子连续朗读");
+            } else {
+                startSentenceAutoPlay();
+                showToast("▶️ 已开启句子自动连续朗读！");
+            }
+        });
+    }
+
+    if (sentenceAutoPlayIntervalSelect) {
+        sentenceAutoPlayIntervalSelect.addEventListener('change', (e) => {
+            sentenceAutoPlayInterval = parseInt(e.target.value);
+            if (isSentenceAutoPlaying) {
+                stopSentenceAutoPlay();
+                startSentenceAutoPlay();
             }
         });
     }
@@ -462,6 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             stopAutoPlay();
+            stopSentenceAutoPlay();
             navBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -505,6 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileTabItems.forEach(tab => {
         tab.addEventListener('click', () => {
             stopAutoPlay();
+            stopSentenceAutoPlay();
             mobileTabItems.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
 

@@ -166,6 +166,19 @@
                 </div>
 
                 <div class="sentence-practice-card hidden" id="sentenceCard">
+                    <!-- Auto-Play Controller Bar for Sentences / Scenarios / Examples / Phrases -->
+                    <div class="autoplay-bar" style="margin-bottom: 8px;">
+                        <button class="btn-ios" id="sentenceAutoPlayToggleBtn"><i class="fa-solid fa-play"></i> 开启自动连续播放</button>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 11px; color: var(--text-muted);">⏱️ 切句间隔:</span>
+                            <select id="sentenceAutoPlayIntervalSelect" class="styled-select">
+                                <option value="2000">2s 极速</option>
+                                <option value="3000" selected>3s 推荐</option>
+                                <option value="5000">5s 标准</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="card-ipa-text" id="ipaLine">/haɪ, aɪd laɪk tuː ˈɔːrdər ən aɪst oʊt mɪlk ˈlɑːteɪ, pliːz/</div>
                     <div class="sentence-target-text" id="targetSentence">
                         Hi, I'd like to order an iced oat milk latte, please.
@@ -176,7 +189,7 @@
                     <div id="vocabChips" style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px;"></div>
 
                     <div class="sentence-controls-row">
-                        <button class="btn-ios" id="playSentenceBtn" title="播放标准发音"><i class="fa-solid fa-play"></i> 播放读音</button>
+                        <button class="btn-ios" id="playSentenceBtn" title="播放标准发音"><i class="fa-solid fa-play"></i> 单次朗读</button>
                         <button class="btn-action" id="slowPlayBtn" title="0.5x 慢速朗读"><i class="fa-solid fa-turtle text-amber"></i> 0.5x 慢速</button>
                         <button class="btn-action" id="prevSentenceBtn"><i class="fa-solid fa-chevron-left"></i> 上一句</button>
                         <button class="btn-action" id="nextSentenceBtn">下一句 <i class="fa-solid fa-chevron-right"></i></button>
