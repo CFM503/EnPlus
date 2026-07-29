@@ -1,15 +1,14 @@
 /* ==========================================================================
-   EnPlus VoiceTutor AI - Native iOS & PC Hybrid Design System (v2.5 UI)
+   EnPlus VoiceTutor AI - Ultra High-Density Single-Screen UI (v3.0)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    /* Color Palette - Apple Dark Mode Inspired */
-    --bg-dark: #000000;
-    --bg-card: rgba(22, 22, 26, 0.75);
-    --bg-card-hover: rgba(32, 32, 38, 0.9);
-    --border-light: rgba(255, 255, 255, 0.1);
+    --bg-dark: #07090e;
+    --bg-card: rgba(18, 24, 38, 0.75);
+    --bg-card-hover: rgba(28, 36, 56, 0.9);
+    --border-light: rgba(255, 255, 255, 0.08);
     --border-glow: rgba(99, 102, 241, 0.4);
 
     --primary-indigo: #6366f1;
@@ -24,21 +23,18 @@
     --gradient-ios: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
 
     --text-main: #ffffff;
-    --text-muted: #8e8e93;
-    --text-dim: #636366;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
 
-    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    --font-heading: 'Outfit', -apple-system, sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
 
-    --shadow-ios: 0 10px 30px rgba(0, 0, 0, 0.5);
-    --radius-ios: 24px;
-    --radius-md: 14px;
+    --radius-ios: 16px;
+    --radius-md: 10px;
 
-    --transition-fast: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
-    --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-fast: all 0.15s ease-out;
 }
 
-/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -50,56 +46,53 @@ body {
     font-family: var(--font-body);
     background-color: var(--bg-dark);
     background-image: 
-        radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 45%);
+        radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.07) 0%, transparent 45%);
     background-attachment: fixed;
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
-    line-height: 1.5;
-    padding-bottom: env(safe-area-inset-bottom);
+    line-height: 1.4;
 }
 
-/* Top App Header Bar - Translucent Blur iOS Style */
+/* Compact Header */
 .app-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 24px;
-    background: rgba(18, 18, 20, 0.8);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    padding: 8px 20px;
+    background: rgba(13, 17, 26, 0.85);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-light);
     position: sticky;
     top: 0;
     z-index: 100;
+    height: 52px;
 }
 
 .brand-box {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
     background: var(--gradient-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
 }
 
 .brand-title {
     font-family: var(--font-heading);
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 800;
     color: #fff;
-    letter-spacing: -0.5px;
 }
 
 .brand-subtitle {
@@ -111,27 +104,28 @@ body {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
 }
 
 .volume-booster-box {
     display: flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.06);
-    padding: 6px 14px;
-    border-radius: 20px;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 14px;
     border: 1px solid var(--border-light);
+    font-size: 12px;
 }
 
 .volume-slider {
-    width: 80px;
+    width: 65px;
     accent-color: var(--primary-indigo);
     cursor: pointer;
 }
 
 .vol-badge {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--accent-emerald);
 }
@@ -140,102 +134,92 @@ body {
     background: rgba(255, 255, 255, 0.08);
     color: var(--text-main);
     border: 1px solid var(--border-light);
-    padding: 8px 12px;
-    border-radius: 12px;
-    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
     font-weight: 600;
     outline: none;
     cursor: pointer;
 }
 
-.styled-select option {
-    background: #1c1c1e;
-    color: #fff;
-}
-
-/* App Container Layout */
+/* App Container Layout - High Density */
 .app-container {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 24px;
-    padding: 24px;
-    max-width: 1500px;
+    grid-template-columns: 240px 1fr;
+    gap: 14px;
+    padding: 12px 16px;
+    max-width: 1700px;
     margin: 0 auto;
+    height: calc(100vh - 52px);
 }
 
-/* PC Sidebar */
+/* Compact PC Sidebar */
 .sidebar-panel {
     background: var(--bg-card);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(16px);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-ios);
-    padding: 20px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    height: calc(100vh - 110px);
-    position: sticky;
-    top: 85px;
+    gap: 12px;
+    height: 100%;
     overflow-y: auto;
 }
 
 .sidebar-section-title {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: var(--text-dim);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .nav-group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 3px;
 }
 
 .nav-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 16px;
-    border-radius: 14px;
+    padding: 8px 12px;
+    border-radius: 8px;
     background: transparent;
     border: 1px solid transparent;
     color: var(--text-muted);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition-fast);
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
     color: #fff;
 }
 
 .nav-btn.active {
     background: var(--gradient-ios);
     color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
 }
 
-/* Topic List */
 .topic-list-box {
-    margin-top: 10px;
+    margin-top: 6px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
 }
 
 .topic-item {
-    padding: 12px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.04);
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-light);
     cursor: pointer;
-    transition: var(--transition-fast);
 }
 
 .topic-item.active {
@@ -244,94 +228,99 @@ body {
 }
 
 .topic-item-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     color: #fff;
 }
 
 .topic-item-sub {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--text-muted);
 }
 
-/* Workspace Main */
+/* Main Studio Layout Grid */
 .workspace-panel {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+    height: 100%;
+    overflow-y: auto;
 }
 
-/* iOS Segmented Control Bar */
+/* Compact Segmented Control Bar */
 .mode-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(28, 28, 32, 0.8);
-    backdrop-filter: blur(20px);
+    background: rgba(22, 28, 42, 0.85);
+    backdrop-filter: blur(16px);
     border: 1px solid var(--border-light);
-    border-radius: 18px;
-    padding: 6px;
+    border-radius: 12px;
+    padding: 4px 8px;
+    flex-shrink: 0;
 }
 
 .mode-buttons {
     display: flex;
     gap: 4px;
-    width: 100%;
 }
 
 .mode-btn {
-    flex: 1;
-    padding: 10px 14px;
-    border-radius: 12px;
+    padding: 6px 14px;
+    border-radius: 8px;
     background: transparent;
     border: none;
     color: var(--text-muted);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     cursor: pointer;
-    transition: var(--transition-fast);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 6px;
-
 }
 
 .mode-btn.active {
-    background: #2c2c2e;
+    background: #252b3b;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-glow);
+}
+
+/* High-Density Split Workspace Grid (Flashcard + Studio Side-by-Side) */
+.split-workspace-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
 }
 
 /* Vocab Module */
 .vocab-module-card {
     background: var(--bg-card);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(16px);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-ios);
-    padding: 20px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
 }
 
 .search-filter-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .search-box {
     display: flex;
     align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 8px 16px;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 6px 12px;
     flex: 1;
-    min-width: 200px;
 }
 
 .search-box input {
@@ -339,27 +328,24 @@ body {
     border: none;
     outline: none;
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
     width: 100%;
 }
 
 .filter-chips {
     display: flex;
-    gap: 6px;
-    overflow-x: auto;
-    padding-bottom: 4px;
+    gap: 4px;
 }
 
 .chip-btn {
-    padding: 6px 14px;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.06);
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-light);
     color: var(--text-muted);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     cursor: pointer;
-    white-space: nowrap;
 }
 
 .chip-btn.active {
@@ -368,127 +354,127 @@ body {
     border-color: transparent;
 }
 
-/* Auto-Play Bar */
+/* Autoplay Bar */
 .autoplay-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.04);
-    padding: 10px 16px;
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 6px 12px;
+    border-radius: 10px;
     border: 1px solid var(--border-light);
-    flex-wrap: wrap;
-    gap: 10px;
+    font-size: 11px;
 }
 
 .btn-ios {
     background: var(--gradient-ios);
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 12px;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 }
 
-/* Main iOS Flashcard Card */
+/* Compact Flashcard */
 .flashcard-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
+    flex: 1;
+    justify-content: center;
 }
 
 .main-flashcard {
     width: 100%;
-    max-width: 600px;
-    background: linear-gradient(160deg, #1c1c1e 0%, #121214 100%);
-    border: 1px solid var(--border-light);
-    border-radius: 28px;
-    padding: 32px 24px;
+    background: linear-gradient(150deg, #161e2e 0%, #0d131f 100%);
+    border: 1px solid var(--border-glow);
+    border-radius: 20px;
+    padding: 20px 16px;
     text-align: center;
-    box-shadow: var(--shadow-ios);
     position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .card-stage-badge {
     position: absolute;
-    top: 16px;
-    left: 16px;
-    font-size: 11px;
+    top: 10px;
+    left: 12px;
+    font-size: 10px;
     font-weight: 700;
     color: var(--accent-cyan);
     background: rgba(6, 182, 212, 0.12);
-    padding: 4px 12px;
-    border-radius: 10px;
+    padding: 2px 8px;
+    border-radius: 8px;
 }
 
 .card-word-title {
     font-family: var(--font-heading);
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 800;
     color: #fff;
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .card-ipa-text {
-    font-size: 18px;
+    font-size: 15px;
     color: var(--accent-emerald);
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 .audio-play-circle {
-    width: 60px;
-    height: 60px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     background: var(--gradient-ios);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    margin: 20px auto;
+    font-size: 18px;
+    margin: 10px auto;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(0, 122, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
 }
 
 .card-back-details {
     border-top: 1px solid var(--border-light);
-    padding-top: 16px;
-    margin-top: 16px;
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
 .card-pos-tag {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--accent-amber);
 }
 
 .card-cn-desc {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: #fff;
 }
 
 .card-example-box {
     background: rgba(255, 255, 255, 0.04);
-    border-radius: 14px;
-    padding: 14px;
-    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 6px;
 }
 
 .ex-en-text {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--accent-cyan);
 }
 
 .ex-cn-text {
-    font-size: 13px;
+    font-size: 11px;
     color: var(--text-muted);
 }
 
@@ -496,106 +482,103 @@ body {
 .card-action-bar {
     display: flex;
     align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 6px;
     justify-content: center;
 }
 
 .btn-action {
-    padding: 10px 16px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
     border: 1px solid var(--border-light);
     color: #fff;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 }
 
-/* Sentence & Scenario Card */
+/* Sentence Practice & Script List Card */
 .sentence-practice-card {
     background: var(--bg-card);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(16px);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-ios);
-    padding: 24px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
 }
 
 .sentence-target-text {
     font-family: var(--font-heading);
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     color: #fff;
 }
 
 .sentence-cn-text {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--text-muted);
 }
 
 .sentence-controls-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 8px;
 }
 
-/* Microphone Assessment */
+/* Speech Recording Box */
 .speech-recording-card {
     background: var(--bg-card);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(16px);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-ios);
-    padding: 20px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
 }
 
 .mic-circle-btn {
-    width: 70px;
-    height: 70px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background: var(--gradient-primary);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
+    font-size: 22px;
     cursor: pointer;
     border: none;
-    box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
 }
 
-/* Native iOS Bottom Tab Bar (Visible on Mobile) */
 .ios-bottom-tabbar {
     display: none;
 }
 
 .toast-container {
     position: fixed;
-    bottom: 90px;
+    bottom: 20px;
     right: 20px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .toast {
-    background: rgba(28, 28, 30, 0.95);
-    border: 1px solid var(--border-light);
+    background: rgba(22, 28, 42, 0.95);
+    border: 1px solid var(--border-glow);
     color: #fff;
-    padding: 10px 18px;
-    border-radius: 16px;
-    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -604,102 +587,35 @@ body {
 }
 
 /* ==========================================================================
-   MOBILE RESPONSIVE LAYOUT (NATIVE APPLE iOS APP FEEL FOR MOBILE USERS)
+   MOBILE RESPONSIVE
    ========================================================================== */
 @media (max-width: 768px) {
-    .app-header {
-        padding: 12px 16px;
-    }
-
-    .brand-title {
-        font-size: 17px;
-    }
-
-    .brand-subtitle {
-        display: none;
-    }
-
-    .volume-booster-box {
-        padding: 4px 10px;
-    }
-
-    .volume-slider {
-        width: 60px;
-    }
-
-    .vol-badge {
-        font-size: 11px;
-    }
-
     .app-container {
         grid-template-columns: 1fr;
-        padding: 12px;
-        padding-bottom: 100px; /* Space for iOS Bottom Tab Bar */
+        padding: 8px;
+        padding-bottom: 80px;
+        height: auto;
     }
 
-    /* Hide PC Sidebar on Mobile */
+    .split-workspace-grid {
+        grid-template-columns: 1fr;
+    }
+
     .sidebar-panel {
         display: none;
     }
 
-    .mode-bar {
-        border-radius: 14px;
-        padding: 4px;
-    }
-
-    .mode-btn {
-        padding: 8px 6px;
-        font-size: 12px;
-    }
-
-    .main-flashcard {
-        padding: 24px 16px;
-        border-radius: 22px;
-    }
-
-    .card-word-title {
-        font-size: 36px;
-    }
-
-    .card-ipa-text {
-        font-size: 16px;
-    }
-
-    .audio-play-circle {
-        width: 52px;
-        height: 52px;
-        font-size: 20px;
-        margin: 14px auto;
-    }
-
-    .card-cn-desc {
-        font-size: 18px;
-    }
-
-    .card-action-bar {
-        gap: 6px;
-    }
-
-    .btn-action {
-        padding: 8px 12px;
-        font-size: 12px;
-        border-radius: 12px;
-    }
-
-    /* Show Native iOS Style Bottom Tab Bar */
     .ios-bottom-tabbar {
         display: flex;
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
-        height: 70px;
-        background: rgba(18, 18, 20, 0.92);
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
+        height: 60px;
+        background: rgba(13, 17, 26, 0.95);
+        backdrop-filter: blur(20px);
         border-top: 1px solid var(--border-light);
         z-index: 1000;
-        padding-bottom: env(safe-area-inset-bottom);
         justify-content: space-around;
         align-items: center;
     }
@@ -708,10 +624,9 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4px;
+        gap: 2px;
         color: var(--text-muted);
         font-size: 10px;
-        font-weight: 600;
         background: transparent;
         border: none;
         cursor: pointer;
@@ -719,10 +634,10 @@ body {
     }
 
     .ios-tab-item i {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .ios-tab-item.active {
-        color: #007aff; /* Apple iOS Accent Blue */
+        color: #007aff;
     }
 }
